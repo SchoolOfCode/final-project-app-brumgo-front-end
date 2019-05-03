@@ -45,3 +45,5 @@ const pois = [
       "The Old Crown pub is the oldest secular building in Birmingham, England. It is Grade II listed, and claims to date back to 1368, retaining its 'black and white' timber frame, although almost all of the present building dates from the early 16th century."
   }
 ];
+
+export default pois
