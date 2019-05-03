@@ -1,11 +1,12 @@
 const pois = [
   {
-    poiName: "",
+    poiName: "st Martin in the Bullring",
     poiLocation: {
-      lat: 1,
-      lng: 1
+      lat: 52.477074,
+      lng: -1.893224
     },
-    poiTrivia: ""
+    poiTrivia:
+      "The present Victorian church was built on the site of a 13th-century predecessor, which was documented in 1263. The church was enlarged in medieval times and the resulting structure consisted of a lofty nave and chancel, north and south aisles and a northwest tower with spire."
   },
   {
     poiName: "Bull Ring Markets",
