@@ -3,10 +3,12 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import { ListItem } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
+import HeaderSection from "../HeaderSection";
 
 export default function FlatListBasics() {
   return (
     <View style={styles.container}>
+      <HeaderSection />
       <FlatList
         data={pois}
         keyExtractor={(item, index) => index.toString()}
@@ -25,7 +27,7 @@ export default function FlatListBasics() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: "80%",
+    width: "100%",
     paddingTop: 22
   },
   item: {
