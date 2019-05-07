@@ -9,6 +9,7 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import FlatListBasics from "./components/FlatList";
+import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -22,6 +23,17 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.brumGo}>Welcome to brumGo! </Text>
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.map}
+          initialRegion={{
+            // initial region set to Bileto
+            latitude: 50.0517273,
+            longitude: 14.4286503,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}
+        />
         <FlatListBasics />
       </View>
     );
@@ -46,9 +58,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: 10
   },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
+  map: {
+    flex: 1
   }
 });
