@@ -8,6 +8,8 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
+
+import MapDisplay from "./components/MapDisplay";
 import FlatListBasics from "./components/FlatList";
 import HeaderSection from "./components/HeaderSection";
 import MainAppComponent from "./components/MainAppComponent";
@@ -20,6 +22,8 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
+  // const mapCenter =
+
   render() {
     return (
       <View style={styles.container}>
@@ -46,10 +50,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
   }
 });
