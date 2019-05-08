@@ -10,6 +10,7 @@ import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import FlatListBasics from "./components/FlatList";
 import HeaderSection from "./components/HeaderSection";
+import MainAppComponent from "./components/MainAppComponent";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -22,7 +23,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <FlatListBasics />
+        <MainAppComponent />
       </View>
     );
   }
