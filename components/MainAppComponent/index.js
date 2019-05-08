@@ -17,6 +17,7 @@ export default class MainAppComponent extends Component {
             </View>
         );
     }
+
 }
 
 const styles = StyleSheet.create({
