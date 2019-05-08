@@ -5,27 +5,6 @@ import pois from "../../data/digbethPois";
 
 keyExtractor = (item, index) => index.toString();
 
-// const building = require("./Building.png");
-// const market = require("./Market.png");
-// const culture = require("./Culture.png");
-// const event = require("./Event.png");
-
-// function iconSetter(category) {
-//     switch (category) {
-//         case "Building":
-//             building;
-//             break;
-//         case "Market":
-//             market;
-//             break;
-//         case "Event":
-//             event;
-//             break;
-//         case "Culture":
-//             culture;
-//     }
-// }
-
 export default function PinMarker() {
     return (
         <View>
@@ -54,13 +33,3 @@ export default function PinMarker() {
         </View>
     );
 }
-
-/* 
-item.category === "Building"
-                            ? require("./sand-beach-castle.png")
-                            : "Event"
-                            ? require("./battle.png")
-                            : "Market"
-                            ? require("./cart.png")
-                            : require("./dancer.png")
-*/
