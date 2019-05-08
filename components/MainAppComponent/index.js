@@ -7,21 +7,22 @@ import FlatList from "../FlatList";
 import MapDisplay from "../MapDisplay";
 
 export default class MainAppComponent extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <HeaderSection />
-        <MapDisplay />
-        <FlatList />
-        <FooterSection />
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <HeaderSection />
+                <MapDisplay />
+                <FlatList />
+                <FooterSection />
+            </View>
+        );
+    }
+
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%"
-  }
+    container: {
+        flex: 1,
+        width: "100%"
+    }
 });
