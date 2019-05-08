@@ -9,6 +9,8 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
+import requestLocationPermission from "./utils/permissions/fineLocationPermission";
+
 import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
 import StorybookUIRoot from "./storybook";
@@ -26,6 +28,10 @@ export default class App extends Component {
       ...state,
       view: destination
     }));
+
+  componentDidMount() {
+    requestLocationPermission();
+  }
 
   render() {
     switch (this.state.view) {

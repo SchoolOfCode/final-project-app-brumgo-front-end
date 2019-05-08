@@ -1,6 +1,6 @@
 const pois = [
   {
-    poiName: "st Martin in the Bullring",
+    poiName: "St Martin in the Bullring",
     poiLocation: {
       lat: 52.477074,
       lng: -1.893224
