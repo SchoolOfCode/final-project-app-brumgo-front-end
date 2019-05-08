@@ -9,7 +9,7 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import FlatListBasics from "./components/FlatList";
-import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     margin: 10
   },
   map: {
-    flex: 1
+    height: "60%",
+    width: "100%"
   }
 });
