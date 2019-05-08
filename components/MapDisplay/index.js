@@ -10,10 +10,10 @@ export default function MapDisplay() {
       showsUserLocation={true}
       initialRegion={{
         // initial region set to Bileto
-        latitude: 50.0517273,
-        longitude: 14.4286503,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421
+        latitude: 52.475149,
+        longitude: -1.884333,
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.0071
       }}
     />
   );
