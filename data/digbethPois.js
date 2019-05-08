@@ -8,6 +8,7 @@ const pois = [
         },
         poiTrivia:
             "The present Victorian church was built on the site of a 13th-century predecessor, which was documented in 1263. The church was enlarged in medieval times and the resulting structure consisted of a lofty nave and chancel, north and south aisles and a northwest tower with spire."
+
     },
     {
         category: "Market",

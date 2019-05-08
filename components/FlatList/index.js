@@ -12,9 +12,9 @@ export default function FlatListBasics() {
         keyExtractor={(item, index) => index.toString()}
         // keyExtractor={this.index.toString()}
         renderItem={({ item, index }) => (
-          <View>
+          <View style={styles.title}>
             <ListItem bottomDivider={true} title={item.poiName} />
-            <Text>{item.poiTrivia}</Text>
+            <Text style={styles.text}>{item.poiTrivia}</Text>
           </View>
         )}
       />
@@ -26,12 +26,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    paddingTop: 22
+    borderRadius: 10,
+    backgroundColor: "#28559A"
   },
   item: {
     padding: 10,
     fontSize: 18,
     height: 44
+  },
+  text: {
+    padding: 15,
+    color: "#FFFFFF",
+    letterSpacing: 1,
+    fontSize: 15
+  },
+  title: {
+    fontWeight: "bold"
   }
 });
 

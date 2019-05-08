@@ -9,27 +9,64 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
-import MapDisplay from "./components/MapDisplay";
-import FlatListBasics from "./components/FlatList";
-import HeaderSection from "./components/HeaderSection";
-import MainAppComponent from "./components/MainAppComponent";
+import requestLocationPermission from "./utils/permissions/fineLocationPermission";
 
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
+import LoadingPage from "./components/LoadingPage";
+import MainAppComponent from "./components/MainAppComponent";
+import StorybookUIRoot from "./storybook";
 
 export default class App extends Component {
-  // const mapCenter =
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: "LoadingPage"
+    };
+  }
+
+  handleNavigation = destination =>
+    this.setState(state => ({
+      ...state,
+      view: destination
+    }));
+
+  componentDidMount() {
+    requestLocationPermission();
+  }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <MainAppComponent />
-      </View>
-    );
+    switch (this.state.view) {
+      case "LoadingPage":
+        return (
+          <>
+            <LoadingPage handleNavigation={this.handleNavigation} />
+          </>
+        );
+        break;
+      case "Storybook":
+        return (
+          <>
+            <StorybookUIRoot />
+          </>
+        );
+        break;
+      case "MainView":
+        return (
+          <>
+            <MainAppComponent />
+          </>
+        );
+        break;
+      default:
+        <>
+          <Text>Invalid View</Text>
+        </>;
+    }
+
+    {
+      /* // <View style={styles.container}>
+      //   <MainAppComponent />
+      // </View> */
+    }
   }
 }
 
