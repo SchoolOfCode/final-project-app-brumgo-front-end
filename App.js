@@ -9,10 +9,15 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 
+import requestLocationPermission from "./utils/permissions/fineLocationPermission";
 import MainAppComponent from "./components/MainAppComponent";
 
 export default class App extends Component {
   // const mapCenter =
+
+  componentDidMount() {
+    requestLocationPermission();
+  }
 
   render() {
     return (
