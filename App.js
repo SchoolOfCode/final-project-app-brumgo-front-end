@@ -12,6 +12,7 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 import MapDisplay from "./components/MapDisplay";
 import FlatListBasics from "./components/FlatList";
 import HeaderSection from "./components/HeaderSection";
+import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
 
 const instructions = Platform.select({

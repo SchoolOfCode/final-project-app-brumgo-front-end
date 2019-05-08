@@ -10,7 +10,7 @@ export default class MainAppComponent extends Component {
     return (
       <View style={styles.container}>
         <HeaderSection />
-        <FlatList />
+
         <FooterSection />
       </View>
     );
