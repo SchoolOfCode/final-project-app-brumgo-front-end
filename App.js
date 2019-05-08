@@ -11,6 +11,8 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 
 import MapDisplay from "./components/MapDisplay";
 import FlatListBasics from "./components/FlatList";
+import HeaderSection from "./components/HeaderSection";
+import MainAppComponent from "./components/MainAppComponent";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -25,21 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.brumGo}>Welcome to brumGo! </Text>
-        <MapDisplay />
-        {/* <MapView
-          provider={PROVIDER_GOOGLE}
-          style={styles.map}
-          showsUserLocation={true}
-          initialRegion={{
-            // initial region set to Bileto
-            latitude: 50.0517273,
-            longitude: 14.4286503,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
-          }}
-        /> */}
-        <FlatListBasics />
+        <MainAppComponent />
       </View>
     );
   }

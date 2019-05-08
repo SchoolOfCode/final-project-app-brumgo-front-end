@@ -25,7 +25,7 @@ export default function FlatListBasics() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: "80%",
+    width: "100%",
     paddingTop: 22
   },
   item: {
