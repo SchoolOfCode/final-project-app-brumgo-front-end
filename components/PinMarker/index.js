@@ -1,15 +1,23 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import pois from "../../data/digbethPois";
+
+keyExtractor = (item, index) => index.toString();
 
 export default function PinMarker() {
     return (
-        <MapView.Marker
-            coordinate={{
-                latitude: 52.4752029,
-                longitude: -1.884587
-            }}
-            title={"The Custard Factory"}
-        />
+        <View>
+            {pois.map((item, idx) => (
+                <MapView.Marker
+                    key={idx}
+                    title={item.poiName}
+                    coordinate={{
+                        latitude: item.poiLocation.lat,
+                        longitude: item.poiLocation.lng
+                    }}
+                />
+            ))}
+        </View>
     );
 }
