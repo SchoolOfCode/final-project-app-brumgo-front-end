@@ -4,22 +4,26 @@ import { ListItem } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import HeaderSection from "../HeaderSection";
+import FooterSection from "../FooterSection";
 
 export default function FlatListBasics() {
   return (
-    <View style={styles.container}>
+    <View>
       <HeaderSection />
-      <FlatList
-        data={pois}
-        keyExtractor={(item, index) => index.toString()}
-        // keyExtractor={this.index.toString()}
-        renderItem={({ item, index }) => (
-          <View>
-            <ListItem bottomDivider={true} title={item.poiName} />
-            <Text>{item.poiTrivia}</Text>
-          </View>
-        )}
-      />
+      <View style={styles.container}>
+        <FlatList
+          data={pois}
+          keyExtractor={(item, index) => index.toString()}
+          // keyExtractor={this.index.toString()}
+          renderItem={({ item, index }) => (
+            <View>
+              <ListItem bottomDivider={true} title={item.poiName} />
+              <Text>{item.poiTrivia}</Text>
+            </View>
+          )}
+        />
+      </View>
+      <FooterSection />
     </View>
   );
 }
