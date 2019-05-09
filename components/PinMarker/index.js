@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import pois from "../../data/digbethPois";
 
@@ -20,14 +20,16 @@ export default function PinMarker() {
           <MapView.Marker
             key={idx}
             title={item.poiName}
-            image={iconSet[item.category]}
             coordinate={{
               latitude: item.poiLocation.lat,
               longitude: item.poiLocation.lng
             }}
           >
-          <Teaxt>HI</Teaxt>
-          <MapView.Marker />
+            <Image
+              style={{ height: 20, width: 20 }}
+              source={iconSet[item.category]}
+            />
+          </MapView.Marker>
         );
       })}
     </View>
