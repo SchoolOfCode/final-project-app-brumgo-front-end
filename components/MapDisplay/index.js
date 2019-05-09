@@ -24,7 +24,7 @@ export default function MapDisplay() {
 
 const styles = StyleSheet.create({
     map: {
-        height: "50%",
+        height: "100%",
         width: "100%"
     }
 });

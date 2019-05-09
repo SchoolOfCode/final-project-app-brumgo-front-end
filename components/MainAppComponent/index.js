@@ -10,19 +10,39 @@ export default class MainAppComponent extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <HeaderSection />
-                <MapDisplay />
-                <FlatList />
-                <FooterSection />
+                <View style={styles.header}>
+                    <HeaderSection />
+                </View>
+                <View style={styles.map}>
+                    <MapDisplay />
+                </View>
+                {/* <FlatList /> */}
+                <View style={styles.footer}>
+                    <FooterSection />
+                </View>
             </View>
         );
     }
-
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: "100%"
+    },
+    header: {
+        // flex: 0.7,
+        height: "8%",
+        width: "100%"
+    },
+    map: {
+        // flex: 7,
+        height: "82.5%",
+        width: "100%"
+    },
+    footer: {
+        // flex: 1,
+        height: "10%",
         width: "100%"
     }
 });
