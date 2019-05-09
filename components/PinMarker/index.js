@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, TouchableHighlight } from "react-native";
 import { Marker } from "react-native-maps";
 import pois from "../../data/digbethPois";
 
@@ -25,10 +25,12 @@ export default function PinMarker() {
               longitude: item.poiLocation.lng
             }}
           >
-            <Image
-              style={{ height: 20, width: 20 }}
-              source={iconSet[item.category]}
-            />
+            <TouchableHighlight>
+              <Image
+                style={{ height: 20, width: 20 }}
+                source={iconSet[item.category]}
+              />
+            </TouchableHighlight>
           </Marker>
         );
       })}
