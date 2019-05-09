@@ -8,6 +8,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@99xt/first-born": "^1.1.1",
+    "create-react-class": "^15.6.3",
     "deepmerge": "^3.2.0",
     "native-base": "^2.12.1",
     "react": "16.8.3",

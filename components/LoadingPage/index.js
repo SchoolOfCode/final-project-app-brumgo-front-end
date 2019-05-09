@@ -6,11 +6,19 @@ export default function LoadingPage({ handleNavigation }) {
     <View style={styles.container}>
       <Image
         style={styles.logo}
-        source={require("../LoadingPage/brumGo.png")}
+        source={require("../LoadingPage/brumGoLogoRed.png")}
       />
-      <Button title="Go to App" onPress={() => handleNavigation("MainView")} />
+
       <Button
+        style={styles.button}
+        title="Continue as Guest"
+        onPress={() => handleNavigation("MainView")}
+      />
+
+      <Button
+        style={styles.button}
         title="dev-Storybook"
+        color="##E12B38"
         onPress={() => handleNavigation("Storybook")}
       />
     </View>
@@ -21,10 +29,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "#E12B38"
   },
   logo: {
-    width: 200,
-    height: 200
+    width: 150,
+    height: 150
+  },
+  someButtonStyle: {
+    backgroundColor: "#FFFFFF"
+  },
+  MyButton: {
+    backgroundColor: "#BADA55"
   }
 });
