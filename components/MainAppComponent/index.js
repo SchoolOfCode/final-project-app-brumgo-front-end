@@ -10,9 +10,6 @@ export default class MainAppComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <HeaderSection />
-        </View>
         <View style={styles.map}>
           <MapDisplay />
         </View>
@@ -30,14 +27,10 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%"
   },
-  header: {
-    // flex: 0.7,
-    height: "8%",
-    width: "100%"
-  },
+
   map: {
     // flex: 7,
-    height: "83%",
+    height: "90%",
     width: "100%"
   },
   footer: {

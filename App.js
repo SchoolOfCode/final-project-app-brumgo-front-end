@@ -7,17 +7,17 @@ import StoryBook from "./storybook";
 import Header from "./components/HeaderSection";
 
 const AppNavigator = createStackNavigator(
-    {
-        Home: LoadingPage,
-        Main: MainAppComponent,
-        StoryBook: StoryBook
-    },
-    {
-        initialRouteName: "Home",
-        defaultNavigationOptions: {
-            header: <Header />
-        }
+  {
+    Home: LoadingPage,
+    Main: MainAppComponent,
+    StoryBook: StoryBook
+  },
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      header: <Header />
     }
+  }
 );
 
 export default createAppContainer(AppNavigator);
