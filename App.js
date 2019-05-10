@@ -6,18 +6,23 @@ import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
 import Header from "./components/HeaderSection";
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: LoadingPage,
-    Main: MainAppComponent,
-    StoryBook: StoryBook
-  },
-  {
-    initialRouteName: "Home",
-    defaultNavigationOptions: {
-      header: <Header />
+const AppNavigator = createStackNavigator({
+    Home: {
+        screen: LoadingPage,
+        navigationOptions: {
+            header: null
+        }
+    },
+    Main: {
+        screen: MainAppComponent,
+        navigationOptions: {
+            header: <Header />
+        }
+    },
+
+    StoryBook: {
+        screen: StoryBook
     }
-  }
-);
+});
 
 export default createAppContainer(AppNavigator);
