@@ -7,8 +7,8 @@ import PinMarker from "../PinMarker";
 
 const initialPosition = {
   // initial region set to Bileto
-  latitude: 52.475149,
-  longitude: -1.884333,
+  latitude: 52.476,
+  longitude: -1.8885,
   latitudeDelta: 0.01,
   longitudeDelta: 0.0071
 };

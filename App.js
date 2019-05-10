@@ -8,31 +8,32 @@ import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
 import Header from "./components/HeaderSection";
 
-
-const AppNavigator = createStackNavigator({
+const AppNavigator = createStackNavigator(
+  {
     Home: {
-        screen: LoadingPage,
-        navigationOptions: {
-            header: null
-        }
+      screen: LoadingPage,
+      navigationOptions: {
+        header: null
+      }
     },
     Main: {
-        screen: MainAppComponent,
-        navigationOptions: {
-            header: <Header />
-        }
+      screen: MainAppComponent,
+      navigationOptions: {
+        header: <Header />
+      }
     },
 
     StoryBook: {
-        screen: StoryBook,
-        navigationOptions: {
-            title: "StoryBook"
-        }
-    },
+      screen: StoryBook,
+      navigationOptions: {
+        title: "StoryBook"
+      }
+    }
+  },
   {
     initialRouteName: "Home",
-    transitionConfig: () => springFromLeft(500),
-      }
-});
+    transitionConfig: () => springFromLeft(500)
+  }
+);
 
 export default createAppContainer(AppNavigator);

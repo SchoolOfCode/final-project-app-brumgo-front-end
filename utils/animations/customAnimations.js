@@ -4,7 +4,7 @@ export function springFromLeft(duration = 300) {
   return {
     transitionSpec: {
       duration,
-      easing: Easing.out(Easing.elastic(1)),
+      easing: Easing.in(Easing.elastic(1)),
       timing: Animated.timing,
       useNativeDriver: true
     },
