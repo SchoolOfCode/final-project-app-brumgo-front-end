@@ -14,7 +14,7 @@ export default class HeaderSection extends Component {
                     backgroundColor: "#E12B38",
                     justifyContent: "space-around",
                     alignItems: "flex-start",
-                    height: "100%",
+                    height: "8%",
                     paddingTop: 12.5
                 }}
             />
