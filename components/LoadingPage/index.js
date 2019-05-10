@@ -1,8 +1,14 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View, Image } from "react-native";
 import { Button, Icon } from "react-native-elements";
 
+import fineLocationPermissions from "../../utils/permissions/fineLocationPermission";
+
 export default function LoadingPage(props) {
+  useEffect(() => {
+    fineLocationPermissions();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Image
