@@ -21,7 +21,10 @@ const AppNavigator = createStackNavigator({
     },
 
     StoryBook: {
-        screen: StoryBook
+        screen: StoryBook,
+        navigationOptions: {
+            title: "StoryBook"
+        }
     }
 });
 
