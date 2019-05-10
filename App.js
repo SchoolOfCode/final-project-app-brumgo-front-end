@@ -1,7 +1,7 @@
 import React from "react";
 // import { View, Text } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import { springFromLeft } from "./utils/animations/customAnimations";
+import { transition1 } from "./utils/animations/customAnimations";
 
 import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
@@ -32,7 +32,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: "Home",
-    transitionConfig: () => springFromLeft(500)
+    transitionConfig: () => transition1(500)
   }
 );
 

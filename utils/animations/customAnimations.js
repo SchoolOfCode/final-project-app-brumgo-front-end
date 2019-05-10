@@ -1,10 +1,10 @@
 import { Animated, Easing, Platform } from "react-native";
 
-export function springFromLeft(duration = 300) {
+export function transition1(duration = 300) {
   return {
     transitionSpec: {
       duration,
-      easing: Easing.in(Easing.elastic(1)),
+      easing: Easing.inOut(Easing.poly(5)),
       timing: Animated.timing,
       useNativeDriver: true
     },
