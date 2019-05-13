@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "storybook": "storybook start",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "@99xt/first-born": "^1.1.1",

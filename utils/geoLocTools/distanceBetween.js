@@ -1,6 +1,14 @@
 import toRad from "./degreesToRadians";
+import { isTSExpressionWithTypeArguments } from "@babel/types";
 
 export default (distanceBetween = (lat1, lng1, lat2, lng2) => {
+  if (
+    [lat1, lng1, lat2, lng2].filter(val => typeof val === "number").length !== 4
+  ) {
+    throw new Error(
+      "requires 'ALL' 4 number arguments (lat1, lng1, lat2, lng2)"
+    );
+  }
   //radius of earth
   const R = 6371000;
 
@@ -18,5 +26,7 @@ export default (distanceBetween = (lat1, lng1, lat2, lng2) => {
 
   let distance = R * c;
 
-  return distance;
+  let roundedDistance = Math.round(distance * 100) / 100;
+
+  return roundedDistance;
 });
