@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
-import mapStyle from "./mapstyle";
+// import mapStyle from "./mapstyle";
 import PinMarker from "../PinMarker";
 
 const initialPosition = {
