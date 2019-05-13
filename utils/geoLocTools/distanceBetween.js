@@ -1,5 +1,4 @@
 import toRad from "./degreesToRadians";
-import { isTSExpressionWithTypeArguments } from "@babel/types";
 
 export default (distanceBetween = (lat1, lng1, lat2, lng2) => {
   if (
