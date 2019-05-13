@@ -95,7 +95,7 @@ describe("returns a sorted (closest to farthest) array of distances between user
       distanceToPointsFromMe({ latitude: 60, longitude: 2 }, [
         { poiName: "randomPlace", poiLocation: { lat: 55, lng: 3 } }
       ])
-    ).toEqual([{ poiName: "randomPlace", distance: 559158.45 }]);
+    ).toEqual([{ randomPlace: 559158.45 }]);
 
     expect(
       distanceToPointsFromMe({ latitude: 52.478311, longitude: -1.887021 }, [
@@ -105,10 +105,7 @@ describe("returns a sorted (closest to farthest) array of distances between user
         },
         { poiName: "randomPlace", poiLocation: { lat: 55, lng: 3 } }
       ])
-    ).toEqual([
-      { poiName: "Digbeth Place", distance: 400.38 },
-      { poiName: "randomPlace", distance: 426352.12 }
-    ]);
+    ).toEqual([{ "Digbeth Place": 400.38 }, { randomPlace: 426352.12 }]);
   });
 
   it("should return the objects in order from closest to farthest", () => {
@@ -122,9 +119,9 @@ describe("returns a sorted (closest to farthest) array of distances between user
         }
       ])
     ).toEqual([
-      { poiName: "Digbeth Place", distance: 400.38 },
-      { poiName: "randomPlace", distance: 426352.12 },
-      { poiName: "Equatorial", distance: 5730418.47 }
+      { "Digbeth Place": 400.38 },
+      { randomPlace: 426352.12 },
+      { Equatorial: 5730418.47 }
     ]);
   });
 });
