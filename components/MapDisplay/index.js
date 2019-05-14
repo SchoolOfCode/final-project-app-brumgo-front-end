@@ -16,7 +16,7 @@ const initialPosition = {
 export default function MapDisplay() {
   return (
     <MapView
-      customMapStyle={mapStyle}
+      // customMapStyle={mapStyle}
       provider={PROVIDER_GOOGLE}
       style={styles.map}
       showsUserLocation={true}
