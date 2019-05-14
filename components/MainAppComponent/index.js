@@ -9,19 +9,17 @@ import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import { Footer } from "native-base";
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.map}>
-          <MapDisplay />
-        </View>
-        <View style={styles.footer}>
-          <FooterSection />
-        </View>
+function HomeScreen() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.map}>
+        <MapDisplay />
       </View>
-    );
-  }
+      <View style={styles.footer}>
+        <FooterSection />
+      </View>
+    </View>
+  );
 }
 
 class SettingsScreen extends React.Component {
