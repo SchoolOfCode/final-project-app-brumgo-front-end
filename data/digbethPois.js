@@ -17,7 +17,7 @@ const pois = [
       lng: -1.892838
     },
     poiTrivia:
-      "One of the oldest continuously trading markets in the world, The market legally began in 1154 when Peter de Bermingham, a local landowner, obtained a Charter of Marketing Rights from King Henry II."
+      "One of the oldest continuously trading markets in the world, The market legally began in 1154 when Peter de Birmingham, a local landowner, obtained a Charter of Marketing Rights from King Henry II."
   },
   {
     category: "Event",

@@ -5,29 +5,25 @@ import {
   createAppContainer
 } from "react-navigation";
 
-import pois from "../../data/digbethPois";
-
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
-import popupDialogue from "../PopupDialogue";
+import GeoPopping from "../GeoPopping";
 
-import useGeoFence from "../../utils/hooks/useGeoFence";
-
-function HomeScreen() {
-  let [inFence, poiName] = useGeoFence;
-
-  return (
-    <View style={styles.container}>
-      <popupDialogue inFence={inFence} poiName={poiName} />
-      <View style={styles.map}>
-        <MapDisplay />
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <GeoPopping />
+        <View style={styles.map}>
+          <MapDisplay />
+        </View>
+        <View style={styles.footer}>
+          <FooterSection />
+        </View>
       </View>
-      <View style={styles.footer}>
-        <FooterSection />
-      </View>
-    </View>
-  );
+    );
+  }
 }
 
 class SettingsScreen extends React.Component {

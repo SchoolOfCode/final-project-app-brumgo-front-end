@@ -19,7 +19,7 @@ class PopupDialogue extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.inFence !== this.props.inFence) {
-      setState(state => ({
+      this.setState(state => ({
         ...state,
         defaultAnimationDialog: this.props.inFence
       }));
