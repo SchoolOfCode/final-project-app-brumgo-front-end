@@ -4,14 +4,22 @@ import {
   createMaterialTopTabNavigator,
   createAppContainer
 } from "react-navigation";
+
+import pois from "../../data/digbethPois";
+
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
-import { Footer } from "native-base";
+import popupDialogue from "../PopupDialogue";
+
+import useGeoFence from "../../utils/hooks/useGeoFence";
 
 function HomeScreen() {
+  let [inFence, poiName] = useGeoFence;
+
   return (
     <View style={styles.container}>
+      <popupDialogue inFence={inFence} poiName={poiName} />
       <View style={styles.map}>
         <MapDisplay />
       </View>

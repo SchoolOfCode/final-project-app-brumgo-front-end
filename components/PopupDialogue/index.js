@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, Text } from "react-native";
 import pois from "../../data/digbethPois";
 import Dialog, {
@@ -17,7 +17,7 @@ class PopupDialogue extends Component {
     slideAnimationDialog: false
   };
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps) {
     if (prevProps.inFence !== this.props.inFence) {
       setState(state => ({
         ...state,
