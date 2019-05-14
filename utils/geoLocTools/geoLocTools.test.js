@@ -1,6 +1,7 @@
 import toRad from "./degreesToRadians";
 import distanceBetween from "./distanceBetween";
 import distanceToPointsFromMe from "./distanceToPointsFromMe";
+import withinGeoFence from "./withinGeoFence";
 
 describe("toRad, Angles correctly converted to Radians rounded to 10 d.p.", () => {
   it("360 degrees converted to 2PI", () => {
@@ -38,7 +39,7 @@ describe("distanceBetween Function correctly calculates the distance between lat
   });
 });
 
-describe("returns a sorted (closest to farthest) array of distances between user location and POIs", () => {
+describe("distanceToPointsFromMe: returns a sorted (closest to farthest) array of distances between user location and POIs", () => {
   it("throws an error if the first argument (user location) is not in the form {latitude: Number, longitude: Number}", () => {
     expect(() => distanceToPointsFromMe(0, [])).toThrowError(
       "user position needs to be an object with keys 'longitude and 'latitude' only"
@@ -95,7 +96,7 @@ describe("returns a sorted (closest to farthest) array of distances between user
       distanceToPointsFromMe({ latitude: 60, longitude: 2 }, [
         { poiName: "randomPlace", poiLocation: { lat: 55, lng: 3 } }
       ])
-    ).toEqual([{ randomPlace: 559158.45 }]);
+    ).toEqual([{ poiName: "randomPlace", distance: 559158.45 }]);
 
     expect(
       distanceToPointsFromMe({ latitude: 52.478311, longitude: -1.887021 }, [
@@ -105,7 +106,10 @@ describe("returns a sorted (closest to farthest) array of distances between user
         },
         { poiName: "randomPlace", poiLocation: { lat: 55, lng: 3 } }
       ])
-    ).toEqual([{ "Digbeth Place": 400.38 }, { randomPlace: 426352.12 }]);
+    ).toEqual([
+      { poiName: "Digbeth Place", distance: 400.38 },
+      { poiName: "randomPlace", distance: 426352.12 }
+    ]);
   });
 
   it("should return the objects in order from closest to farthest", () => {
@@ -119,9 +123,45 @@ describe("returns a sorted (closest to farthest) array of distances between user
         }
       ])
     ).toEqual([
-      { "Digbeth Place": 400.38 },
-      { randomPlace: 426352.12 },
-      { Equatorial: 5730418.47 }
+      { poiName: "Digbeth Place", distance: 400.38 },
+      { poiName: "randomPlace", distance: 426352.12 },
+      { poiName: "Equatorial", distance: 5730418.47 }
     ]);
+  });
+});
+
+describe("withinGeofence: returns false if outside of radius from closest POI and the name of the POI", () => {
+  it("returns false and poiName if distance to POI is greater than the defined radius", () => {
+    expect(withinGeoFence([{ poiName: "test", distance: 100 }], 50)).toEqual([
+      false,
+      "test"
+    ]);
+
+    expect(
+      withinGeoFence(
+        [
+          { poiName: "test", distance: 100 },
+          { poiName: "notThis", distance: 10 }
+        ],
+        50
+      )
+    ).toEqual([false, "test"]);
+  });
+
+  it("returns true and name in an array if distance to POI is greater than the defined radius", () => {
+    expect(withinGeoFence([{ poiName: "test", distance: 100 }], 150)).toEqual([
+      true,
+      "test"
+    ]);
+
+    expect(
+      withinGeoFence(
+        [
+          { poiName: "test", distance: 100 },
+          { poiName: "notThis", distance: 10 }
+        ],
+        150
+      )
+    ).toEqual([true, "test"]);
   });
 });

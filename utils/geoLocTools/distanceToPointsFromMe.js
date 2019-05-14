@@ -15,7 +15,8 @@ export default (distanceToPointsFromMe = (userPosition, poiArray) => {
   let distanceArray = poiArray
     .map(obj => {
       return {
-        [obj.poiName]: distance(
+        poiName: obj.poiName,
+        distance: distance(
           userPosition.latitude,
           userPosition.longitude,
           obj.poiLocation.lat,
@@ -23,6 +24,6 @@ export default (distanceToPointsFromMe = (userPosition, poiArray) => {
         )
       };
     })
-    .sort((a, b) => a[Object.keys(a)[0]] - b[Object.keys(b)[0]]);
+    .sort((a, b) => a.distance - b.distance);
   return distanceArray;
 });
