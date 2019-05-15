@@ -2,20 +2,25 @@ import React, { useState } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
 import Search from "../Search";
 
-export default function FooterSection() {
-    const [showSearch, setShowSearch] = useState(false);
+export default function FooterSection(props) {
+    // const [showSearch, setShowSearch] = useState(false);
 
     return (
         <>
-            {showSearch ? <Search /> : null}
+            {/* {showSearch ? <Search /> : null} */}
             <Footer>
                 <FooterTab
-                    style={{ backgroundColor: "#D3D3D3", height: "100%" }}
+                    style={{
+                        backgroundColor: "#D3D3D3",
+                        height: "100%"
+                    }}
                 >
                     <Button>
                         <Icon name="home" style={{ color: "#FFFFFF" }} />
                     </Button>
-                    <Button onPress={() => setShowSearch(!showSearch)}>
+                    <Button
+                        onPress={() => props.setShowSearch(!props.showSearch)}
+                    >
                         <Icon name="search" style={{ color: "#FFFFFF" }} />
                     </Button>
                     <Button

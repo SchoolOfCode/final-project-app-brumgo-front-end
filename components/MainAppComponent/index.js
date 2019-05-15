@@ -12,15 +12,26 @@ import { Footer } from "native-base";
 
 function HomeScreen() {
     const [searchTerm, setSearchTerm] = useState(null);
+    const [showSearch, setShowSearch] = useState(false);
 
     return (
         <View style={styles.container}>
             <View style={styles.map}>
-                <Search searchTerm={searchTerm} handleSearch={setSearchTerm} />
                 <MapDisplay />
             </View>
             <View style={styles.footer}>
-                <FooterSection />
+                <>
+                    {showSearch ? (
+                        <Search
+                            searchTerm={searchTerm}
+                            handleSearch={setSearchTerm}
+                        />
+                    ) : null}
+                </>
+                <FooterSection
+                    showSearch={showSearch}
+                    setShowSearch={setShowSearch}
+                />
             </View>
         </View>
     );
