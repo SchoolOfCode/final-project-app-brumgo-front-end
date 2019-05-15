@@ -20,14 +20,14 @@ function HomeScreen() {
                 <MapDisplay />
             </View>
             <View style={styles.footer}>
-                <>
+                <View style={styles.search}>
                     {showSearch ? (
                         <Search
                             searchTerm={searchTerm}
                             handleSearch={setSearchTerm}
                         />
                     ) : null}
-                </>
+                </View>
                 <FooterSection
                     showSearch={showSearch}
                     setShowSearch={setShowSearch}
@@ -76,7 +76,16 @@ const styles = StyleSheet.create({
     },
     footer: {
         // flex: 1,
+        top: -5,
         height: "10%",
-        width: "100%"
+        width: "100%",
+        position: "relative"
+    },
+    search: {
+        // flex: 1,
+        top: -50,
+        height: "10%",
+        width: "100%",
+        position: "relative"
     }
 });
