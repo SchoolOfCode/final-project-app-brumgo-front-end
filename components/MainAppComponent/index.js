@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
   createMaterialTopTabNavigator,
@@ -10,21 +10,30 @@ import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
+import Search from "../Search";
 
-class MapScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <GeoPopping />
-        <View style={styles.map}>
-          <MapDisplay />
-        </View>
-        <View style={styles.footer}>
-          <FooterSection />
-        </View>
+import usePoiFilter from "../../utils/hooks/usePoiFilter";
+
+import pois from "../../data/digbethPois";
+
+function HomeScreen() {
+  const [searchTerm, setSearchTerm] = useState(null);
+
+  const filteredPois = usePoiFilter(pois, searchTerm);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.map}>
+    <GeoPopping />
+        <Search searchTerm={searchTerm} handleSearch={setSearchTerm} />
+        <MapDisplay />
+
       </View>
-    );
-  }
+      <View style={styles.footer}>
+        <FooterSection />
+      </View>
+    </View>
+  );
 }
 
 class ListScreen extends React.Component {
