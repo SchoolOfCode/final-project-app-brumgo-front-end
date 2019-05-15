@@ -12,7 +12,7 @@ const GeoPopping = props => {
 
   return (
     <View>
-      <PopupDialogue inFence={inFence} poiName={poiName} />
+      <PopupDialogue isVisible={inFence} poiName={poiName} />
     </View>
   );
 };

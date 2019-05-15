@@ -17,11 +17,17 @@ class PopupDialogue extends Component {
     slideAnimationDialog: false
   };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.inFence !== this.props.inFence) {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.isVisible !== this.props.isVisible) {
       this.setState(state => ({
         ...state,
-        defaultAnimationDialog: this.props.inFence
+        defaultAnimationDialog: this.props.isVisible
+      }));
+    }
+    if (prevProps.poiName !== this.props.poiName) {
+      this.setState(state => ({
+        ...state,
+        defaultAnimationDialog: false
       }));
     }
   }
