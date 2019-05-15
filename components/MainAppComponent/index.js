@@ -9,6 +9,7 @@ import { Icon } from "react-native-elements";
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
+import LoginApp from "../LoginApp";
 import GeoPopping from "../GeoPopping";
 
 class MapScreen extends React.Component {
@@ -31,12 +32,7 @@ class ListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.list}>
-          <FlatList />
-        </View>
-        <View style={styles.footer}>
-          <FooterSection />
-        </View>
+        <LoginApp />
       </View>
     );
   }
