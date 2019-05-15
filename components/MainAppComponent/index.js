@@ -5,12 +5,13 @@ import {
   createAppContainer
 } from "react-navigation";
 
+import { Icon } from "react-native-elements";
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
 
-class HomeScreen extends React.Component {
+class MapScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -26,7 +27,7 @@ class HomeScreen extends React.Component {
   }
 }
 
-class SettingsScreen extends React.Component {
+class ListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -41,10 +42,32 @@ class SettingsScreen extends React.Component {
   }
 }
 
-const TabNavigator = createMaterialTopTabNavigator({
-  Map: HomeScreen,
-  List: SettingsScreen
-});
+const TabNavigator = createMaterialTopTabNavigator(
+  {
+    Map: {
+      screen: MapScreen,
+      navigationOptions: {
+        tabBarLabel: "Map"
+      }
+    },
+    List: {
+      screen: ListScreen,
+      navigationOptions: {
+        tabBarLabel: "List"
+      }
+    }
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: "#FFFFFF",
+      inactiveTintColor: "#D3D3D3",
+      showLabel: true,
+      style: {
+        backgroundColor: "#E12B38"
+      }
+    }
+  }
+);
 
 export default createAppContainer(TabNavigator);
 
