@@ -3,6 +3,10 @@ import usePoiFilter from "./usePoiFilter";
 import pois from "../../data/digbethPois";
 
 describe("Filters given list by search term fuzzily", () => {
+  it(`returns the whole array if filter is ""`, () => {
+    expect(usePoiFilter(pois, "")).toEqual(pois);
+  });
+
   it("filters by poiName", () => {
     expect(usePoiFilter(pois, "custard")).toEqual([
       {
