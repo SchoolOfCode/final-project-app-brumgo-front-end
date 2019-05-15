@@ -27,7 +27,7 @@ function MapScreen() {
 
   const { coords } = position || { coords: { latitude: 1, longitude: 1 } };
 
-  let distanceArray = useDistanceToPointsFromMe(coords, filteredPois);
+  let distanceArray = useDistanceToPointsFromMe(coords, pois);
 
   return (
     <View style={styles.container}>

@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
 // import mapStyle from "./mapstyle";
-import PinMarker from "../PinMarker";
+import PinMarkers from "../PinMarkers";
 
 const initialPosition = {
   // initial region set to Bileto
@@ -13,7 +13,7 @@ const initialPosition = {
   longitudeDelta: 0.0071
 };
 
-export default function MapDisplay() {
+export default function MapDisplay({ distanceArray }) {
   return (
     <MapView
       // customMapStyle={mapStyle}
@@ -22,7 +22,7 @@ export default function MapDisplay() {
       showsUserLocation={true}
       initialRegion={initialPosition}
     >
-      <PinMarker />
+      <PinMarkers distanceArray={distanceArray} />
     </MapView>
   );
 }

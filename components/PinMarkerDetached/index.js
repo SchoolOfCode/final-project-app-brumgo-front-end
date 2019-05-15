@@ -7,7 +7,6 @@ import {
   TouchableHighlight
 } from "react-native";
 import { Marker, Callout } from "react-native-maps";
-import pois from "../../data/digbethPois";
 import Dialog, {
   DialogTitle,
   DialogContent,
@@ -67,17 +66,24 @@ export default class PinMarkerDetached extends React.Component {
   };
 
   render() {
+    const closest = this.props.closest;
     const { poiName, poiLocation, category, poiTrivia } = this.props.poi;
+    const sizes = [10, 40, 30, 25];
+
+    const size = sizes[closest.indexOf(poiName) + 1];
+
     return (
       <Marker
-        key={this.props.key}
         title={poiName}
         coordinate={{
           latitude: poiLocation.lat,
           longitude: poiLocation.lng
         }}
       >
-        <Image style={{ height: 20, width: 20 }} source={iconSet[category]} />
+        <Image
+          style={{ height: size, width: size }}
+          source={iconSet[category]}
+        />
         <Callout
           style={{
             width: 100,
