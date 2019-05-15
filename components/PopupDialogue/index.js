@@ -18,16 +18,18 @@ class PopupDialogue extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
+    if (prevProps.poiName !== this.props.poiName) {
+      this.setState(state => ({ ...state, defaultAnimationDialog: false }));
+      setTimeout(
+        () =>
+          this.setState(state => ({ ...state, defaultAnimationDialog: true })),
+        1000
+      );
+    }
     if (prevProps.isVisible !== this.props.isVisible) {
       this.setState(state => ({
         ...state,
         defaultAnimationDialog: this.props.isVisible
-      }));
-    }
-    if (prevProps.poiName !== this.props.poiName) {
-      this.setState(state => ({
-        ...state,
-        defaultAnimationDialog: false
       }));
     }
   }
