@@ -17,7 +17,7 @@ const pois = [
       lng: -1.892838
     },
     poiTrivia:
-      "One of the oldest continuously trading markets in the world, The market legally began in 1154 when Peter de Bermingham, a local landowner, obtained a Charter of Marketing Rights from King Henry II."
+      "One of the oldest continuously trading markets in the world, The market legally began in 1154 when Peter de Birmingham, a local landowner, obtained a Charter of Marketing Rights from King Henry II."
   },
   {
     category: "Event",
@@ -80,7 +80,7 @@ const pois = [
       "Created in 1968 by Kenneth Budd The JF Kennedy mural outside South Birmingham and City College is an almost exact replica of one originally located in the Snow Hill area funded by the Irish community in the  American President’s honour. There are 111,604 pieces of Italian ‘Smalti’ mosaic weighing 500 kilos!"
   },
   {
-    category: "Hungry? Thirsty?",
+    category: "FoodDrink",
     poiName: "Baked in Brick",
     poiLocation: {
       lat: 52.475498,
@@ -90,7 +90,7 @@ const pois = [
       "This award winning eatery was started by Lee Desanges in a shed at the bottom of his garden where he bolted together a wood-fired pizza oven and a converted classic mini. Now located in the Custard Factory you can gorge on delcious pizza, seated at canteen style benches, all washed down with a cold beer. Not open on Monday's except for requested group booking it's deffinately a place to stop off at for everyone who loves their pizza"
   },
   {
-    category: "Hungry? Thirsty?",
+    category: "FoodDrink",
     poiName: "Seven Sins Lounge",
     poiLocation: {
       lat: 33.5207,
@@ -100,7 +100,7 @@ const pois = [
       "If you want to enjoy a delicious coffee in a great atmosphere go in and see Greg. He'll sort you out with a caffine fix and if you need some whiskey with your coffee, he can sort you out with that too."
   },
   {
-    category: "Hungry? Thirsty?",
+    category: "FoodDrink",
     poiName: "Digeth Dining Club",
     poiLocation: {
       lat: 33.509915,
@@ -110,7 +110,7 @@ const pois = [
       "open Thursday - Sunday from 4pm DDC is more than just a place to eat it's an eating experience. Set beneth he arches of Lower Trinity Street a whole host of food traders will cook you delicious street food from around the world. Fancy melt in your mouth beef? try Slow n' Low; want something sweet then head to Bournville Waffel co. Grab a drink from the bar and enjoy the DJ. There is usually an entry fee of a pound or 2 which is so make sure you have some change"
   },
   {
-    category: "Hungry? Thirsty?",
+    category: "FoodDrink",
     poiName: "Dig brew co",
     poiLocation: {
       lat: 52.475861,

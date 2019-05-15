@@ -1,17 +1,20 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import ReactNative from "react-native";
 
 import useWatchPosition from "./useWatchPosition";
-import distanceToPointsFromMe from "../geoLocTools/distanceToPointsFromMe";
-import withinGeoFence from "../geoLocTools/withinGeoFence";
+import useDistanceToPointsFromMe from "../geoLocTools/useDistanceToPointsFromMe";
+import useWithinGeoFence from "../geoLocTools/useWithinGeoFence";
 
-const useGeoFenceToPopup = ({ poiArray, popupFunction }) => {
-  const [closestLocation, setClosestLocation] = useState(null);
-  const [withinFence, setWithinFence] = useState(false);
-  const [position, positioningError] = useWatchPosition;
+const useGeoFence = poiArray => {
+  const [position, positioningError] = useWatchPosition();
 
-  let distanceArray = distanceToPointsFromMe(position, poiArray);
+  const { coords } = position || { coords: { latitude: 1, longitude: 1 } };
 
-  return withinGeoFence(distanceArray, 50);
+  let distanceArray = useDistanceToPointsFromMe(coords, poiArray);
+
+  const [inFence, poiName] = useWithinGeoFence(distanceArray, 20);
+
+  return [inFence, poiName];
 };
 
-export default useGeoFenceToPopup;
+export default useGeoFence;
