@@ -11,11 +11,9 @@ const GeoPopping = props => {
   let [inFence, poiName] = useGeoFence(pois);
 
   return (
-    <>
-      <View>
-        <PopupDialogue inFence={inFence} poiName={poiName} />
-      </View>
-    </>
+    <View>
+      <PopupDialogue inFence={inFence} poiName={poiName} />
+    </View>
   );
 };
 
