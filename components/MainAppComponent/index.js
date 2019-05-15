@@ -13,21 +13,27 @@ import GeoPopping from "../GeoPopping";
 import Search from "../Search";
 
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import useWatchPosition from "../../utils/hooks/useWatchPosition";
 
 import pois from "../../data/digbethPois";
+import useDistanceToPointsFromMe from "../../utils/geoLocTools/useDistanceToPointsFromMe";
 
-function HomeScreen() {
-  const [searchTerm, setSearchTerm] = useState(null);
+function MapScreen() {
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPois = usePoiFilter(pois, searchTerm);
+  let filteredPois = usePoiFilter(pois, searchTerm);
+
+  let [position, error] = useWatchPosition();
+
+  const { coords } = position || { coords: { latitude: 1, longitude: 1 } };
+
+  let distanceArray = useDistanceToPointsFromMe(coords, filteredPois);
 
   return (
     <View style={styles.container}>
       <View style={styles.map}>
-    <GeoPopping />
-        <Search searchTerm={searchTerm} handleSearch={setSearchTerm} />
-        <MapDisplay />
-
+        <GeoPopping />
+        <MapDisplay distanceArray={distanceArray} />
       </View>
       <View style={styles.footer}>
         <FooterSection />

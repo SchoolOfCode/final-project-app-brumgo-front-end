@@ -18,7 +18,7 @@ class PopupDialogue extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.poiName !== this.props.poiName) {
+    if (prevProps.poiName !== this.props.poiName && this.props.inFence) {
       this.setState(state => ({ ...state, defaultAnimationDialog: false }));
       setTimeout(
         () =>
