@@ -1,19 +1,50 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
-    createMaterialTopTabNavigator,
-    createAppContainer
+  createMaterialTopTabNavigator,
+  createAppContainer
 } from "react-navigation";
+
+import { Icon } from "react-native-elements";
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
+import LoginApp from "../LoginApp";
+import GeoPopping from "../GeoPopping";
 import Search from "../Search";
-import { Footer } from "native-base";
 
-function HomeScreen() {
-    const [searchTerm, setSearchTerm] = useState(null);
+import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import useWatchPosition from "../../utils/hooks/useWatchPosition";
+
+import pois from "../../data/digbethPois";
+import useDistanceToPointsFromMe from "../../utils/geoLocTools/useDistanceToPointsFromMe";
+
+function MapScreen() {
+const [searchTerm, setSearchTerm] = useState(null);
     const [showSearch, setShowSearch] = useState(false);
+  let filteredPois = usePoiFilter(pois, searchTerm);
 
+  let [position, error] = useWatchPosition();
+
+  const { coords } = position || { coords: { latitude: 1, longitude: 1 } };
+
+  let distanceArray = useDistanceToPointsFromMe(coords, filteredPois);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.map}>
+        <GeoPopping />
+        <MapDisplay distanceArray={distanceArray} />
+      </View>
+      <View style={styles.footer}>
+        <FooterSection />
+      </View>
+    </View>
+  );
+}
+
+class ListScreen extends React.Component {
+  render() {
     return (
         <View style={styles.container}>
             <View style={styles.map}>
@@ -33,37 +64,47 @@ function HomeScreen() {
                     setShowSearch={setShowSearch}
                 />
             </View>
+
         </View>
+      </View>
     );
+  }
 }
 
-class SettingsScreen extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.list}>
-                    <FlatList />
-                </View>
-                <View style={styles.footer}>
-                    <FooterSection />
-                </View>
-            </View>
-        );
+const TabNavigator = createMaterialTopTabNavigator(
+  {
+    Map: {
+      screen: MapScreen,
+      navigationOptions: {
+        tabBarLabel: "Map"
+      }
+    },
+    List: {
+      screen: ListScreen,
+      navigationOptions: {
+        tabBarLabel: "List"
+      }
     }
-}
-
-const TabNavigator = createMaterialTopTabNavigator({
-    Map: HomeScreen,
-    List: SettingsScreen
-});
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: "#FFFFFF",
+      inactiveTintColor: "#D3D3D3",
+      showLabel: true,
+      style: {
+        backgroundColor: "#E12B38"
+      }
+    }
+  }
+);
 
 export default createAppContainer(TabNavigator);
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%"
-    },
+  container: {
+    flex: 1,
+    width: "100%"
+  },
 
     map: {
         // flex: 7,

@@ -6,7 +6,7 @@ import { transition1 } from "./utils/animations/customAnimations";
 import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
-import Header from "./components/HeaderSection";
+import Login from "./components/LoginApp";
 
 const AppNavigator = createStackNavigator(
   {
@@ -19,7 +19,13 @@ const AppNavigator = createStackNavigator(
     Main: {
       screen: MainAppComponent,
       navigationOptions: {
-        title: "BrumGo"
+        header: null
+      }
+    },
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        title: "Log In or Register"
       }
     },
 
