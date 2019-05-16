@@ -38,7 +38,7 @@ const TabNavigation = createMaterialBottomTabNavigator(
       }
     },
     "No Account? Register Here": {
-      screen: Register,
+      screen: RegisterScreen,
       navigationOptions: {
         tabBarLabel: "No Account? Register Here",
         tabBarIcon: ({ tintColor }) => (

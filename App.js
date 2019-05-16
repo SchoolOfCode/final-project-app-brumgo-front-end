@@ -25,7 +25,7 @@ const AppNavigator = createStackNavigator(
     Login: {
       screen: Login,
       navigationOptions: {
-        title: "Log In or Register"
+        header: null
       }
     },
 
