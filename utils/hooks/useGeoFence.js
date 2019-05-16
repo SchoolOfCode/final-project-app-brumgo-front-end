@@ -12,7 +12,7 @@ const useGeoFence = poiArray => {
 
   let distanceArray = useDistanceToPointsFromMe(coords, poiArray);
 
-  const [inFence, poiName] = useWithinGeoFence(distanceArray, 20);
+  const [inFence, poiName] = useWithinGeoFence(distanceArray, 50);
 
   return [inFence, poiName];
 };

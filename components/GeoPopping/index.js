@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 
 import PopupDialogue from "../PopupDialogue";
@@ -8,6 +8,7 @@ import pois from "../../data/digbethPois";
 import useGeoFence from "../../utils/hooks/useGeoFence";
 
 const GeoPopping = props => {
+  // needs to change state or props to force rerender
   let [inFence, poiName] = useGeoFence(pois);
 
   return (
