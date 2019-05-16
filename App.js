@@ -19,7 +19,7 @@ const AppNavigator = createStackNavigator(
     Main: {
       screen: MainAppComponent,
       navigationOptions: {
-        title: "BrumGo"
+        header: null
       }
     },
     Login: {

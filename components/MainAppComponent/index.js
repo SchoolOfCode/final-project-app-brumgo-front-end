@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import {
   createMaterialTopTabNavigator,
@@ -11,21 +11,36 @@ import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import LoginApp from "../LoginApp";
 import GeoPopping from "../GeoPopping";
+import Search from "../Search";
 
-class MapScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
+import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import useWatchPosition from "../../utils/hooks/useWatchPosition";
+
+import pois from "../../data/digbethPois";
+import useDistanceToPointsFromMe from "../../utils/geoLocTools/useDistanceToPointsFromMe";
+
+function MapScreen() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  let filteredPois = usePoiFilter(pois, searchTerm);
+
+  let [position, error] = useWatchPosition();
+
+  const { coords } = position || { coords: { latitude: 1, longitude: 1 } };
+
+  let distanceArray = useDistanceToPointsFromMe(coords, filteredPois);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.map}>
         <GeoPopping />
-        <View style={styles.map}>
-          <MapDisplay />
-        </View>
-        <View style={styles.footer}>
-          <FooterSection />
-        </View>
+        <MapDisplay distanceArray={distanceArray} />
       </View>
-    );
-  }
+      <View style={styles.footer}>
+        <FooterSection />
+      </View>
+    </View>
+  );
 }
 
 class ListScreen extends React.Component {
