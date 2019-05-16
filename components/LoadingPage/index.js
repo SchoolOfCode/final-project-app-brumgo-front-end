@@ -32,7 +32,7 @@ export default function LoadingPage(props) {
                 borderWidth: 3
               }}
               containerStyle={{ width: 280, height: 50, opacity: 0.8 }}
-              // onPress={}
+              onPress={() => props.navigation.push("Login")}
             />
             <Button
               title=" Guest"
