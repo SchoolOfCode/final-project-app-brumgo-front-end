@@ -20,8 +20,8 @@ import pois from "../../data/digbethPois";
 import useDistanceToPointsFromMe from "../../utils/geoLocTools/useDistanceToPointsFromMe";
 
 function MapScreen() {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const [searchTerm, setSearchTerm] = useState(null);
+    const [showSearch, setShowSearch] = useState(false);
   let filteredPois = usePoiFilter(pois, searchTerm);
 
   let [position, error] = useWatchPosition();
@@ -46,12 +46,25 @@ function MapScreen() {
 class ListScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.list}>
-          <FlatList />
-        </View>
-        <View style={styles.footer}>
-          <FooterSection />
+        <View style={styles.container}>
+            <View style={styles.map}>
+                <MapDisplay />
+            </View>
+            <View style={styles.footer}>
+                <View style={styles.search}>
+                    {showSearch ? (
+                        <Search
+                            searchTerm={searchTerm}
+                            handleSearch={setSearchTerm}
+                        />
+                    ) : null}
+                </View>
+                <FooterSection
+                    showSearch={showSearch}
+                    setShowSearch={setShowSearch}
+                />
+            </View>
+
         </View>
       </View>
     );
@@ -93,18 +106,27 @@ const styles = StyleSheet.create({
     width: "100%"
   },
 
-  map: {
-    // flex: 7,
-    height: "90%",
-    width: "100%"
-  },
-  list: {
-    height: "90%",
-    width: "100%"
-  },
-  footer: {
-    // flex: 1,
-    height: "10%",
-    width: "100%"
-  }
+    map: {
+        // flex: 7,
+        height: "90%",
+        width: "100%"
+    },
+    list: {
+        height: "90%",
+        width: "100%"
+    },
+    footer: {
+        // flex: 1,
+        top: -5,
+        height: "10%",
+        width: "100%",
+        position: "relative"
+    },
+    search: {
+        // flex: 1,
+        top: -50,
+        height: "10%",
+        width: "100%",
+        position: "relative"
+    }
 });
