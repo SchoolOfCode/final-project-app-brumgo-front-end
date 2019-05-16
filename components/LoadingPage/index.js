@@ -23,7 +23,7 @@ export default function LoadingPage(props) {
 
           <View style={styles.buttonGroup}>
             <Button
-              title="Log In"
+              title="LOGIN"
               titleStyle={{ fontSize: 15, color: "#FFFFFF" }}
               buttonStyle={{
                 borderRadius: 60,
@@ -35,7 +35,7 @@ export default function LoadingPage(props) {
               onPress={() => props.navigation.push("Login")}
             />
             <Button
-              title=" Guest"
+              title=" GUEST"
               titleStyle={{ fontSize: 15, color: "#E12B38" }}
               buttonStyle={{
                 borderRadius: 60,
