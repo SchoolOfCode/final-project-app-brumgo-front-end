@@ -32,7 +32,12 @@ class ListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <LoginApp />
+        <View style={styles.list}>
+          <FlatList />
+        </View>
+        <View style={styles.footer}>
+          <FooterSection />
+        </View>
       </View>
     );
   }

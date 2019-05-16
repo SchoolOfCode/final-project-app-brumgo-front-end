@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ImageBackground } from "react-native";
+import { StyleSheet, View, Text, ImageBackground } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 
-export default class Login extends Component {
+export default class Register extends Component {
   render() {
     return (
       <ImageBackground
@@ -11,6 +11,27 @@ export default class Login extends Component {
       >
         <View style={styles.overlay}>
           <View style={styles.bottom}>
+            <Input
+              leftIcon={
+                <Icon
+                  name="user"
+                  type="font-awesome"
+                  color="#FCC133"
+                  size={27}
+                />
+              }
+              containerStyle={{ marginVertical: 10 }}
+              inputStyle={{ marginLeft: 10, color: "white" }}
+              keyboardAppearance="light"
+              placeholder="Name"
+              autoFocus={false}
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="default"
+              returnKeyType="next"
+              placeholderTextColor="white"
+            />
+
             <Input
               leftIcon={
                 <Icon
@@ -38,7 +59,7 @@ export default class Login extends Component {
                   name="lock"
                   type="font-awesome"
                   color="#FCC133"
-                  size={33}
+                  size={25}
                 />
               }
               containerStyle={{ marginVertical: 10 }}
@@ -53,7 +74,7 @@ export default class Login extends Component {
             />
 
             <Button
-              title="LOG IN"
+              title="SIGN UP"
               activeOpacity={1}
               underlayColor="transparent"
               loadingProps={{ size: "small", color: "#FCC133" }}
@@ -74,6 +95,7 @@ export default class Login extends Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   background: {
     flex: 1
