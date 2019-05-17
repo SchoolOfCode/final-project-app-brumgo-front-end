@@ -14,7 +14,7 @@ const useGeoFence = poiArray => {
 
   const [inFence, poiName] = useWithinGeoFence(distanceArray, 50);
 
-  return [inFence, poiName];
+  return [inFence, poiName, distanceArray];
 };
 
 export default useGeoFence;
