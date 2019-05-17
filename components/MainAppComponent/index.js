@@ -27,7 +27,7 @@ function MapScreen(props) {
 function ListScreen(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.map}>
+      <View style={styles.list}>
         <List />
       </View>
       <View style={styles.footer}>
