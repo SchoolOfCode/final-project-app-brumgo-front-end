@@ -132,8 +132,8 @@ const pois = [
         category: "FoodDrink",
         poiName: "Seven Sins Lounge",
         poiLocation: {
-            lat: 33.5207,
-            lng: -86.8024
+            lat: 52.474895,
+            lng: -1.884335
         },
         poiTrivia:
             "If you want to enjoy a delicious coffee in a great atmosphere go in and see Greg. He'll sort you out with a caffeine fix and if you need some whiskey with your coffee, he can sort you out with that too.",
@@ -146,8 +146,8 @@ const pois = [
         category: "FoodDrink",
         poiName: "Digeth Dining Club",
         poiLocation: {
-            lat: 33.509915,
-            lng: -86.7974
+            lat: 52.475557,
+            lng: -1.882568
         },
         poiTrivia:
             "open Thursday - Sunday from 4pm DDC is more than just a place to eat it's an eating experience. Set beneath he arches of Lower Trinity Street a whole host of food traders will cook you delicious street food from around the world. Fancy melt in your mouth beef? try Slow n' Low; want something sweet then head to Bournville Waffel co. Grab a drink from the bar and enjoy the DJ. There is usually an entry fee of a pound or 2 which is so make sure you have some change",
