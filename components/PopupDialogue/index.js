@@ -18,15 +18,21 @@ class PopupDialogue extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.poiName !== this.props.poiName && this.props.inFence) {
+    if (
+      prevProps.poiName !== this.props.poiName &&
+      prevProps.isVisible &&
+      this.props.isVisible
+    ) {
+      console.log("triggered 1");
       this.setState(state => ({ ...state, defaultAnimationDialog: false }));
       setTimeout(
         () =>
           this.setState(state => ({ ...state, defaultAnimationDialog: true })),
-        1000
+        500
       );
     }
     if (prevProps.isVisible !== this.props.isVisible) {
+      console.log("triggered 2");
       this.setState(state => ({
         ...state,
         defaultAnimationDialog: this.props.isVisible
@@ -39,12 +45,13 @@ class PopupDialogue extends Component {
       obj => obj.poiName === this.props.poiName
     );
 
+    console.log(this.props);
+
     return (
       <Dialog
         overlayBackgroundColor={"rgba(0, 0, 0, 0.3)"}
         dialogAnimation={new ScaleAnimation()}
         onHardwareBackPress={() => {
-          console.log("onHardwareBackPress");
           this.setState({
             scaleAnimationDialog: false
           });
