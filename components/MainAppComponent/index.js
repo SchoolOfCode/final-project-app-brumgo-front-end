@@ -5,7 +5,7 @@ import {
   createAppContainer
 } from "react-navigation";
 
-import FlatList from "../FlatList";
+import List from "../List";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
@@ -28,7 +28,7 @@ function ListScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.map}>
-        <FlatList />
+        <List />
       </View>
       <View style={styles.footer}>
         <FooterSection />
