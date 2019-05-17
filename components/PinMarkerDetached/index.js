@@ -17,12 +17,14 @@ import Dialog, {
     ScaleAnimation
 } from "react-native-popup-dialog";
 import ReadMore from "../ReadMore";
+import placeholder from "../../assets/images/pictures/birds-custard-factory.jpg";
 
 const iconSet = {
     Building: require("../../assets/images/icons/Building.png"),
     Culture: require("../../assets/images/icons/Culture.png"),
     Market: require("../../assets/images/icons/Market.png"),
-    Event: require("../../assets/images/icons/Event.png")
+    Event: require("../../assets/images/icons/Event.png"),
+    FoodDrink: require("../../assets/images/icons/Food.png")
 };
 
 const styles = StyleSheet.create({
@@ -76,7 +78,8 @@ export default class PinMarkerDetached extends React.Component {
             poiLocation,
             category,
             poiTrivia,
-            extraPoiTrivia
+            extraPoiTrivia,
+            urlExtra
         } = this.props.poi;
         return (
             <Marker
@@ -188,7 +191,10 @@ export default class PinMarkerDetached extends React.Component {
                             {this.state.readMore ? (
                                 poiTrivia
                             ) : (
-                                <ReadMore extraPoiTrivia={extraPoiTrivia} />
+                                <ReadMore
+                                    extraPoiTrivia={extraPoiTrivia}
+                                    urlExtra={placeholder}
+                                />
                             )}
                         </Text>
                     </DialogContent>
