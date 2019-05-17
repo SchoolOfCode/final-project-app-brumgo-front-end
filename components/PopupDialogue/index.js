@@ -43,9 +43,11 @@ class PopupDialogue extends Component {
     }
 
     render() {
-        const { poiName, poiTrivia } = pois.find(
+        const { poiName, poiTrivia, extraPoiTrivia } = pois.find(
             obj => obj.poiName === this.props.poiName
         );
+
+        console.log("extra", extraPoiTrivia);
 
         return (
             <Dialog
@@ -121,7 +123,11 @@ class PopupDialogue extends Component {
                     }}
                 >
                     <Text>
-                        {this.state.readMore ? poiTrivia : <ReadMore />}
+                        {this.state.readMore ? (
+                            poiTrivia
+                        ) : (
+                            <ReadMore extraPoiTrivia={extraPoiTrivia} />
+                        )}
                     </Text>
                 </DialogContent>
             </Dialog>

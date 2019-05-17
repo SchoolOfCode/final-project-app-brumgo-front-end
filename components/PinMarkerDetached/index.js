@@ -71,7 +71,13 @@ export default class PinMarkerDetached extends React.Component {
     };
 
     render() {
-        const { poiName, poiLocation, category, poiTrivia } = this.props.poi;
+        const {
+            poiName,
+            poiLocation,
+            category,
+            poiTrivia,
+            extraPoiTrivia
+        } = this.props.poi;
         return (
             <Marker
                 key={this.props.key}
@@ -179,7 +185,11 @@ export default class PinMarkerDetached extends React.Component {
                         }}
                     >
                         <Text>
-                            {this.state.readMore ? poiTrivia : <ReadMore />}
+                            {this.state.readMore ? (
+                                poiTrivia
+                            ) : (
+                                <ReadMore extraPoiTrivia={extraPoiTrivia} />
+                            )}
                         </Text>
                     </DialogContent>
                 </Dialog>
