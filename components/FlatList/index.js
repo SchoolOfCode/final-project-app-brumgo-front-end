@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
-import { ListItem } from "react-native-elements";
+import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
+import { BorderlessButton } from "react-native-gesture-handler";
 
 export default function FlatListBasics() {
   return (
@@ -12,24 +13,31 @@ export default function FlatListBasics() {
         keyExtractor={(item, index) => index.toString()}
         // keyExtractor={this.index.toString()}
         renderItem={({ item, index }) => (
-          <View style={styles.title}>
-            <ListItem bottomDivider={true} bottomDivider={true} style={styles.header} title={item.poiName} />
-            <Image style={{ height: 320, width: 320, margin: 10 }} source={require("../LoadingPage/brum.jpg")} />
-            <Text style={styles.text}>{item.poiTrivia}</Text>
-          </View>
-        )}
-      />
-    </View>
-  );
+          <View>
+          <ListItem
+            title={item.poiName}
+            rightIcon={<Icon name="star" type="font-awesome" />}
+            ></ListItem>
+            
+            </View>
+             )}
+             />
+             </View>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    width: "98%",
-    borderWidth: 2,
-    borderColor: '#D3D3D3'
+    height: "100%"
+  },
+  title: {
+fontSize: 15,
+fontWeight: "bold",
+letterSpacing: 2,
+margin: 10,
+textAlign: "center"
   },
   item: {
     padding: 10,
@@ -49,3 +57,11 @@ const styles = StyleSheet.create({
 
 // skip this line if using Create React Native App
 // AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics);
+
+// <View>
+//   <ListItem bottomDivider={true} bottomDivider={true} style={styles.header} rightIcon={} />
+//   <Text style={styles.title}>{item.poiName}</Text>
+//   <Image style={{ height: 320, width: 340, margin: 10 }} source={require("../LoadingPage/brum.jpg")} />
+
+//   <Text style={styles.text}>{item.poiTrivia}</Text>
+// </View>
