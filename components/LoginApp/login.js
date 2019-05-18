@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, ImageBackground, Text } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
+import { Row } from "native-base";
 
 export default class Login extends Component {
   render() {
@@ -64,7 +65,7 @@ export default class Login extends Component {
                 loadingProps={{ size: "small", color: "#FCC133" }}
                 buttonStyle={{
                   height: 45,
-                  width: 280,
+                  width: 325,
                   backgroundColor: "transparent",
                   borderWidth: 3,
                   borderColor: "#FCC133",
@@ -76,6 +77,34 @@ export default class Login extends Component {
                   color: "white",
                   fontSize: 15
                 }}
+              />
+            </View>
+            <View style={styles.social}>
+              <Button
+                title="facebook"
+                titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+                buttonStyle={{
+                  height: 45,
+                  width: 150,
+                  borderRadius: 60,
+                  backgroundColor: "#FCC133",
+                  borderWidth: 3,
+                  borderColor: "#FCC133",
+                }}
+                containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
+              />
+              <Button
+                title="twitter"
+                titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+                buttonStyle={{
+                  height: 45,
+                  width: 150,
+                  borderRadius: 60,
+                  backgroundColor: "#FCC133",
+                  borderWidth: 3,
+                  borderColor: "#FCC133",
+                }}
+                containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
             </View>
           </View>
@@ -110,5 +139,9 @@ const styles = StyleSheet.create({
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(152,152,152,0.7)"
+  },
+  social: {
+    flexDirection: "row",
+    marginLeft: 25
   }
 });
