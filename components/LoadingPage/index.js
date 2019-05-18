@@ -24,24 +24,31 @@ export default function LoadingPage(props) {
           <View style={styles.buttonGroup}>
             <Button
               title="LOGIN"
-              titleStyle={{ fontSize: 15, color: "#FFFFFF" }}
+              activeOpacity={1}
+              underlayColor="transparent"
+              loadingProps={{ size: "small", color: "#FCC133" }}
+              titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
               buttonStyle={{
                 borderRadius: 60,
-                backgroundColor: "#E12B38",
+                height: 45,
+                width: 280,
+                backgroundColor: "transparent",
                 borderColor: "#FFFFFF",
                 borderWidth: 3
               }}
-              containerStyle={{ width: 280, height: 50, opacity: 0.8 }}
+              containerStyle={{ marginVertical: 10, margin: 23 }}
               onPress={() => props.navigation.push("Login")}
             />
             <Button
               title=" GUEST"
-              titleStyle={{ fontSize: 15, color: "#E12B38" }}
+              titleStyle={{ fontSize: 15, color: "#E12B38", fontWeight: "bold" }}
               buttonStyle={{
+                height: 45,
+                width: 280,
                 borderRadius: 60,
-                backgroundColor: "#FFFFFF"
+                backgroundColor: "#FFFFFF",
               }}
-              containerStyle={{ width: 280, height: 50, opacity: 0.8 }}
+              containerStyle={{ marginVertical: 10, opacity: 0.8 }}
               onPress={() => props.navigation.push("Main")}
             />
 

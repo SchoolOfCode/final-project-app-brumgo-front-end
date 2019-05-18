@@ -37,6 +37,7 @@ export default function FlatListBasics() {
 
 // add category
 // add images to database
+// triva needs to be five lines in order to have consistency in design
 
 const styles = StyleSheet.create({
   container: {
