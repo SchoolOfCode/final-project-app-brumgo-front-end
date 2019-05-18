@@ -16,9 +16,16 @@ export default function FlatListBasics() {
           <View>
           <ListItem
             title={item.poiName}
+            topDivider="true"
               rightIcon={<Icon name="star" type="font-awesome" color="#FCC133" />}
                 ></ListItem>
-            <Image style={{ height: 320, width: 340, margin: 10 }} source={require("../LoadingPage/brum.jpg")} />
+            <Image style={{ height: 320, width: 350, margin: 5 }} source={require("../LoadingPage/brum.jpg")} />
+            <ListItem
+              title={item.poiName}
+              leftIcon={<Icon name="calendar" type="font-awesome" color="#FCC133" />}
+              title="Category"
+              rightIcon={<Icon name="location-arrow" type="font-awesome" color="#FCC133" />}
+            ></ListItem>
             <Text style={styles.text}>{item.poiTrivia}</Text>
             </View>
              )}
@@ -26,6 +33,9 @@ export default function FlatListBasics() {
              </View>
   )
 }
+
+// add category
+// add images to database
 
 const styles = StyleSheet.create({
   container: {
@@ -46,7 +56,7 @@ textAlign: "center"
     height: 44
   },
   text: {
-    padding: 15,
+    padding: 12,
     color: "#000000",
     letterSpacing: 1,
     fontSize: 15
