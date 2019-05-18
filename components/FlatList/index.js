@@ -58,10 +58,3 @@ textAlign: "center"
 
 // skip this line if using Create React Native App
 // AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics);
-
-// <View>
-//   <ListItem bottomDivider={true} bottomDivider={true} style={styles.header} />
-//   <Image style={{ height: 320, width: 340, margin: 10 }} source={require("../LoadingPage/brum.jpg")} />
-
-//   <Text style={styles.text}>{item.poiTrivia}</Text>
-// </View>
