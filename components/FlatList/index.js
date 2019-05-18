@@ -16,9 +16,10 @@ export default function FlatListBasics() {
           <View>
           <ListItem
             title={item.poiName}
-            rightIcon={<Icon name="star" type="font-awesome" />}
-            ></ListItem>
-            
+              rightIcon={<Icon name="star" type="font-awesome" color="#FCC133" />}
+                ></ListItem>
+            <Image style={{ height: 320, width: 340, margin: 10 }} source={require("../LoadingPage/brum.jpg")} />
+            <Text style={styles.text}>{item.poiTrivia}</Text>
             </View>
              )}
              />
@@ -59,8 +60,7 @@ textAlign: "center"
 // AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics);
 
 // <View>
-//   <ListItem bottomDivider={true} bottomDivider={true} style={styles.header} rightIcon={} />
-//   <Text style={styles.title}>{item.poiName}</Text>
+//   <ListItem bottomDivider={true} bottomDivider={true} style={styles.header} />
 //   <Image style={{ height: 320, width: 340, margin: 10 }} source={require("../LoadingPage/brum.jpg")} />
 
 //   <Text style={styles.text}>{item.poiTrivia}</Text>
