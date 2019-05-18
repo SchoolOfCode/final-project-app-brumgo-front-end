@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
-import { BorderlessButton } from "react-native-gesture-handler";
+
 
 export default function FlatListBasics() {
   return (
@@ -25,6 +25,7 @@ export default function FlatListBasics() {
               leftIcon={<Icon name="calendar" type="font-awesome" color="#FCC133" />}
               title="Category"
               rightIcon={<Icon name="location-arrow" type="font-awesome" color="#FCC133" />}
+              rightTitle="Route"
             ></ListItem>
             <Text style={styles.text}>{item.poiTrivia}</Text>
             </View>
@@ -43,27 +44,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
-  title: {
-fontSize: 15,
-fontWeight: "bold",
-letterSpacing: 2,
-margin: 10,
-textAlign: "center"
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44
-  },
   text: {
-    padding: 12,
     color: "#000000",
     letterSpacing: 1,
-    fontSize: 15
+    fontSize: 12, 
+    textAlign: "justify",
+    padding: 10
   },
-  title: {
-    fontWeight: "bold"
-  }
 });
 
 // skip this line if using Create React Native App
