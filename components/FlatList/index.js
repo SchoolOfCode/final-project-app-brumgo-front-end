@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
+
 import pois from "../../data/digbethPois";
 
 
