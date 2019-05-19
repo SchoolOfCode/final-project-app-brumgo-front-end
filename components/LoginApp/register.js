@@ -98,6 +98,7 @@ export default class Register extends Component {
                   fontSize: 15
                 }}
               />
+
             </View>
           </View>
         </View>

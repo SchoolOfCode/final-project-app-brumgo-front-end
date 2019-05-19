@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, ImageBackground, Text } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
-import { Row } from "native-base";
+
 
 export default class Login extends Component {
   render() {
@@ -71,6 +71,7 @@ export default class Login extends Component {
                   borderColor: "#FCC133",
                   borderRadius: 60
                 }}
+             
                 containerStyle={{ marginVertical: 10, margin: 23 }}
                 titleStyle={{
                   fontWeight: "bold",
@@ -81,7 +82,15 @@ export default class Login extends Component {
             </View>
             <View style={styles.social}>
               <Button
-                title="facebook"
+                title="  facebook"
+                icon={
+                  <Icon
+                    name="facebook"
+                    type="font-awesome"
+                    size={15}
+                    color="white"
+                  />
+                }
                 titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
                 buttonStyle={{
                   height: 45,
@@ -94,7 +103,15 @@ export default class Login extends Component {
                 containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
               <Button
-                title="twitter"
+                title="  twitter"
+                icon={
+                  <Icon
+                    name="twitter"
+                    type="font-awesome"
+                    size={15}
+                    color="white"
+                  />
+                }
                 titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
                 buttonStyle={{
                   height: 45,

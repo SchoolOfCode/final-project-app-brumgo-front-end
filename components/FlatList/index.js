@@ -19,7 +19,7 @@ export default function FlatListBasics() {
             topDivider="true"
               rightIcon={<Icon name="star" type="font-awesome" color="#FCC133" />}
                 ></ListItem>
-            <Image style={{ height: 320, width: 350, margin: 5 }} source={require("../LoadingPage/brum.jpg")} />
+            <Image style={{ height: 320, width: "100%" }} source={require("../LoadingPage/brum.jpg")} />
             <ListItem
               title={item.poiName}
               leftIcon={<Icon name="calendar" type="font-awesome" color="#FCC133" />}
