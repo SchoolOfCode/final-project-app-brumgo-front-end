@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
+import FavIcon from "./favIcon";
+import { statement } from "@babel/template";
 
 const iconSet = {
     Building: require("../../assets/images/icons/Building.png"),
@@ -13,6 +15,8 @@ const iconSet = {
 };
 
 export default function FlatListBasics() {
+    const [star, setStar] = useState(false);
+
     return (
         <View style={styles.container}>
             <FlatList
@@ -24,13 +28,7 @@ export default function FlatListBasics() {
                         <ListItem
                             title={item.poiName}
                             topDivider="true"
-                            rightIcon={
-                                <Icon
-                                    name="star"
-                                    type="font-awesome"
-                                    color="#FCC133"
-                                />
-                            }
+                            rightIcon={<FavIcon />}
                         />
                         <Image
                             style={{ height: 320, width: "100%" }}
@@ -49,7 +47,8 @@ export default function FlatListBasics() {
                                 <Icon
                                     name="location-arrow"
                                     type="font-awesome"
-                                    color="#FCC133"
+                                    color={star ? "#FCC133" : "#D3D3D3"}
+                                    onPress={() => setStar(!star)}
                                 />
                             }
                             rightTitle="Route"
