@@ -1,7 +1,7 @@
 const pois = [
     {
         category: "Building",
-        poiName: "St Martin in the Bullring",
+        poiName: "St Martin in the Bull Ring",
         poiLocation: {
             lat: 52.477074,
             lng: -1.893224
@@ -158,7 +158,7 @@ const pois = [
     },
     {
         category: "FoodDrink",
-        poiName: "Dig brew co",
+        poiName: "Dig Brew co",
         poiLocation: {
             lat: 52.475861,
             lng: -1.890345

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { ListItem } from "react-native-elements";
+import { FlatList, StyleSheet, Text, View, Image } from "react-native";
+import { ListItem, Icon } from "react-native-elements";
+
 
 import pois from "../../data/digbethPois";
+
 
 export default function FlatListBasics() {
   return (
@@ -12,37 +14,45 @@ export default function FlatListBasics() {
         keyExtractor={(item, index) => index.toString()}
         // keyExtractor={this.index.toString()}
         renderItem={({ item, index }) => (
-          <View style={styles.title}>
-            <ListItem bottomDivider={true} title={item.poiName} />
+          <View>
+          <ListItem
+            title={item.poiName}
+            topDivider="true"
+              rightIcon={<Icon name="star" type="font-awesome" color="#FCC133" />}
+                ></ListItem>
+            <Image style={{ height: 320, width: "100%" }} source={require("../LoadingPage/brum.jpg")} />
+            <ListItem
+              title={item.poiName}
+              leftIcon={<Icon name="calendar" type="font-awesome" color="#FCC133" />}
+              title="Category"
+              rightIcon={<Icon name="location-arrow" type="font-awesome" color="#FCC133" />}
+              rightTitle="Route"
+            ></ListItem>
             <Text style={styles.text}>{item.poiTrivia}</Text>
-          </View>
-        )}
-      />
-    </View>
-  );
+            </View>
+             )}
+             />
+             </View>
+  )
 }
+
+// add category
+// add images to database
+// triva needs to be five lines in order to have consistency in design
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    borderRadius: 10,
-    backgroundColor: "#28559A"
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44
+    height: "100%"
   },
   text: {
-    padding: 15,
-    color: "#FFFFFF",
+    color: "#000000",
     letterSpacing: 1,
-    fontSize: 15
+    fontSize: 12, 
+    textAlign: "justify",
+    padding: 10
   },
-  title: {
-    fontWeight: "bold"
-  }
 });
 
 // skip this line if using Create React Native App

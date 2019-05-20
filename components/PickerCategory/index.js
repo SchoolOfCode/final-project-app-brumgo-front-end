@@ -1,18 +1,35 @@
 import React, { Component } from "react";
-import { Picker, View, Item } from "react-native";
+import { View } from "react-native"
+import { Picker } from "native-base";
 
 export default class PickerCategory extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: undefined
+    };
+  }
+  onValueChange(value) {
+    this.setState({
+      selected: value
+    });
+  }
   render() {
     return (
       <View>
-        <Picker>
-          <Item value={"Buildings"} label={"Buildings"} />
-          <Item value={"Market"} label={"Market"} />
-          <Item value={"Event"} label={"Event"} />
-          <Item value={"Culture"} label={"Culture"} />
-          <Item value={"Food & Drink"} label={"Food & Drink"} />
-        </Picker>
-      </View>
+            <Picker
+              style={{ width: undefined }}
+              selectedValue={this.state.selected}
+              onValueChange={this.onValueChange.bind(this)}
+            >
+        <Picker.Item label={"Pick a Category"} value="key0" />
+        <Picker.Item label={"Buildings"} value="key1" />
+        <Picker.Item label={"Markets"} value="key2" />
+        <Picker.Item label={"Events"} value="key3" />
+        <Picker.Item label={"Food & Drink"} value="key4" />
+        <Picker.Item label={"Culture"} value="key5" />
+            </Picker>
+            </View>
     );
   }
 }
