@@ -16,11 +16,7 @@ import renderIf from "./js/helpers/renderIf";
 var InitialARScene = require("./js/ARHitTestSample");
 
 // Array of 3d models that we use in this sample. This app switches between this these models.
-var objArray = [
-  require("./js/res/coffee_mug/object_coffee_mug.vrx"),
-  require("./js/res/object_flowers/object_flowers.vrx"),
-  require("./js/res/emoji_smile/emoji_smile.vrx")
-];
+var objArray = [];
 
 export default class ViroSample extends Component {
   constructor() {
