@@ -23,82 +23,77 @@ export default class UserProfile extends Component {
                         }}
                     />
                     <Text style={styles.name}>Sahela Rani</Text>
-                    <View style={styles.icons}>
-
-                        <Icon
-                            name='users'
-                            type='font-awesome'
-                            color='#FCC133'
-                            rounded
-                    
-                        />
-
-                        <Icon
-                            name='gamepad'
-                            type='font-awesome'
-                            color='#FCC133'
-                            rounded
-                        />
-                        <Icon
-                            name='share-alt'
-                            type='font-awesome'
-                            color='#FCC133'
-                            rounded 
-    
-
-                        />
-                    </View>
+                
                 </View>
 
                         <View style={styles.middle}>
-                            <Image style={{ height: 50, width: 50 }} />
-                            <Text style={{ color: "#FFFFFF" }}>Invite friends and earn free discounts</Text>
+                         
                             <Icon
-                                name='chevron-right'
+                                name='user-plus'
                                 type='font-awesome'
-                                color='#D3D3D3'
-
+                                color='#FCC133'
+                                raised
                             />
+
+                            <Icon
+                                name='edit'
+                                type='font-awesome'
+                                color='#FCC133'
+                                raised
+                                />
+
+                            <Icon
+                            name='share-alt'
+                            type='font-awesome'
+                            color='#FCC133'
+                            raised
+                        />
                         </View>
 
 
-                <View style={styles.middle}>
-                    <Image style={{ height: 50, width: 50 }} />
+                        <View style={styles.bottom}>
+                            <Icon
+                                name='credit-card'
+                                type='font-awesome'
+                                color='#FCC133'
+                        
+                            />
                     <Text style={{ color: "#000000" }}>Offers & Discounts</Text>
                     <Icon
                         name='chevron-right'
                         type='font-awesome'
                         color='#D3D3D3'
-
                     />
                     </View>
-                        <View style={styles.middle}>
-                            <Image style={{ height: 50, width: 50 }} />
-                            <Text style={{ color: "#000000" }}>Saved</Text>
+                        <View style={styles.bottom}>
+                            <Icon
+                                name='star'
+                                type='font-awesome'
+                                color='#FCC133'
+                            
+                            />
+                            <Text style={{ color: "#000000" }}>Favourite Places</Text>
                             <Icon
                                 name='chevron-right'
                                 type='font-awesome'
                                 color='#D3D3D3'
-
                             />
                         </View>
 
-                        <View style={styles.middle}>
-                            <Image style={{ height: 50, width: 50 }} />
+                        <View style={styles.bottom}>
+                            <Icon
+                                name='check'
+                                type='font-awesome'
+                                color='#FCC133'
+                                
+                            />
                             <Text style={{ color: "#000000" }}>Locations Visited</Text>
                             <Icon
                                 name='chevron-right'
                                 type='font-awesome'
                                 color='#D3D3D3'
-
                             />
                         </View>
-
-
-
-
-                
-
             </View>
             </View>
             </ImageBackground>
@@ -142,6 +137,23 @@ const styles = StyleSheet.create({
     middle: {
         backgroundColor: "#FFFFFF",
         flex: 0.3,
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center",
+        borderRadius: 10,
+        margin: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 1,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 10,
+    },
+    bottom: {
+        backgroundColor: "#FFFFFF",
+        flex: 0.2,
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
