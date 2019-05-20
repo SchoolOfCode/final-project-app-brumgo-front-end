@@ -116,23 +116,14 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     top: {
-        flex: 1,
+        flex: 0.5,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#FFFFFF",
         borderRadius: 10,
-        margin: 10,
         borderWidth: 1,
         borderColor: '#FFFFFF',
-        borderBottomWidth: 0,
-        shadowColor: '#FCC133',
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 1,
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 10,
+        margin: 10,
     },
     middle: {
         backgroundColor: "#FFFFFF",
@@ -171,6 +162,7 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 25,
         margin: 10,
+        fontWeight: "bold",
     },
     icons: {
         flexDirection: "row",
