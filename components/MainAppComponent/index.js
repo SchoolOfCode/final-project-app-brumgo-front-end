@@ -9,7 +9,7 @@ import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
-import PickerCategory from "../PickerCategory"
+import PickerCategory from "../PickerCategory";
 
 function MapScreen(props) {
   return (
