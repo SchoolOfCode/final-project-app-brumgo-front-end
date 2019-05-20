@@ -126,7 +126,8 @@ class PopupDialogue extends Component {
                         {this.state.readMore ? (
                             poiTrivia
                         ) : (
-                            <ReadMore extraPoiTrivia={extraPoiTrivia} />
+                            <ReadMore 
+                            extraPoiTrivia={extraPoiTrivia} />
                         )}
                     </Text>
                 </DialogContent>

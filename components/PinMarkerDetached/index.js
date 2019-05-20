@@ -17,7 +17,7 @@ import Dialog, {
     ScaleAnimation
 } from "react-native-popup-dialog";
 import ReadMore from "../ReadMore";
-import placeholder from "../../assets/images/pictures/birds-custard-factory.jpg";
+// import placeholder from "../../assets/images/pictures/birds-custard-factory.jpg";
 
 const iconSet = {
     Building: require("../../assets/images/icons/Building.png"),
@@ -193,7 +193,8 @@ export default class PinMarkerDetached extends React.Component {
                             ) : (
                                 <ReadMore
                                     extraPoiTrivia={extraPoiTrivia}
-                                    urlExtra={placeholder}
+                                    urlExtra={urlExtra}
+                        
                                 />
                             )}
                         </Text>
