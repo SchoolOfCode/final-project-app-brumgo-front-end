@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, ImageBackground } from 'react-native'
 import { Avatar, Icon, ListItem } from 'react-native-elements'
 
-const list = [
-    {
-        title: 'Email',
-        icon: 'email'
-
-    },
-    {
-        title: 'Phone',
-        icon: 'phone'
-    },
-    {
-        title: 'Password',
-        icon: 'lock'
-    },
-
-]
 
 
 export default class UserProfile extends Component {
     render() {
         return (
+            <ImageBackground
+                source={require("../LoadingPage/brum.jpg")}
+                style={styles.background}
+            >
+                <View style={styles.overlay}>
             <View style={styles.container}>
                 <View style={styles.top}>
                     <Avatar
@@ -32,7 +21,6 @@ export default class UserProfile extends Component {
                             uri:
                                 'https://pbs.twimg.com/profile_images/924260952488411137/tDSjYZpM_400x400.jpg',
                         }}
-                        showEditButton
                     />
                     <Text style={styles.name}>Sahela Rani</Text>
                     <View style={styles.icons}>
@@ -40,63 +28,97 @@ export default class UserProfile extends Component {
                         <Icon
                             name='users'
                             type='font-awesome'
-                            color='#D3D3D3'
-                            raised
+                            color='#FCC133'
+                            rounded
+                    
                         />
 
                         <Icon
                             name='gamepad'
                             type='font-awesome'
                             color='#FCC133'
-                            raised
-                            size={30}
-
+                            rounded
                         />
                         <Icon
                             name='share-alt'
                             type='font-awesome'
-                            color='#D3D3D3'
-                            raised
+                            color='#FCC133'
+                            rounded 
+    
 
                         />
                     </View>
                 </View>
 
+                        <View style={styles.middle}>
+                            <Image style={{ height: 50, width: 50 }} />
+                            <Text style={{ color: "#FFFFFF" }}>Invite friends and earn free discounts</Text>
+                            <Icon
+                                name='chevron-right'
+                                type='font-awesome'
+                                color='#D3D3D3'
+
+                            />
+                        </View>
+
 
                 <View style={styles.middle}>
                     <Image style={{ height: 50, width: 50 }} />
-                    <Text style={{ color: "#FFFFFF" }}>Invite friends and earn free discounts</Text>
+                    <Text style={{ color: "#000000" }}>Offers & Discounts</Text>
                     <Icon
                         name='chevron-right'
                         type='font-awesome'
                         color='#D3D3D3'
 
                     />
-                </View>
+                    </View>
+                        <View style={styles.middle}>
+                            <Image style={{ height: 50, width: 50 }} />
+                            <Text style={{ color: "#000000" }}>Saved</Text>
+                            <Icon
+                                name='chevron-right'
+                                type='font-awesome'
+                                color='#D3D3D3'
 
-
-                <View style={styles.bottom}>
-                    {
-                        list.map((item, i) => (
-                            <ListItem
-                                key={i}
-                                title={item.title}
-                                leftIcon={{ name: item.icon }}
                             />
-                        ))
-                    }
-                </View>
+                        </View>
+
+                        <View style={styles.middle}>
+                            <Image style={{ height: 50, width: 50 }} />
+                            <Text style={{ color: "#000000" }}>Locations Visited</Text>
+                            <Icon
+                                name='chevron-right'
+                                type='font-awesome'
+                                color='#D3D3D3'
+
+                            />
+                        </View>
+
+
+
+
+                
 
             </View>
+            </View>
+            </ImageBackground>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        width: "100%",
+        height: "100%"
+    },
+    overlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: "rgba(152,152,152,0.7)"
+    },
     container: {
         flex: 1,
         width: "100%",
-        backgroundColor: "#FFFFFF",
     },
     top: {
         flex: 1,
@@ -116,10 +138,9 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 10,
         marginTop: 10,
-
     },
     middle: {
-        backgroundColor: "#000000",
+        backgroundColor: "#FFFFFF",
         flex: 0.3,
         flexDirection: "row",
         justifyContent: "space-around",
@@ -134,10 +155,6 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 10,
         marginTop: 10,
-    },
-    bottom: {
-        flex: 1,
-        backgroundColor: "#D3D3D3",
     },
     name: {
         fontSize: 25,
