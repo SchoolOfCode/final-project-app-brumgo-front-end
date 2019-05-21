@@ -7,6 +7,9 @@ import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
 import Login from "./components/LoginApp";
+import UserProfile from "./components/UserProfile";
+import FooterSection from "./components/FooterSection";
+import HeaderSection from "./components/HeaderSection";
 
 const AppNavigator = createStackNavigator(
   {
@@ -24,6 +27,24 @@ const AppNavigator = createStackNavigator(
     },
     Login: {
       screen: Login,
+      navigationOptions: {
+        header: null
+      }
+    },
+    Footer: {
+      screen: FooterSection,
+      navigationOptions: {
+        header: null
+      }
+    },
+    UserProfile: {
+      screen: UserProfile,
+      navigationOptions: {
+        header: <HeaderSection />
+      }
+    },
+    Header: {
+      screen: HeaderSection,
       navigationOptions: {
         header: null
       }

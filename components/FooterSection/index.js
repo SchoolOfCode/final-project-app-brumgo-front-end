@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
 import Search from "../Search";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
@@ -37,7 +38,7 @@ export default function FooterSection(props) {
           <Button>
             <Icon name="camera" style={{ color: "#FFFFFF" }} />
           </Button>
-          <Button>
+          <Button onPress={() => props.navigation.push("UserProfile")}>
             <Icon name="person" style={{ color: "#FFFFFF" }} />
           </Button>
         </FooterTab>

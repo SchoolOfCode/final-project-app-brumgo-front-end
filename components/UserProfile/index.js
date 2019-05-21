@@ -12,6 +12,24 @@ export default class UserProfile extends Component {
         <View style={styles.overlay}>
           <View style={styles.container}>
             <View style={styles.top}>
+              <ListItem
+                style={{ padding: 5, width: "100%", color: "#FCC133" }}
+                leftIcon={
+                  <Icon
+                    name="location-arrow"
+                    type="font-awesome"
+                    color="#FCC133"
+                  />
+                }
+                rightIcon={
+                  <Icon
+                    name="location-arrow"
+                    type="font-awesome"
+                    color="#FCC133"
+                  />
+                }
+                rightTitle="Route"
+              />
               <Avatar
                 size={100}
                 rounded
@@ -98,7 +116,7 @@ const styles = StyleSheet.create({
   },
   top: {
     backgroundColor: "rgb(252,193,51)",
-    flex: 0.6,
+    flex: 0.5,
     justifyContent: "center",
     alignItems: "center"
   },
@@ -124,7 +142,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     margin: 10,
     fontWeight: "bold",
-    color: "black"
+    color: "#FFFFFF"
   },
   icons: {
     flexDirection: "row"
