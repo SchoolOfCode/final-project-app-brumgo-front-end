@@ -23,6 +23,8 @@ export default class Login extends Component {
               />
             </View>
 
+
+
             <View style={styles.bottom}>
               <Input
                 leftIcon={
@@ -88,6 +90,9 @@ export default class Login extends Component {
                 }}
               />
             </View>
+
+
+
             <View style={styles.social}>
               <Button
                 title="   facebook"
@@ -150,6 +155,7 @@ const styles = StyleSheet.create({
     height: 100,
     opacity: 0.9,
     marginLeft: "65%",
+    marginTop: "-45%",
   },
   header: {
     fontSize: 30,
@@ -168,12 +174,6 @@ backgroundColor: "#FFFFFF"
     flex: 1,
     flexDirection: "column",
     justifyContent: "center"
-  },
-  buttom: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
