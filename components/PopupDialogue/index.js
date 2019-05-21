@@ -19,33 +19,32 @@ class PopupDialogue extends Component {
         readMore: true
     };
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.poiName !== this.props.poiName && this.props.inFence) {
-            this.setState(state => ({
-                ...state,
-                defaultAnimationDialog: false
-            }));
-            setTimeout(
-                () =>
-                    this.setState(state => ({
-                        ...state,
-                        defaultAnimationDialog: true
-                    })),
-                1000
-            );
-        }
-        if (prevProps.isVisible !== this.props.isVisible) {
-            this.setState(state => ({
-                ...state,
-                defaultAnimationDialog: this.props.isVisible
-            }));
-        }
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      prevProps.poiName !== this.props.poiName &&
+      prevProps.isVisible &&
+      this.props.isVisible
+    ) {
+      this.setState(state => ({ ...state, defaultAnimationDialog: false }));
+      setTimeout(
+        () =>
+          this.setState(state => ({ ...state, defaultAnimationDialog: true })),
+        500
+      );
+    }
+    if (prevProps.isVisible !== this.props.isVisible) {
+      this.setState(state => ({
+        ...state,
+        defaultAnimationDialog: this.props.isVisible
+      }));
+
     }
 
     render() {
         const { poiName, poiTrivia, extraPoiTrivia } = pois.find(
             obj => obj.poiName === this.props.poiName
         );
+
 
         console.log("extra", extraPoiTrivia);
 
