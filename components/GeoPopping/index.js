@@ -8,14 +8,14 @@ import pois from "../../data/digbethPois";
 import useGeoFence from "../../utils/hooks/useGeoFence";
 
 const GeoPopping = props => {
-  // const [force, setForce] = useState(true);
+  const [force, setForce] = useState(true);
   // needs to change state or props to force rerender
   let [inFence, poiName] = useGeoFence(pois);
 
-  // useEffect(() => {
-  //   setTimeout(() => setForce(!force), 1000);
-  // }, [force]);
-
+  useEffect(() => {
+    setTimeout(() => setForce(!force), 500);
+  }, [force]);
+  console.log(`${inFence}, ${poiName}`);
   return (
     <View>
       <PopupDialogue isVisible={inFence} poiName={poiName} />

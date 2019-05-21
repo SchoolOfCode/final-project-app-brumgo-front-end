@@ -45,7 +45,7 @@ class PopupDialogue extends Component {
       obj => obj.poiName === this.props.poiName
     );
 
-    console.log("extra", extraPoiTrivia);
+    console.log("popup props", this.props);
 
     return (
       <Dialog
