@@ -10,7 +10,7 @@ import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
-import UserProfile from "../UserProfile";
+
 
 function MapScreen(props) {
   return (
@@ -29,7 +29,13 @@ function MapScreen(props) {
 function ListScreen(props) {
   return (
     <View style={styles.container}>
-      <UserProfile />
+    <PickerCategory />
+    <View style={styles.list}>
+       <FlatList />
+      </View>
+      <View style={styles.footer}>
+        <FooterSection {...props} />
+      </View>
     </View>
   );
 }
