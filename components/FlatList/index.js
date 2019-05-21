@@ -25,6 +25,15 @@ export default function FlatListBasics() {
         // keyExtractor={this.index.toString()}
         renderItem={({ item, index }) => (
           <View>
+<<<<<<< HEAD
+=======
+          <ListItem
+            title={item.poiName}
+            topDivider="true"
+              rightIcon={<Icon name="star" type="font-awesome" color="#FCC133" />}
+                ></ListItem>
+            <Image style={{ height: 320, width: "100%" }} source={item.urlExtra} />
+>>>>>>> linked POI url imags to list view
             <ListItem
               title={item.poiName}
               topDivider="true"
