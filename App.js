@@ -8,6 +8,8 @@ import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
 import Login from "./components/LoginApp";
 
+console.disableYellowBox = true;
+
 const AppNavigator = createStackNavigator(
   {
     Home: {

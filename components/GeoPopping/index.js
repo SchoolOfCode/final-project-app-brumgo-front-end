@@ -15,7 +15,7 @@ const GeoPopping = props => {
   useEffect(() => {
     setTimeout(() => setForce(!force), 500);
   }, [force]);
-  console.log(`${inFence}, ${poiName}`);
+
   return (
     <View>
       <PopupDialogue isVisible={inFence} poiName={poiName} />
