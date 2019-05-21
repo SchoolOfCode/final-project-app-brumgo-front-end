@@ -11,7 +11,10 @@ import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 
+import usePoiFilter from "../../utils/hooks/usePoiFilter";
+
 function MapScreen(props) {
+  console.log("navigation", props.navigation);
   return (
     <View style={styles.container}>
       <View style={styles.map}>
