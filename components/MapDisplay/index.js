@@ -24,6 +24,7 @@ export default function MapDisplay() {
     >
       <PinMarker />
     </MapView>
+  
   );
 }
 

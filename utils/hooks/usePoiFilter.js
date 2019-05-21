@@ -1,18 +1,18 @@
-import Fuse from "fuse.js";
-
 export default function usePoiFilter(array, searchTerm) {
-  const options = {
-    shouldSort: false,
-    threshold: 0.2,
-    location: 0,
-    distance: 100,
-    maxPatternLength: 32,
-    minMatchCharLength: 1,
-    keys: ["poiName", "category"]
-  };
+  const { categories, nameSearch } = searchTerm;
+  //set defaults
+  categories = categories || [
+    "Building",
+    "Market",
+    "Event",
+    "Culture",
+    "FoodDrink"
+  ];
+  nameSearch = nameSearch || "";
 
-  let fuse = new Fuse(array, options); // "list" is the item array
-  let result = fuse.search(searchTerm);
+  //filterby category
 
-  return result;
+  let catFiltered = array.filter(obj => categories.includes(obj.category));
+
+  return catFiltered;
 }

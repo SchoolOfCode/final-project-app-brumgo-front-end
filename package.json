@@ -12,6 +12,7 @@
     "create-react-class": "^15.6.3",
     "deepmerge": "^3.2.0",
     "fuse.js": "^3.4.4",
+    "metro-config": "^0.54.1",
     "native-base": "^2.12.1",
     "react": "16.8.3",
     "react-native": "0.59.5",

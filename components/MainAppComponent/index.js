@@ -9,6 +9,7 @@ import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
+import PickerCategory from "../PickerCategory";
 
 function MapScreen(props) {
   return (
@@ -27,7 +28,8 @@ function MapScreen(props) {
 function ListScreen(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.map}>
+      <PickerCategory />
+      <View style={styles.list}>
         <FlatList />
       </View>
       <View style={styles.footer}>
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   list: {
-    height: "90%",
+    height: "81%",
     width: "100%"
   },
   footer: {

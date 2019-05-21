@@ -85,7 +85,7 @@ export default class Register extends Component {
                 loadingProps={{ size: "small", color: "#FCC133" }}
                 buttonStyle={{
                   height: 45,
-                  width: 280,
+                  width: 325,
                   backgroundColor: "transparent",
                   borderWidth: 3,
                   borderColor: "#FCC133",
@@ -98,6 +98,7 @@ export default class Register extends Component {
                   fontSize: 15
                 }}
               />
+
             </View>
           </View>
         </View>

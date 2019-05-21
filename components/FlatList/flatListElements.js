@@ -7,7 +7,7 @@ keyExtractor = (item, index) => index.toString();
 
 export default function FlatListElem() {
   return (
-    <View>
+    <View style={styles.container}>
       {pois.map((item, idx) => (
         <ListItem key={idx} title={item.poiName} subtitle={item.poiTrivia} />
       ))}
@@ -15,15 +15,4 @@ export default function FlatListElem() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    paddingTop: 22
-  },
-  title: {
-    padding: 10,
-    fontSize: 18,
-    height: 44
-  }
-});
+

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, ImageBackground, Text } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 
+
 export default class Login extends Component {
   render() {
     return (
@@ -64,18 +65,63 @@ export default class Login extends Component {
                 loadingProps={{ size: "small", color: "#FCC133" }}
                 buttonStyle={{
                   height: 45,
-                  width: 280,
+                  width: 325,
                   backgroundColor: "transparent",
                   borderWidth: 3,
                   borderColor: "#FCC133",
                   borderRadius: 60
                 }}
+             
                 containerStyle={{ marginVertical: 10, margin: 23 }}
                 titleStyle={{
                   fontWeight: "bold",
                   color: "white",
                   fontSize: 15
                 }}
+              />
+            </View>
+            <View style={styles.social}>
+              <Button
+                title="  facebook"
+                icon={
+                  <Icon
+                    name="facebook"
+                    type="font-awesome"
+                    size={15}
+                    color="white"
+                  />
+                }
+                titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+                buttonStyle={{
+                  height: 45,
+                  width: 150,
+                  borderRadius: 60,
+                  backgroundColor: "#FCC133",
+                  borderWidth: 3,
+                  borderColor: "#FCC133",
+                }}
+                containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
+              />
+              <Button
+                title="  twitter"
+                icon={
+                  <Icon
+                    name="twitter"
+                    type="font-awesome"
+                    size={15}
+                    color="white"
+                  />
+                }
+                titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+                buttonStyle={{
+                  height: 45,
+                  width: 150,
+                  borderRadius: 60,
+                  backgroundColor: "#FCC133",
+                  borderWidth: 3,
+                  borderColor: "#FCC133",
+                }}
+                containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
             </View>
           </View>
@@ -110,5 +156,9 @@ const styles = StyleSheet.create({
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(152,152,152,0.7)"
+  },
+  social: {
+    flexDirection: "row",
+    marginLeft: 25
   }
 });
