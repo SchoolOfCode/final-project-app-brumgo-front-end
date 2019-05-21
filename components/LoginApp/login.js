@@ -11,9 +11,12 @@ export default class Login extends Component {
         style={styles.background}
       >
         <View style={styles.overlay}>
+          <View style={styles.title}>
+            <Text style={styles.header}>LOGIN</Text>
+          </View>
           <View style={styles.container}>
             <View style={styles.top}>
-              <Text style={styles.header}>LOGIN</Text>
+
             </View>
 
             <View style={styles.bottom}>
@@ -22,8 +25,9 @@ export default class Login extends Component {
                   <Icon
                     name="envelope"
                     type="font-awesome"
-                    color="#FCC133"
+                    color="rgba(225, 45, 58, 0.8)"
                     size={25}
+                    raised
                   />
                 }
                 containerStyle={{ marginVertical: 10 }}
@@ -43,8 +47,9 @@ export default class Login extends Component {
                   <Icon
                     name="lock"
                     type="font-awesome"
-                    color="#FCC133"
-                    size={33}
+                    color="rgba(225, 45, 58, 0.8)"
+                    size={25}
+                    raised
                   />
                 }
                 containerStyle={{ marginVertical: 10 }}
@@ -62,13 +67,12 @@ export default class Login extends Component {
                 title="LOGIN"
                 activeOpacity={1}
                 underlayColor="transparent"
-                loadingProps={{ size: "small", color: "#FCC133" }}
                 buttonStyle={{
                   height: 45,
                   width: 325,
                   backgroundColor: "transparent",
                   borderWidth: 3,
-                  borderColor: "#FCC133",
+                  borderColor: "#FFFFFF",
                   borderRadius: 60
                 }}
              
@@ -82,7 +86,7 @@ export default class Login extends Component {
             </View>
             <View style={styles.social}>
               <Button
-                title="  facebook"
+                title="   facebook"
                 icon={
                   <Icon
                     name="facebook"
@@ -96,14 +100,14 @@ export default class Login extends Component {
                   height: 45,
                   width: 150,
                   borderRadius: 60,
-                  backgroundColor: "#FCC133",
+                  backgroundColor: "#E12B38",
                   borderWidth: 3,
-                  borderColor: "#FCC133",
+                  borderColor: "#E12B38",
                 }}
                 containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
               <Button
-                title="  twitter"
+                title="   twitter"
                 icon={
                   <Icon
                     name="twitter"
@@ -117,10 +121,10 @@ export default class Login extends Component {
                   height: 45,
                   width: 150,
                   borderRadius: 60,
-                  backgroundColor: "#FCC133",
+                  backgroundColor: "#E12B38",
                   borderWidth: 3,
-                  borderColor: "#FCC133",
-                }}
+                  borderColor: "#E12B38",
+            }}
                 containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
             </View>
@@ -137,11 +141,16 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 30,
     letterSpacing: 2,
-    color: "#FCC133",
-    justifyContent: "flex-end",
-    margin: 23,
-    fontWeight: "bold"
+    color: "rgba(225, 45, 58, 0.8)",
+    fontWeight: "bold",
+    marginTop: 8,
+    marginLeft: 28
   },
+title: {
+height: 60,
+width: "100%",
+backgroundColor: "#FFFFFF"
+},
   container: {
     flex: 1,
     flexDirection: "column",
