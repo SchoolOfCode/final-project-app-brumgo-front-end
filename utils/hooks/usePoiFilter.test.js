@@ -51,4 +51,8 @@ describe("Additionally filters 'fuzzily' by poiName", () => {
   it("ignores lack of spaces", () => {
     expect(usePoiFilter(pois, { nameSearch: "DigBrewco" }).length).toEqual(1);
   });
+
+  it("is lenient towards spelling mistakes", () => {
+    expect(usePoiFilter(pois, { nameSearch: "bill rung" }).length).toEqual(2);
+  });
 });
