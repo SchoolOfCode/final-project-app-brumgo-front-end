@@ -1,12 +1,22 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
-
 import pois from "../../data/digbethPois";
+import FavIcon from "./favIcon";
+import { statement } from "@babel/template";
 
+const iconSet = {
+  Building: require("../../assets/images/icons/Building.png"),
+  Culture: require("../../assets/images/icons/Culture.png"),
+  Market: require("../../assets/images/icons/Market.png"),
+  Event: require("../../assets/images/icons/Event.png"),
+  FoodDrink: require("../../assets/images/icons/Food.png")
+};
 
 export default function FlatListBasics() {
+  const [star, setStar] = useState(false);
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -15,25 +25,39 @@ export default function FlatListBasics() {
         // keyExtractor={this.index.toString()}
         renderItem={({ item, index }) => (
           <View>
-          <ListItem
-            title={item.poiName}
-            topDivider="true"
-              rightIcon={<Icon name="star" type="font-awesome" color="#FCC133" />}
-                ></ListItem>
-            <Image style={{ height: 320, width: "100%" }} source={require("../LoadingPage/brum.jpg")} />
             <ListItem
               title={item.poiName}
-              leftIcon={<Icon name="calendar" type="font-awesome" color="#FCC133" />}
-              title="Category"
-              rightIcon={<Icon name="location-arrow" type="font-awesome" color="#FCC133" />}
+              topDivider="true"
+              rightIcon={<FavIcon />}
+            />
+            <Image
+              style={{ height: 320, width: "100%" }}
+              source={require("../LoadingPage/brum.jpg")}
+            />
+            <ListItem
+              title={item.poiName}
+              leftIcon={
+                <Image
+                  style={{ height: 20, width: 20 }}
+                  source={iconSet[item.category]}
+                />
+              }
+              title={item.category}
+              rightIcon={
+                <Icon
+                  name="location-arrow"
+                  type="font-awesome"
+                  color="#FCC133"
+                />
+              }
               rightTitle="Route"
-            ></ListItem>
+            />
             <Text style={styles.text}>{item.poiTrivia}</Text>
-            </View>
-             )}
-             />
-             </View>
-  )
+          </View>
+        )}
+      />
+    </View>
+  );
 }
 
 // add category
@@ -49,10 +73,10 @@ const styles = StyleSheet.create({
   text: {
     color: "#000000",
     letterSpacing: 1,
-    fontSize: 12, 
+    fontSize: 12,
     textAlign: "justify",
     padding: 10
-  },
+  }
 });
 
 // skip this line if using Create React Native App
