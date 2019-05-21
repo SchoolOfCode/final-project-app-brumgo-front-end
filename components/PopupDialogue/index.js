@@ -23,7 +23,6 @@ class PopupDialogue extends Component {
       prevProps.isVisible &&
       this.props.isVisible
     ) {
-      console.log("triggered 1");
       this.setState(state => ({ ...state, defaultAnimationDialog: false }));
       setTimeout(
         () =>
@@ -32,7 +31,6 @@ class PopupDialogue extends Component {
       );
     }
     if (prevProps.isVisible !== this.props.isVisible) {
-      console.log("triggered 2");
       this.setState(state => ({
         ...state,
         defaultAnimationDialog: this.props.isVisible
@@ -44,8 +42,6 @@ class PopupDialogue extends Component {
     const { poiName, poiTrivia } = pois.find(
       obj => obj.poiName === this.props.poiName
     );
-
-    console.log(this.props);
 
     return (
       <Dialog
