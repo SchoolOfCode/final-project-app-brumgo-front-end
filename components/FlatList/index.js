@@ -32,7 +32,7 @@ export default function FlatListBasics() {
             />
             <Image
               style={{ height: 320, width: "100%" }}
-              source={require("../LoadingPage/brum.jpg")}
+              source={item.urlExtra}
             />
             <ListItem
               title={item.poiName}
@@ -50,7 +50,7 @@ export default function FlatListBasics() {
                   color="#FCC133"
                 />
               }
-              rightTitle="Route"
+              rightTitle="Directions"
             />
             <Text style={styles.text}>{item.poiTrivia}</Text>
           </View>

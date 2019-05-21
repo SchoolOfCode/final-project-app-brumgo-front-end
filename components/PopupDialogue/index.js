@@ -46,7 +46,6 @@ class PopupDialogue extends Component {
     );
 
     // console.log("popup props", this.props);
-
     return (
       <Dialog
         overlayBackgroundColor={"rgba(0, 0, 0, 0.3)"}
