@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ImageBackground, Text } from "react-native";
+import { StyleSheet, View, ImageBackground, Text, Image } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 
 
@@ -11,12 +11,16 @@ export default class Login extends Component {
         style={styles.background}
       >
         <View style={styles.overlay}>
-          <View style={styles.title}>
-            <Text style={styles.header}>LOGIN</Text>
-          </View>
-          <View style={styles.container}>
-            <View style={styles.top}>
 
+          
+          <View style={styles.container}>
+
+      
+            <View style={styles.top}>
+              <Image
+                style={styles.logo}
+                source={require("../LoadingPage/brumGoLogoRed.png")}
+              />
             </View>
 
             <View style={styles.bottom}>
@@ -25,9 +29,9 @@ export default class Login extends Component {
                   <Icon
                     name="envelope"
                     type="font-awesome"
-                    color="rgba(225, 45, 58, 0.8)"
+                    color="#FFFFFF"
                     size={25}
-                    raised
+                   
                   />
                 }
                 containerStyle={{ marginVertical: 10 }}
@@ -47,9 +51,9 @@ export default class Login extends Component {
                   <Icon
                     name="lock"
                     type="font-awesome"
-                    color="rgba(225, 45, 58, 0.8)"
-                    size={25}
-                    raised
+                    color="#FFFFFF"
+                    size={33}
+            
                   />
                 }
                 containerStyle={{ marginVertical: 10 }}
@@ -79,7 +83,7 @@ export default class Login extends Component {
                 containerStyle={{ marginVertical: 10, margin: 23 }}
                 titleStyle={{
                   fontWeight: "bold",
-                  color: "white",
+                  color: "#FFFFFF",
                   fontSize: 15
                 }}
               />
@@ -92,17 +96,17 @@ export default class Login extends Component {
                     name="facebook"
                     type="font-awesome"
                     size={15}
-                    color="white"
-                  />
-                }
-                titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+                    color="rgba(225, 45, 58, 0.9)"
+            />
+          }
+                titleStyle={{ fontSize: 15, color: "rgba(225, 45, 58, 0.9)", fontWeight: "bold" }}
                 buttonStyle={{
                   height: 45,
                   width: 150,
                   borderRadius: 60,
-                  backgroundColor: "#E12B38",
+                  backgroundColor: "#FFFFFF",
                   borderWidth: 3,
-                  borderColor: "#E12B38",
+                  borderColor: "#FFFFFF",
                 }}
                 containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
@@ -113,21 +117,24 @@ export default class Login extends Component {
                     name="twitter"
                     type="font-awesome"
                     size={15}
-                    color="white"
+                    color="rgba(225, 45, 58, 0.9)"
                   />
                 }
-                titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+                titleStyle={{ fontSize: 15, color: "rgba(225, 45, 58, 0.9)", fontWeight: "bold" }}
                 buttonStyle={{
                   height: 45,
                   width: 150,
                   borderRadius: 60,
-                  backgroundColor: "#E12B38",
+                  backgroundColor: "#FFFFFF",
                   borderWidth: 3,
-                  borderColor: "#E12B38",
+                  borderColor: "#FFFFFF",
             }}
                 containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
               />
             </View>
+          </View>
+          <View style={styles.title}>
+            <Text style={styles.header}>LOGIN</Text>
           </View>
         </View>
       </ImageBackground>
@@ -138,10 +145,16 @@ const styles = StyleSheet.create({
   background: {
     flex: 1
   },
+  logo: {
+    width: 100,
+    height: 100,
+    opacity: 0.9,
+    marginLeft: "65%",
+  },
   header: {
     fontSize: 30,
     letterSpacing: 2,
-    color: "rgba(225, 45, 58, 0.8)",
+    color: "#E12B38",
     fontWeight: "bold",
     marginTop: 8,
     marginLeft: 28
