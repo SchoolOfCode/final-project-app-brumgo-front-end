@@ -46,8 +46,6 @@ class PopupDialogue extends Component {
     );
 
     // console.log("popup props", this.props);
-
-<<<<<<< HEAD
     return (
       <Dialog
         overlayBackgroundColor={"rgba(0, 0, 0, 0.3)"}
@@ -132,93 +130,6 @@ class PopupDialogue extends Component {
       </Dialog>
     );
   }
-=======
-        return (
-            <Dialog
-                overlayBackgroundColor={"rgba(0, 0, 0, 0.3)"}
-                dialogAnimation={new ScaleAnimation()}
-                onHardwareBackPress={() => {
-                    console.log("onHardwareBackPress");
-                    this.setState({
-                        scaleAnimationDialog: false
-                    });
-                    return true;
-                }}
-                onDismiss={() => {
-                    this.setState({
-                        defaultAnimationDialog: false
-                    });
-                }}
-                width={0.9}
-                visible={this.state.defaultAnimationDialog}
-                rounded
-                actionsBordered
-                dialogTitle={
-                    <DialogTitle
-                        title={poiName}
-                        style={{
-                            backgroundColor: "#F7F7F8"
-                        }}
-                        hasTitleBar={false}
-                        align="left"
-                    />
-                }
-                footer={
-                    <DialogFooter>
-                        <Button
-                            title={this.state.readMore ? "Read +" : "Back"}
-                            color="#E12B38"
-                            accessibility
-                            label="learn more about this site"
-                            onPress={() => {
-                                this.setState({
-                                    readMore: !this.state.readMore
-                                });
-                            }}
-                            key="button-1"
-                        />
-                        <DialogButton
-                            text="AR"
-                            bordered
-                            onPress={() => {
-                                this.setState({
-                                    defaultAnimationDialog: false
-                                });
-                            }}
-                            key="button-2"
-                        />
-                        <DialogButton
-                            text="Done"
-                            bordered
-                            onPress={() => {
-                                this.setState({
-                                    defaultAnimationDialog: false,
-                                    readMore: true
-                                });
-                            }}
-                            key="button-3"
-                        />
-                    </DialogFooter>
-                }
-            >
-                <DialogContent
-                    style={{
-                        backgroundColor: "#F7F7F8"
-                    }}
-                >
-                    <Text>
-                        {this.state.readMore ? (
-                            poiTrivia
-                        ) : (
-                            <ReadMore 
-                            extraPoiTrivia={extraPoiTrivia} />
-                        )}
-                    </Text>
-                </DialogContent>
-            </Dialog>
-        );
-    }
->>>>>>> image url added, image styling needs fixing
 }
 
 const styles = StyleSheet.create({
