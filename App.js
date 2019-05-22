@@ -7,6 +7,7 @@ import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
 import Login from "./components/LoginApp";
+import MainAppWrapper from "./components/MainAppWrapper";
 
 console.disableYellowBox = true;
 
@@ -19,7 +20,7 @@ const AppNavigator = createStackNavigator(
       }
     },
     Main: {
-      screen: MainAppComponent,
+      screen: MainAppWrapper,
       navigationOptions: {
         header: null
       }

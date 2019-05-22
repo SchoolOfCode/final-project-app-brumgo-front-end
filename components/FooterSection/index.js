@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
-import Search from "../Search";
+// import Search from "../Search";
+// import { PoiContext } from "../PoiContextProvider";
 
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
+  // const [{ pois, filteredPois, searchTerms }, setPoiSearchContext] = useContext(
+  //   PoiContext
+  // );
+
+  // console.log(searchTerms);
 
   return (
     <>
