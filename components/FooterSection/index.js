@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
+import { Text } from "react-native";
 import Search from "../Search";
 
+import SearchContext from "../SearchContext";
+
 export default function FooterSection(props) {
-  // const [showSearch, setShowSearch] = useState(false);
+  const [searchSets, setSearchSets] = useContext(SearchContext);
 
   return (
     <>
+      {console.log("context", searchSets)}
+      <Text>{`${searchSets}`}</Text>
+
       <Footer>
         <FooterTab
           style={{

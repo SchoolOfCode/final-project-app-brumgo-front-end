@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, View, Text } from "react-native";
 import {
   createMaterialTopTabNavigator,
   createAppContainer
@@ -11,34 +11,40 @@ import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 
-import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import SearchContext from "../SearchContext";
 
 function MapScreen(props) {
-  console.log("navigation", props.navigation);
   return (
-    <View style={styles.container}>
-      <View style={styles.map}>
-        <GeoPopping />
-        <MapDisplay />
+    <SearchContext.Provider value={["bobob", () => {}]}>
+      <View style={styles.container}>
+        <View style={styles.map}>
+          <GeoPopping />
+          <MapDisplay />
+        </View>
+        <View style={styles.footer}>
+          <FooterSection />
+        </View>
       </View>
-      <View style={styles.footer}>
-        <FooterSection />
-      </View>
-    </View>
+    </SearchContext.Provider>
   );
 }
 
 function ListScreen(props) {
+  const [searchSets, setSearchSets] = useContext(SearchContext);
   return (
-    <View style={styles.container}>
-      <PickerCategory />
-      <View style={styles.list}>
-        <FlatList />
+    <SearchContext.Provider value={["list", () => {}]}>
+      <View style={styles.container}>
+        <PickerCategory />
+        <View style={styles.list}>
+          {console.log(searchSets)}
+          <Text>{searchSets}</Text>
+          <FlatList />
+        </View>
+        <View style={styles.footer}>
+          <FooterSection />
+        </View>
       </View>
-      <View style={styles.footer}>
-        <FooterSection />
-      </View>
-    </View>
+    </SearchContext.Provider>
   );
 }
 
