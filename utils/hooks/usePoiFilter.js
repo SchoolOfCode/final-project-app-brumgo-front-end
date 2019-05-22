@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 
-export default function usePoiFilter(array, searchTerm) {
-  let { categories, nameSearch } = searchTerm;
+export default function usePoiFilter(array, searchTerms) {
+  let { categories, nameSearch } = searchTerms;
   //set defaults
 
   if (!categories || categories.length === 0) {
