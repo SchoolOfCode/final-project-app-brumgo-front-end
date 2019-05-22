@@ -12,24 +12,6 @@ export default class UserProfile extends Component {
         <View style={styles.overlay}>
           <View style={styles.container}>
             <View style={styles.top}>
-              <ListItem
-                style={{ padding: 5, width: "100%", color: "#FCC133" }}
-                leftIcon={
-                  <Icon
-                    name="location-arrow"
-                    type="font-awesome"
-                    color="#FCC133"
-                  />
-                }
-                rightIcon={
-                  <Icon
-                    name="location-arrow"
-                    type="font-awesome"
-                    color="#FCC133"
-                  />
-                }
-                rightTitle="Route"
-              />
               <Avatar
                 size={100}
                 rounded
@@ -127,7 +109,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 10,
-    margin: 10
+    margin: 10,
+    padding: 10
   },
   bottom: {
     backgroundColor: "rgba(252,193,51,0.9)",
