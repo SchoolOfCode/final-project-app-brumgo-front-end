@@ -1,150 +1,169 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native'
-import { Avatar, Icon, ListItem } from 'react-native-elements'
-
-const list = [
-    {
-        title: 'Email',
-        icon: 'email'
-
-    },
-    {
-        title: 'Phone',
-        icon: 'phone'
-    },
-    {
-        title: 'Password',
-        icon: 'lock'
-    },
-
-]
-
+import React, { Component } from "react";
+import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
+import { Avatar, Icon, ListItem } from "react-native-elements";
+import FooterSection from "../FooterSection";
 
 export default class UserProfile extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.top}>
-                    <Avatar
-                        size={100}
-                        rounded
-                        source={{
-                            uri:
-                                'https://pbs.twimg.com/profile_images/924260952488411137/tDSjYZpM_400x400.jpg',
-                        }}
-                        showEditButton
-                    />
-                    <Text style={styles.name}>Sahela Rani</Text>
-                    <View style={styles.icons}>
-
-                        <Icon
-                            name='users'
-                            type='font-awesome'
-                            color='#D3D3D3'
-                            raised
-                        />
-
-                        <Icon
-                            name='gamepad'
-                            type='font-awesome'
-                            color='#FCC133'
-                            raised
-                            size={30}
-
-                        />
-                        <Icon
-                            name='share-alt'
-                            type='font-awesome'
-                            color='#D3D3D3'
-                            raised
-
-                        />
-                    </View>
-                </View>
-
-
-                <View style={styles.middle}>
-                    <Image style={{ height: 50, width: 50 }} />
-                    <Text style={{ color: "#FFFFFF" }}>Invite friends and earn free discounts</Text>
-                    <Icon
-                        name='chevron-right'
-                        type='font-awesome'
-                        color='#D3D3D3'
-
-                    />
-                </View>
-
-
-                <View style={styles.bottom}>
-                    {
-                        list.map((item, i) => (
-                            <ListItem
-                                key={i}
-                                title={item.title}
-                                leftIcon={{ name: item.icon }}
-                            />
-                        ))
-                    }
-                </View>
-
+  render() {
+    return (
+      <ImageBackground
+        source={require("../LoadingPage/brum.jpg")}
+        style={styles.background}
+      >
+        <View style={styles.overlay}>
+          <View style={styles.container}>
+            <View style={styles.top}>
+              <Avatar
+                size={90}
+                rounded
+                source={{
+                  uri:
+                    "https://banner2.kisspng.com/20180328/dew/kisspng-computer-icons-social-media-blog-avatar-material-5abbf0d5b48680.3023774615222663257395.jpg"
+                }}
+              />
+              <Text style={styles.name}>Joe Bloggs</Text>
             </View>
-        )
-    }
+
+            <View style={styles.middle}>
+              <Icon
+                name="user-plus"
+                type="font-awesome"
+                color="#FCC133"
+                raised
+              />
+
+              <Icon name="edit" type="font-awesome" color="#FCC133" raised />
+
+              <Icon
+                name="share-alt"
+                type="font-awesome"
+                color="#FCC133"
+                raised
+              />
+            </View>
+
+            <View style={styles.bottom}>
+              <Icon
+                name="credit-card"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  color: "rgba(255,45,58,0.8)"
+                }}
+              >
+                Offers & Discounts
+              </Text>
+              <Icon
+                name="chevron-right"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
+            </View>
+            <View style={styles.bottom}>
+              <Icon
+                name="star"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  color: "rgba(255,45,58,0.8)"
+                }}
+              >
+                Favourite Places
+              </Text>
+              <Icon
+                name="chevron-right"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
+            </View>
+
+            <View style={styles.bottom}>
+              <Icon
+                name="check"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  color: "rgba(255,45,58,0.8)"
+                }}
+              >
+                Locations Visited
+              </Text>
+              <Icon
+                name="chevron-right"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
+            </View>
+          </View>
+          <FooterSection />
+        </View>
+      </ImageBackground>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%",
-        backgroundColor: "#FFFFFF",
-    },
-    top: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#FFFFFF",
-        borderRadius: 10,
-        margin: 10,
-        borderWidth: 1,
-        borderColor: '#FFFFFF',
-        borderBottomWidth: 0,
-        shadowColor: '#FCC133',
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 1,
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 10,
-
-    },
-    middle: {
-        backgroundColor: "#000000",
-        flex: 0.3,
-        flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "center",
-        borderRadius: 10,
-        margin: 5,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 1,
-        marginLeft: 10,
-        marginRight: 10,
-        marginTop: 10,
-    },
-    bottom: {
-        flex: 1,
-        backgroundColor: "#D3D3D3",
-    },
-    name: {
-        fontSize: 25,
-        margin: 10,
-    },
-    icons: {
-        flexDirection: "row",
-    },
-
-})
+  background: {
+    flex: 1,
+    width: "100%",
+    height: "100%"
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(255,255,255,0.7)"
+  },
+  container: {
+    flex: 1,
+    width: "100%"
+  },
+  top: {
+    backgroundColor: "#FFFFFF",
+    flex: 0.5,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
+    margin: 10,
+    paddingTop: 10
+  },
+  middle: {
+    borderColor: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
+    flex: 0.05,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    borderRadius: 60,
+    margin: 10,
+    borderWidth: 3,
+    padding: 10,
+    opacity: 0.8
+  },
+  bottom: {
+    backgroundColor: "#FFFFFF",
+    opacity: 0.8,
+    flex: 0.15,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    borderRadius: 60,
+    margin: 10
+  },
+  name: {
+    fontSize: 25,
+    margin: 10,
+    fontWeight: "bold",
+    color: "#D3D3D3"
+  },
+  icons: {
+    flexDirection: "row"
+  }
+});

@@ -4,7 +4,7 @@ import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
-import { statement } from "@babel/template";
+
 
 const iconSet = {
   Building: require("../../assets/images/icons/Building.png"),
@@ -15,20 +15,46 @@ const iconSet = {
 };
 
 export default function FlatListBasics() {
-  const [star, setStar] = useState(false);
+    const [star, setStar] = useState(false);
 
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={pois}
-        keyExtractor={(item, index) => index.toString()}
-        // keyExtractor={this.index.toString()}
-        renderItem={({ item, index }) => (
-          <View>
-            <ListItem
-              title={item.poiName}
-              topDivider="true"
-              rightIcon={<FavIcon />}
+    return (
+        <View style={styles.container}>
+            <FlatList
+                data={pois}
+                keyExtractor={(item, index) => index.toString()}
+                // keyExtractor={this.index.toString()}
+                renderItem={({ item, index }) => (
+                    <View>
+                        <ListItem
+                            title={item.poiName}
+                            topDivider="true"
+                            rightIcon={<FavIcon />}
+                        />
+                        <Image
+                            style={{ height: 320, width: "100%" }}
+                            source={require("../LoadingPage/brum.jpg")}
+                        />
+                        <ListItem
+                            title={item.poiName}
+                            leftIcon={
+                                <Image
+                                    style={{ height: 20, width: 20 }}
+                                    source={iconSet[item.category]}
+                                />
+                            }
+                            title={item.category}
+                            rightIcon={
+                                <Icon
+                                    name="location-arrow"
+                                    type="font-awesome"
+                                    color="#FCC133"
+                                />
+                            }
+                            rightTitle="Route"
+                        />
+                        <Text style={styles.text}>{item.poiTrivia}</Text>
+                    </View>
+                )}
             />
             <Image
               style={{ height: 320, width: "100%" }}

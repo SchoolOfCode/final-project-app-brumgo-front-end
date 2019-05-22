@@ -11,35 +11,34 @@ import MapDisplay from "../MapDisplay";
 import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
-
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
 
 function MapScreen(props) {
-    return (
-        <View style={styles.container}>
-            <View style={styles.map}>
-                <GeoPopping />
-                <MapDisplay />
-            </View>
-            <View style={styles.footer}>
-                <FooterSection />
-            </View>
-        </View>
-    );
+  return (
+    <View style={styles.container}>
+      <View style={styles.map}>
+        <GeoPopping />
+        <MapDisplay />
+      </View>
+      <View style={styles.footer}>
+        <FooterSection {...props} />
+      </View>
+    </View>
+  );
 }
 
 function ListScreen(props) {
-    return (
-        <View style={styles.container}>
-            <PickerCategory />
-            <View style={styles.list}>
-                <FlatList />
-            </View>
-            <View style={styles.footer}>
-                <FooterSection />
-            </View>
-        </View>
-    );
+  return (
+    <View style={styles.container}>
+    <PickerCategory />
+    <View style={styles.list}>
+       <FlatList />
+      </View>
+      <View style={styles.footer}>
+        <FooterSection {...props} />
+      </View>
+    </View>
+  );
 }
 
 const TabNavigator = createMaterialTopTabNavigator(

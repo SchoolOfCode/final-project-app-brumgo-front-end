@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
-// import Search from "../Search";
+import Search from "../Search";
 import { PoiContext } from "../PoiContextProvider";
 
 export default function FooterSection(props) {
@@ -37,7 +37,7 @@ export default function FooterSection(props) {
           <Button>
             <Icon name="camera" style={{ color: "#FFFFFF" }} />
           </Button>
-          <Button>
+          <Button onPress={() => props.navigation.push("UserProfile")}>
             <Icon name="person" style={{ color: "#FFFFFF" }} />
           </Button>
         </FooterTab>
