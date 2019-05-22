@@ -15,11 +15,8 @@ const iconSet = {
 };
 
 export default function FlatListBasics() {
-<<<<<<< HEAD
-=======
     const [star, setStar] = useState(false);
 
->>>>>>> 50da17d6cc086541ebbd6d127b050595419307e9
     return (
         <View style={styles.container}>
             <FlatList
