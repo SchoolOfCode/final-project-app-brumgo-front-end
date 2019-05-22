@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
 // import Search from "../Search";
-// import { PoiContext } from "../PoiContextProvider";
+import { PoiContext } from "../PoiContextProvider";
 
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
-  // const [{ pois, filteredPois, searchTerms }, setPoiSearchContext] = useContext(
-  //   PoiContext
-  // );
+  const [poiContext, setPoiSearchContext] = useContext(PoiContext);
 
-  // console.log(searchTerms);
+  console.log(poiContext);
+
+  if (poiContext.searchTerms.categories.length > 1) {
+    setPoiSearchContext({ categories: ["Building"] });
+  }
 
   return (
     <>

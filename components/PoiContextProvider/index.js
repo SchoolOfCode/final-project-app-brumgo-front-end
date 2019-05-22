@@ -10,11 +10,13 @@ const PoiContextProvider = ({ children }) => {
     categories: ["Building", "Market", "Event", "Culture", "FoodDrink"],
     nameSearch: ""
   });
-  const [filteredPois, setFilteredPois] = useState(pois);
+  const [filteredPois, setFilteredPois] = useState(
+    usePoiFilter(pois, searchTerms)
+  );
 
   const setSearchAndFilter = newSearchTerms => {
     setSearchTerms(prevState => ({ ...prevState, ...newSearchTerms }));
-    setFilteredPois(usePoiFilter(pois, searchTerms));
+    setFilteredPois(prevState => usePoiFilter(pois, newSearchTerms));
   };
 
   return (
@@ -34,3 +36,12 @@ const PoiContextProvider = ({ children }) => {
 };
 
 export { PoiContext, PoiContextProvider };
+
+// import { PoiContext } from "../PoiContextProvider";
+//------
+// const [{ pois, filteredPois, searchTerms }, setPoiSearchContext] = useContext(
+//   PoiContext
+// );
+
+// setPoiSearchContext requires an object passed of {categories: ["Building etc..."], nameSearch: "" }
+// or one of either {categories[]} or {nameSearch: ''}
