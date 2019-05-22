@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
 import { Avatar, Icon, ListItem } from "react-native-elements";
+import FooterSection from "../FooterSection";
 
 export default class UserProfile extends Component {
   render() {
@@ -76,6 +77,7 @@ export default class UserProfile extends Component {
               <Icon name="chevron-right" type="font-awesome" color="#FFFFFF" />
             </View>
           </View>
+          <FooterSection />
         </View>
       </ImageBackground>
     );
