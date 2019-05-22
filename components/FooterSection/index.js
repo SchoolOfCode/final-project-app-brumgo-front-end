@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
 import Search from "../Search";
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { PoiContext } from "../PoiContextProvider";
 
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
-
   return (
     <>
       <Footer>

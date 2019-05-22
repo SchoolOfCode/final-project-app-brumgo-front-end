@@ -10,6 +10,10 @@ import Login from "./components/LoginApp";
 import UserProfile from "./components/UserProfile";
 import FooterSection from "./components/FooterSection";
 import HeaderSection from "./components/HeaderSection";
+import MainAppWrapper from "./components/MainAppWrapper";
+
+console.disableYellowBox = true;
+
 
 const AppNavigator = createStackNavigator(
   {
@@ -20,7 +24,7 @@ const AppNavigator = createStackNavigator(
       }
     },
     Main: {
-      screen: MainAppComponent,
+      screen: MainAppWrapper,
       navigationOptions: {
         header: null
       }
