@@ -5,14 +5,6 @@ import { PoiContext } from "../PoiContextProvider";
 
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
-  const [poiContext, setPoiSearchContext] = useContext(PoiContext);
-
-  console.log(poiContext);
-
-  if (poiContext.searchTerms.categories.length > 1) {
-    setPoiSearchContext({ categories: ["Building"] });
-  }
-
   return (
     <>
       <Footer>
