@@ -18,10 +18,10 @@ export default class UserProfile extends Component {
                 rounded
                 source={{
                   uri:
-                    "https://pbs.twimg.com/profile_images/924260952488411137/tDSjYZpM_400x400.jpg"
+                    "https://banner2.kisspng.com/20180328/dew/kisspng-computer-icons-social-media-blog-avatar-material-5abbf0d5b48680.3023774615222663257395.jpg"
                 }}
               />
-              <Text style={styles.name}>Sahela Rani</Text>
+              <Text style={styles.name}>Joe Bloggs</Text>
             </View>
 
             <View style={styles.middle}>
@@ -127,12 +127,12 @@ const styles = StyleSheet.create({
   },
   top: {
     backgroundColor: "#FFFFFF",
-    flex: 0.4,
+    flex: 0.5,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
     margin: 10,
-    opacity: 0.8
+    paddingTop: 10
   },
   middle: {
     borderColor: "#FFFFFF",
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     margin: 10,
     fontWeight: "bold",
-    color: "rgba(255,45,58,0.8)"
+    color: "#D3D3D3"
   },
   icons: {
     flexDirection: "row"
