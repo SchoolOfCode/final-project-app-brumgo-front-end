@@ -12,6 +12,8 @@ import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 
+import usePoiFilter from "../../utils/hooks/usePoiFilter";
+
 function MapScreen(props) {
     return (
         <View style={styles.container}>
