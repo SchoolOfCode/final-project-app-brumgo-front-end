@@ -14,7 +14,7 @@ export default class UserProfile extends Component {
           <View style={styles.container}>
             <View style={styles.top}>
               <Avatar
-                size={100}
+                size={90}
                 rounded
                 source={{
                   uri:
@@ -43,38 +43,65 @@ export default class UserProfile extends Component {
             </View>
 
             <View style={styles.bottom}>
-              <Icon name="credit-card" type="font-awesome" color="#FFFFFF" />
+              <Icon
+                name="credit-card"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
               <Text
                 style={{
-                  color: "#FFFFFF"
+                  fontWeight: "bold",
+                  color: "rgba(255,45,58,0.8)"
                 }}
               >
                 Offers & Discounts
               </Text>
-              <Icon name="chevron-right" type="font-awesome" color="#FFFFFF" />
+              <Icon
+                name="chevron-right"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
             </View>
             <View style={styles.bottom}>
-              <Icon name="star" type="font-awesome" color="#FFFFFF" />
+              <Icon
+                name="star"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
               <Text
                 style={{
-                  color: "#FFFFFF"
+                  fontWeight: "bold",
+                  color: "rgba(255,45,58,0.8)"
                 }}
               >
                 Favourite Places
               </Text>
-              <Icon name="chevron-right" type="font-awesome" color="#FFFFFF" />
+              <Icon
+                name="chevron-right"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
             </View>
 
             <View style={styles.bottom}>
-              <Icon name="check" type="font-awesome" color="#FFFFFF" />
+              <Icon
+                name="check"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
               <Text
                 style={{
-                  color: "#FFFFFF"
+                  fontWeight: "bold",
+                  color: "rgba(255,45,58,0.8)"
                 }}
               >
                 Locations Visited
               </Text>
-              <Icon name="chevron-right" type="font-awesome" color="#FFFFFF" />
+              <Icon
+                name="chevron-right"
+                type="font-awesome"
+                color="rgba(255,45,58,0.8)"
+              />
             </View>
           </View>
           <FooterSection />
@@ -92,42 +119,49 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(225,225,255,0.7)"
+    backgroundColor: "rgba(255,255,255,0.7)"
   },
   container: {
     flex: 1,
     width: "100%"
   },
   top: {
-    backgroundColor: "rgb(252,193,51)",
-    flex: 0.5,
+    backgroundColor: "#FFFFFF",
+    flex: 0.4,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 20,
+    margin: 10,
+    opacity: 0.8
   },
   middle: {
-    backgroundColor: "rgba(252,193,51,0.9)",
+    borderColor: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
     flex: 0.05,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    borderRadius: 10,
+    borderRadius: 60,
     margin: 10,
-    padding: 10
+    borderWidth: 3,
+    padding: 10,
+    opacity: 0.8
   },
   bottom: {
-    backgroundColor: "rgba(252,193,51,0.9)",
-    flex: 0.1,
+    backgroundColor: "#FFFFFF",
+    opacity: 0.8,
+    flex: 0.15,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    borderRadius: 10,
+    borderRadius: 60,
     margin: 10
   },
   name: {
     fontSize: 25,
     margin: 10,
     fontWeight: "bold",
-    color: "#FFFFFF"
+    color: "rgba(255,45,58,0.8)"
   },
   icons: {
     flexDirection: "row"
