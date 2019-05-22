@@ -8,7 +8,6 @@ import {
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
-import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 
@@ -17,7 +16,7 @@ function MapScreen(props) {
         <View style={styles.container}>
             <View style={styles.map}>
                 <GeoPopping />
-                <Directions />
+                <MapDisplay />
             </View>
             <View style={styles.footer}>
                 <FooterSection />
