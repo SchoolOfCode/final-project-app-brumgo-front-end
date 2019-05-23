@@ -37,6 +37,7 @@ function MapScreen(props) {
 }
 
 function ListScreen(props) {
+  const [searching, setSearching] = useState(false);
   return (
     <ViewContainer {...props}>
       <PickerCategory />
