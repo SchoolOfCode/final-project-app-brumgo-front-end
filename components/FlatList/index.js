@@ -15,7 +15,7 @@ const iconSet = {
 };
 
 export default function FlatListBasics() {
-    const [star, setStar] = useState(false);
+    const [destination, setDestination] = useState(null);
 
     return (
         <View style={styles.container}>
@@ -48,6 +48,12 @@ export default function FlatListBasics() {
                                     name="location-arrow"
                                     type="font-awesome"
                                     color="#FCC133"
+                                    onPress={() =>
+                                        setDestination({
+                                            latitude: item.poiLocation.lat,
+                                            longitude: item.poiLocation.lng
+                                        })
+                                    }
                                 />
                             }
                             rightTitle="Directions"

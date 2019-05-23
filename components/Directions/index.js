@@ -20,7 +20,7 @@ export default function Directions(props) {
     return (
         <MapViewDirections
             origin={userPosition}
-            destination={destination}
+            destination={props.destination}
             apikey={GOOGLE_MAPS_APIKEY}
             strokeWidth={7}
             strokeColor="#3EB650"
