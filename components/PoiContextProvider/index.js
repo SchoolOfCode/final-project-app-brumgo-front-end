@@ -16,7 +16,7 @@ const PoiContextProvider = ({ children }) => {
 
   const setSearchAndFilter = newSearchTerms => {
     setSearchTerms(prevState => ({ ...prevState, ...newSearchTerms }));
-    setFilteredPois(prevState => usePoiFilter(pois, newSearchTerms));
+    setFilteredPois(usePoiFilter(pois, newSearchTerms));
   };
 
   return (
