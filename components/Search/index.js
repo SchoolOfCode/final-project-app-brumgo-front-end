@@ -1,21 +1,30 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { SearchBar } from "react-native-elements";
+
+import { PoiContext } from "../PoiContextProvider";
+
 import CategoryToggles from "../CategoryToggles";
 
 export default (Search = props => {
+  const [{ searchTerms }, setSearchTerms] = useContext(PoiContext);
+
   return (
     <View style={styles.searchContainer}>
       <Text style={styles.header}>Filter by Category</Text>
-      <CategoryToggles />
+      <CategoryToggles
+        searchTerms={searchTerms}
+        setSearchTerms={setSearchTerms}
+      />
       <View>
         <Text style={styles.header}>Search by Name</Text>
         <SearchBar
+          inputStyle={{ color: "#000" }}
           lightTheme
           round
           placeholder="Searching for..."
-          // onChangeText={}
-          // value={}
+          onChangeText={val => setSearchTerms({ nameSearch: val })}
+          value={searchTerms.nameSearch}
           containerStyle={{
             height: 60,
             backgroundColor: "#E12B38",

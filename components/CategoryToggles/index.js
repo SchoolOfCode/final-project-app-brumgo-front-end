@@ -1,19 +1,11 @@
 import React, { useContext } from "react";
 import { Text, Image, View, StyleSheet } from "react-native";
 
-import { PoiContext } from "../PoiContextProvider";
-
 import CatToggle from "../CatToggle";
 import iconSet from "../../assets/images/icons/iconSet";
 
-const CategoryToggles = () => {
-  const [{ searchTerms, filteredPois }, setSearchTerms] = useContext(
-    PoiContext
-  );
-
-  let categories = searchTerms.categories;
-  console.log("searchCats", searchTerms);
-  console.log("filteredPois", filteredPois);
+const CategoryToggles = ({ searchTerms, setSearchTerms }) => {
+  let { categories } = searchTerms;
 
   const toggleCategory = category => {
     if (categories.includes(category)) {
@@ -53,6 +45,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    alignItems: "center"
   }
 });

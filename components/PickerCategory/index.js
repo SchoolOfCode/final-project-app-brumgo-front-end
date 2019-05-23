@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native"
+import { View } from "react-native";
 import { Picker } from "native-base";
 
 export default class PickerCategory extends Component {
@@ -15,21 +15,25 @@ export default class PickerCategory extends Component {
     });
   }
   render() {
+    const { searchTerms, setSearchTerms } = this.props;
     return (
       <View>
-            <Picker
-              style={{ width: undefined }}
-              selectedValue={this.state.selected}
-              onValueChange={this.onValueChange.bind(this)}
-            >
-        <Picker.Item label={"Pick a Category"} value="key0" />
-        <Picker.Item label={"Buildings"} value="key1" />
-        <Picker.Item label={"Markets"} value="key2" />
-        <Picker.Item label={"Events"} value="key3" />
-        <Picker.Item label={"Food & Drink"} value="key4" />
-        <Picker.Item label={"Culture"} value="key5" />
-            </Picker>
-            </View>
+        <Picker
+          style={{ width: undefined }}
+          selectedValue={searchTerms}
+          onValueChange={value => setSearchTerms({ categories: [value] })}
+        >
+          <Picker.Item
+            label={"All Categories"}
+            value={["Building", "Market", "Event", "Culture", "FoodDrink"]}
+          />
+          <Picker.Item label={"Buildings"} value={["Buildings"]} />
+          <Picker.Item label={"Markets"} value={["Markets"]} />
+          <Picker.Item label={"Events"} value={["Events"]} />
+          <Picker.Item label={"Food & Drink"} value={["Food & Drink"]} />
+          <Picker.Item label={"Culture"} value={["Culture"]} />
+        </Picker>
+      </View>
     );
   }
 }
