@@ -17,7 +17,7 @@ export default function FooterSection(props) {
           <Button>
             <Icon name="home" style={{ color: "#FFFFFF" }} />
           </Button>
-          <Button>
+          <Button onPress={props.searchingToggle}>
             <Icon name="search" style={{ color: "#FFFFFF" }} />
           </Button>
           <Button

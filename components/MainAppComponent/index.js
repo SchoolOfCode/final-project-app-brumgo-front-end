@@ -10,19 +10,20 @@ import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
+import Search from "../Search";
 
-import usePoiFilter from "../../utils/hooks/usePoiFilter";
+function MapScreen(...props) {
+  const [searching, setSearching] = useState(false);
 
-function MapScreen(props) {
-  console.log("navigation", props.navigation);
   return (
     <View style={styles.container}>
       <View style={styles.map}>
         <GeoPopping />
         <MapDisplay />
       </View>
-      <View style={styles.footer}>
-        <FooterSection />
+      <View style={styles.search}>{searching && <Search />}</View>
+      <View>
+        <FooterSection searchingToggle={() => setSearching(!searching)} />
       </View>
     </View>
   );
@@ -78,24 +79,22 @@ const styles = StyleSheet.create({
   },
 
   map: {
-    // flex: 7,
     height: "90%",
     width: "100%"
   },
   list: {
-    height: "81%",
+    height: "90%",
     width: "100%"
   },
   footer: {
     height: "10%",
-    width: "100%",
-    position: "relative"
+    width: "100%"
   },
   search: {
-    // flex: 1,
-    top: -50,
-    height: "10%",
+    bottom: 55,
+    left: 0,
+    // marginTop: -50,
     width: "100%",
-    position: "relative"
+    position: "absolute"
   }
 });
