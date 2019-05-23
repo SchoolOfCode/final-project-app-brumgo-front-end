@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
+import PickerCategory from "../PickerCategory";
+import { PoiContext } from "../PoiContextProvider";
 
 import iconSet from "../../assets/images/icons/iconSet";
 
 export default function FlatListBasics() {
-  const [star, setStar] = useState(false);
+  const [{ searchTerms, filteredPois }, setSearchTerms] = useContext(
+    PoiContext
+  );
 
   return (
     <View style={styles.container}>
+      <PickerCategory
+        searchTerms={searchTerms.categories}
+        setSearchTerms={setSearchTerms}
+      />
       <FlatList
-        data={pois}
+        data={filteredPois}
         keyExtractor={(item, index) => index.toString()}
-        // keyExtractor={this.index.toString()}
         renderItem={({ item, index }) => (
           <View>
             <ListItem

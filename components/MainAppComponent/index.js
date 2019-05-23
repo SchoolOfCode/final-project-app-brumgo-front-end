@@ -9,7 +9,6 @@ import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
-import PickerCategory from "../PickerCategory";
 import Search from "../Search";
 
 function MapScreen(...props) {
@@ -30,14 +29,16 @@ function MapScreen(...props) {
 }
 
 function ListScreen(props) {
+  const [searching, setSearching] = useState(false);
   return (
     <View style={styles.container}>
-      <PickerCategory />
       <View style={styles.list}>
         <FlatList />
       </View>
+      <View style={styles.search}>{searching && <Search />}</View>
+
       <View style={styles.footer}>
-        <FooterSection />
+        <FooterSection searchingToggle={() => setSearching(!searching)} />
       </View>
     </View>
   );
