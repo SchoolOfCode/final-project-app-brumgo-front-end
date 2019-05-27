@@ -12,10 +12,11 @@ export default class Login extends Component {
       >
         <View style={styles.overlay}>
 
-          
+          <View style={styles.title}>
+            <Text style={styles.header}>LOGIN</Text>
+          </View>
           <View style={styles.container}>
-
-      
+            
             <View style={styles.top}>
               <Image
                 style={styles.logo}
@@ -138,9 +139,6 @@ export default class Login extends Component {
               />
             </View>
           </View>
-          <View style={styles.title}>
-            <Text style={styles.header}>LOGIN</Text>
-          </View>
         </View>
       </ImageBackground>
     );
@@ -153,9 +151,9 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
-    opacity: 0.9,
     marginLeft: "65%",
     marginTop: "-45%",
+    zIndex: -1,
   },
   header: {
     fontSize: 30,
