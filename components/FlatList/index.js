@@ -30,32 +30,6 @@ export default function FlatListBasics() {
                             topDivider="true"
                             rightIcon={<FavIcon />}
                         />
-                        <Image
-                            style={{ height: 320, width: "100%" }}
-                            source={require("../LoadingPage/brum.jpg")}
-                        />
-                        <ListItem
-                            title={item.poiName}
-                            leftIcon={
-                                <Image
-                                    style={{ height: 20, width: 20 }}
-                                    source={iconSet[item.category]}
-                                />
-                            }
-                            title={item.category}
-                            rightIcon={
-                                <Icon
-                                    name="location-arrow"
-                                    type="font-awesome"
-                                    color="#FCC133"
-                                />
-                            }
-                            rightTitle="Route"
-                        />
-                        <Text style={styles.text}>{item.poiTrivia}</Text>
-                    </View>
-                )}
-            />
             <Image
               style={{ height: 320, width: "100%" }}
               source={item.urlExtra}
