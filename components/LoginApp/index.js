@@ -54,8 +54,8 @@ const TabNavigation = createMaterialBottomTabNavigator(
   },
   {
     initialRouteName: "Login",
-    activeTintColor: "rgba(225, 45, 58, 0.8)",
-    inactiveTintColor: "#000",
+    activeTintColor: "#E12B38",
+    inactiveTintColor: "#FFFFFF",
     barStyle: { backgroundColor: "#D3D3D3" }
   }
 );

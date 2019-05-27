@@ -102,19 +102,18 @@ export default class Login extends Component {
                     name="facebook"
                     type="font-awesome"
                     size={15}
-                    color="rgba(225, 45, 58, 0.9)"
+                    color="#E12B38"
             />
           }
-                titleStyle={{ fontSize: 15, color: "rgba(225, 45, 58, 0.9)", fontWeight: "bold" }}
+                titleStyle={{ fontSize: 15, color: "#E12B38", fontWeight: "bold" }}
                 buttonStyle={{
                   height: 45,
                   width: 150,
                   borderRadius: 60,
                   backgroundColor: "#FFFFFF",
-                  borderWidth: 3,
-                  borderColor: "#FFFFFF",
+              
                 }}
-                containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
+                containerStyle={{ marginVertical: 10, opacity: 0.9, padding: 5 }}
               />
               <Button
                 title="   twitter"
@@ -123,19 +122,18 @@ export default class Login extends Component {
                     name="twitter"
                     type="font-awesome"
                     size={15}
-                    color="rgba(225, 45, 58, 0.9)"
+                    color="#E12B38"
                   />
                 }
-                titleStyle={{ fontSize: 15, color: "rgba(225, 45, 58, 0.9)", fontWeight: "bold" }}
+                titleStyle={{ fontSize: 15, color: "#E12B38", fontWeight: "bold" }}
                 buttonStyle={{
                   height: 45,
                   width: 150,
                   borderRadius: 60,
                   backgroundColor: "#FFFFFF",
-                  borderWidth: 3,
-                  borderColor: "#FFFFFF",
+                
             }}
-                containerStyle={{ marginVertical: 10, opacity: 0.8, padding: 5 }}
+                containerStyle={{ marginVertical: 10, opacity: 0.9, padding: 5 }}
               />
             </View>
           </View>
