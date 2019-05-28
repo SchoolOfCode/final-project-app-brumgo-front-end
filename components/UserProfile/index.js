@@ -13,13 +13,19 @@ export default class UserProfile extends Component {
         <View style={styles.overlay}>
           <View style={styles.container}>
             <View style={styles.top}>
-              <Avatar
+              {/* <Avatar
                 size={90}
                 rounded
                 source={{
                   uri:
                     "https://cdn2.iconfinder.com/data/icons/people-round-icons/128/man_avatar-512.png"
                 }}
+              /> */}
+              <Icon
+                name="user-circle"
+                type="font-awesome"
+                color="#FFFFFF"
+                size={80}
               />
               <Text style={styles.name}>Joe Bloggs</Text>
             </View>
@@ -32,7 +38,7 @@ export default class UserProfile extends Component {
                 raised
               />
 
-              <Icon name="edit" type="font-awesome" color="#FCC133" raised />
+              <Icon name="edit" type="font-awesome" color="#FCC133" size={35} raised />
 
               <Icon
                 name="share-alt"
@@ -46,12 +52,12 @@ export default class UserProfile extends Component {
               <Icon
                 name="credit-card"
                 type="font-awesome"
-                color="#E12B38"
+                color="#FFFFFF"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "#E12B38"
+                  color: "#FFFFFF"
                 }}
               >
                 Offers & Discounts
@@ -59,19 +65,19 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="#E12B38"
+                color="#FFFFFF"
               />
             </View>
             <View style={styles.bottom}>
               <Icon
                 name="star"
                 type="font-awesome"
-                color="#E12B38"
+                color="#FFFFFF"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "#E12B38"
+                  color: "#FFFFFF"
                 }}
               >
                 Favourite Places
@@ -79,7 +85,7 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="#E12B38"
+                color="#FFFFFF"
               />
             </View>
 
@@ -87,12 +93,12 @@ export default class UserProfile extends Component {
               <Icon
                 name="check"
                 type="font-awesome"
-                color="#E12B38"
+                color="#FFFFFF"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "#E12B38"
+                  color: "#FFFFFF"
                 }}
               >
                 Locations Visited
@@ -100,7 +106,7 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="#E12B38"
+                color="#FFFFFF"
               />
             </View>
           </View>
@@ -126,16 +132,18 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   top: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "transparent",
     flex: 0.5,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
-    margin: 15,
-    paddingTop: 20,
+    marginBottom: 20,
+    paddingTop: 23,
     marginLeft: "25%",
     marginTop: "10%",
     width: 180,
+    borderWidth: 3,
+    borderColor: "#FFFFFF",
   },
   middle: {
     backgroundColor: "transparent",
@@ -156,13 +164,13 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     borderWidth: 3,
     borderColor: "#FFFFFF",
-    margin: 10
+    margin: 18
   },
   name: {
     fontSize: 25,
     margin: 10,
     fontWeight: "bold",
-    color: "#D3D3D3"
+    color: "#FFFFFF"
   },
   icons: {
     flexDirection: "row"
