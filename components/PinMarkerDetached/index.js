@@ -144,7 +144,7 @@ export default class PinMarkerDetached extends React.Component {
           footer={
             <DialogFooter>
               <DialogButton
-                text={this.state.readMore ? "Read +" : "Back"}
+                text={this.state.readMore ? "Read More" : "Back"}
                 color="#E12B38"
                 onPress={() => {
                   this.setState({
