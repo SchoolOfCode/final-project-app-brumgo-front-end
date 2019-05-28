@@ -4,6 +4,7 @@ import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
+import TickIcon from "./tickIcon";
 
 
 const iconSet = {
@@ -26,7 +27,9 @@ export default function FlatListBasics() {
                 renderItem={({ item, index }) => (
                     <View>
                         <ListItem
+                        leftIcon={<TickIcon />}
                             title={item.poiName}
+                            titleStyle={{ textAlign: "center"}}
                             topDivider="true"
                             rightIcon={<FavIcon />}
                         />
