@@ -13,6 +13,8 @@ import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import SocialMediaFAB from "../SocialMediaFAB"
+
 
 function MapScreen(props) {
   return (
@@ -20,6 +22,7 @@ function MapScreen(props) {
       <View style={styles.map}>
         <GeoPopping />
         <MapDisplay />
+        <SocialMediaFAB />
       </View>
       <View style={styles.footer}>
         <FooterSection {...props} />
@@ -30,9 +33,15 @@ function MapScreen(props) {
 
 function ListScreen(props) {
   return (
-    <>
-       <UserProfile />
-       </>
+      <View style={styles.container}>
+          <PickerCategory />
+          <View style={styles.list}>
+              <FlatList />
+          </View>
+          <View style={styles.footer}>
+              <FooterSection {...props} />
+          </View>
+          </View>
   );
 }
 
