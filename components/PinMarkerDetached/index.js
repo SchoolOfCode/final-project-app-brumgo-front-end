@@ -134,10 +134,13 @@ export default class PinMarkerDetached extends React.Component {
           dialogTitle={
             <DialogTitle
               title={poiName}
+
               style={{
-                backgroundColor: "#F7F7F8"
-              }}
-              hasTitleBar={false}
+                backgroundColor: "#FFFFFF",
+                margin: 10,
+                color: "#FCC133"
+      }}
+              hasTitleBar={true}
               align="left"
             />
           }
@@ -145,7 +148,8 @@ export default class PinMarkerDetached extends React.Component {
             <DialogFooter>
               <DialogButton
                 text={this.state.readMore ? "Read More" : "Back"}
-                color="#E12B38"
+                textStyle={{ color: "#E12B38"}}
+                activeOpacity={0.6}
                 onPress={() => {
                   this.setState({
                     readMore: !this.state.readMore
@@ -166,6 +170,8 @@ export default class PinMarkerDetached extends React.Component {
               <DialogButton
                 text="Done"
                 bordered
+                textStyle={{ color: "#E12B38" }}
+                activeOpacity={0.6}
                 onPress={() => {
                   this.setState({
                     defaultAnimationDialog: false,
@@ -179,13 +185,15 @@ export default class PinMarkerDetached extends React.Component {
         >
           <DialogContent
             style={{
-              backgroundColor: "#F7F7F8"
+              backgroundColor: "#FFFFFF",
+              margin: 10, 
             }}
           >
             <Text>
               {this.state.readMore ? (
                 poiTrivia
               ) : (
+              
                 <ReadMore extraPoiTrivia={extraPoiTrivia} urlExtra={urlExtra} />
               )}
             </Text>

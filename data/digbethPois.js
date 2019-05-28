@@ -178,7 +178,7 @@ const pois = [
     },
     {
         category: "FoodDrink",
-        poiName: "Dig Brew co",
+        poiName: "Dig Brew Co",
         poiLocation: {
             lat: 52.478063,
             lng: -1.882926
