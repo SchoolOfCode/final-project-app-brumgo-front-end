@@ -18,7 +18,7 @@ export default class UserProfile extends Component {
                 rounded
                 source={{
                   uri:
-                    "https://banner2.kisspng.com/20180328/dew/kisspng-computer-icons-social-media-blog-avatar-material-5abbf0d5b48680.3023774615222663257395.jpg"
+                    "https://cdn2.iconfinder.com/data/icons/people-round-icons/128/man_avatar-512.png"
                 }}
               />
               <Text style={styles.name}>Joe Bloggs</Text>
@@ -46,12 +46,12 @@ export default class UserProfile extends Component {
               <Icon
                 name="credit-card"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#E12B38"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "rgba(255,45,58,0.8)"
+                  color: "#E12B38"
                 }}
               >
                 Offers & Discounts
@@ -59,19 +59,19 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#E12B38"
               />
             </View>
             <View style={styles.bottom}>
               <Icon
                 name="star"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#E12B38"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "rgba(255,45,58,0.8)"
+                  color: "#E12B38"
                 }}
               >
                 Favourite Places
@@ -79,7 +79,7 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#E12B38"
               />
             </View>
 
@@ -87,12 +87,12 @@ export default class UserProfile extends Component {
               <Icon
                 name="check"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#E12B38"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "rgba(255,45,58,0.8)"
+                  color: "#E12B38"
                 }}
               >
                 Locations Visited
@@ -100,7 +100,7 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#E12B38"
               />
             </View>
           </View>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(255,255,255,0.7)"
+    backgroundColor: "rgba(152,152,152,0.7)"
   },
   container: {
     flex: 1,
@@ -131,30 +131,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
-    margin: 10,
-    paddingTop: 10
+    margin: 15,
+    paddingTop: 20,
+    marginLeft: "25%",
+    marginTop: "10%",
+    width: 180,
   },
   middle: {
-    borderColor: "#FFFFFF",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "transparent",
     flex: 0.05,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 60,
     margin: 10,
-    borderWidth: 3,
     padding: 10,
-    opacity: 0.8
   },
   bottom: {
-    backgroundColor: "#FFFFFF",
-    opacity: 0.8,
+    backgroundColor: "transparent",
     flex: 0.15,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 60,
+    borderWidth: 3,
+    borderColor: "#FFFFFF",
     margin: 10
   },
   name: {

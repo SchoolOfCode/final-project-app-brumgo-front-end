@@ -4,6 +4,7 @@ import {
     createMaterialTopTabNavigator,
     createAppContainer
 } from "react-navigation";
+import UserProfile from "../UserProfile"
 
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
@@ -29,15 +30,9 @@ function MapScreen(props) {
 
 function ListScreen(props) {
   return (
-    <View style={styles.container}>
-    <PickerCategory />
-    <View style={styles.list}>
-       <FlatList />
-      </View>
-      <View style={styles.footer}>
-        <FooterSection {...props} />
-      </View>
-    </View>
+    <>
+       <UserProfile />
+       </>
   );
 }
 
