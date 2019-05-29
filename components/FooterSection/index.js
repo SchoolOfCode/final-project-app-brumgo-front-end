@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
 import Search from "../Search";
 import { PoiContext } from "../PoiContextProvider";
+import NavContext from "../NavigationContext";
 
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
+  const navigation = useContext(NavContext);
+  console.log("footermasternavigation", navigation.state);
+  console.log("fotterTabnav", props.navigation);
   return (
     <>
       <Footer>
@@ -14,12 +18,7 @@ export default function FooterSection(props) {
             height: "100%"
           }}
         >
-          <Button
-            onPress={() => {
-              props.navigation.navigate("Map");
-              console.log(props);
-            }}
-          >
+          <Button onPress={() => navigation.push("Home")}>
             <Icon name="home" style={{ color: "#FFFFFF" }} />
           </Button>
           <Button>
@@ -42,12 +41,7 @@ export default function FooterSection(props) {
           <Button>
             <Icon name="camera" style={{ color: "#FFFFFF" }} />
           </Button>
-          <Button
-            onPress={() => {
-              props.navigation.navigate("UserProfile"),
-                console.log(` hello`, props);
-            }}
-          >
+          <Button onPress={() => navigation.push("UserProfile")}>
             <Icon name="person" style={{ color: "#FFFFFF" }} />
           </Button>
         </FooterTab>
