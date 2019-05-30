@@ -15,9 +15,6 @@ export default class ReadMore extends React.Component {
     render() {
         return (
             <>
-            <Image 
-                    source={this.props.urlExtra}
-                    style={{flex: 1, width: 300, height: 200}}/>
                 <Text>{this.props.extraPoiTrivia}</Text>
             
           </>
