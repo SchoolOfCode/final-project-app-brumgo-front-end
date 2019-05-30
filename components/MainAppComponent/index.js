@@ -82,25 +82,23 @@ const styles = StyleSheet.create({
         width: "100%"
     },
 
-    map: {
-        // flex: 7,
-        height: "90%",
-        width: "100%"
-    },
-    list: {
-        height: "81%",
-        width: "100%"
-    },
-    footer: {
-        height: "10%",
-        width: "100%",
-        position: "relative"
-    },
-    search: {
-        // flex: 1,
-        top: -50,
-        height: "10%",
-        width: "100%",
-        position: "relative"
-    }
+  map: {
+    height: "90%",
+    width: "100%"
+  },
+  list: {
+    height: "90%",
+    width: "100%"
+  },
+  footer: {
+    height: "10%",
+    width: "100%"
+  },
+  search: {
+    bottom: 55,
+    left: 0,
+    // marginTop: -50,
+    width: "100%",
+    position: "absolute"
+  }
 });

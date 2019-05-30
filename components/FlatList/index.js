@@ -4,15 +4,10 @@ import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
-import { statement } from "@babel/template";
 
-const iconSet = {
-    Building: require("../../assets/images/icons/Building.png"),
-    Culture: require("../../assets/images/icons/Culture.png"),
-    Market: require("../../assets/images/icons/Market.png"),
-    Event: require("../../assets/images/icons/Event.png"),
-    FoodDrink: require("../../assets/images/icons/Food.png")
-};
+
+import iconSet from "../../assets/images/icons/iconSet";
+
 
 export default function FlatListBasics() {
     const [destination, setDestination] = useState(null);
@@ -85,5 +80,4 @@ const styles = StyleSheet.create({
     }
 });
 
-// skip this line if using Create React Native App
-// AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics);
+

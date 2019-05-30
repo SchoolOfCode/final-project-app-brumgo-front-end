@@ -1,7 +1,7 @@
 export default (iconSet = {
-  Building: require("../../assets/images/icons/Building.png"),
-  Culture: require("../../assets/images/icons/Culture.png"),
-  Market: require("../../assets/images/icons/Market.png"),
-  Event: require("../../assets/images/icons/Event.png"),
-  FoodDrink: require("../../assets/images/icons/Food.png")
+  Building: require("./Building.png"),
+  Culture: require("./Culture.png"),
+  Market: require("./Market.png"),
+  Event: require("./Event.png"),
+  FoodDrink: require("./Food.png")
 });
