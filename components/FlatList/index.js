@@ -4,7 +4,9 @@ import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
-import { statement } from "@babel/template";
+import TickIcon from "./tickIcon";
+
+
 
 const iconSet = {
     Building: require("../../assets/images/icons/Building.png"),
@@ -26,10 +28,13 @@ export default function FlatListBasics() {
                 renderItem={({ item, index }) => (
                     <View>
                         <ListItem
+                        leftIcon={<TickIcon />}
                             title={item.poiName}
+                            titleStyle={{ textAlign: "center"}}
                             topDivider="true"
                             rightIcon={<FavIcon />}
                         />
+
                         <Image
                             style={{ height: 320, width: "100%" }}
                             source={item.urlExtra}

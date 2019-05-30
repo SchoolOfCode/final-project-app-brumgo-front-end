@@ -4,6 +4,7 @@ import {
     createMaterialTopTabNavigator,
     createAppContainer
 } from "react-navigation";
+import UserProfile from "../UserProfile"
 
 import FlatList from "../FlatList";
 import FooterSection from "../FooterSection";
@@ -13,6 +14,8 @@ import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 import UserProfile from "../UserProfile";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import SocialMediaFAB from "../SocialMediaFAB"
+
 
 function ViewContainer(props) {
     return (
@@ -26,11 +29,13 @@ function ViewContainer(props) {
 }
 
 function MapScreen(props) {
+
     return (
         <ViewContainer {...props}>
             <View style={styles.map}>
                 <GeoPopping />
                 <MapDisplay />
+      <SocialMediaFAB />
             </View>
         </ViewContainer>
     );
