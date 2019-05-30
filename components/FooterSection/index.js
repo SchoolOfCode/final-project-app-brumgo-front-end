@@ -7,7 +7,11 @@ import NavContext from "../NavigationContext";
 export default function FooterSection(props) {
   // const [showSearch, setShowSearch] = useState(false);
   const navigation = useContext(NavContext);
+<<<<<<< HEAD
   console.log("footermasternavigation", navigation.state);
+=======
+  console.log("footermasternavigation", navigation);
+>>>>>>> de1a60fc11137aa03ff3ea992b5f9f02029786ea
   console.log("fotterTabnav", props.navigation);
   return (
     <>
@@ -21,7 +25,11 @@ export default function FooterSection(props) {
           <Button onPress={() => navigation.push("Home")}>
             <Icon name="home" style={{ color: "#FFFFFF" }} />
           </Button>
+<<<<<<< HEAD
           <Button>
+=======
+          <Button onPress={props.searchingToggle}>
+>>>>>>> de1a60fc11137aa03ff3ea992b5f9f02029786ea
             <Icon name="search" style={{ color: "#FFFFFF" }} />
           </Button>
           <Button

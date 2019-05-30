@@ -13,13 +13,27 @@ import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 import UserProfile from "../UserProfile";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import Search from "../Search";
 
 function ViewContainer(props) {
+<<<<<<< HEAD
   return (
     <View style={styles.container}>
       {props.children}
       <View style={styles.footer}>
         <FooterSection {...props} />
+=======
+  const [searching, setSearching] = useState(false);
+  return (
+    <View style={styles.container}>
+      {props.children}
+      <View style={styles.search}>{searching && <Search />}</View>
+      <View style={styles.footer}>
+        <FooterSection
+          searchingToggle={() => setSearching(!searching)}
+          {...props}
+        />
+>>>>>>> de1a60fc11137aa03ff3ea992b5f9f02029786ea
       </View>
     </View>
   );
@@ -37,6 +51,10 @@ function MapScreen(props) {
 }
 
 function ListScreen(props) {
+<<<<<<< HEAD
+=======
+  const [searching, setSearching] = useState(false);
+>>>>>>> de1a60fc11137aa03ff3ea992b5f9f02029786ea
   return (
     <ViewContainer {...props}>
       <View style={styles.list}>
