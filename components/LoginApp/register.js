@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ImageBackground, Text } from "react-native";
+import { StyleSheet, View, ImageBackground, Text, Image} from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 
 export default class Register extends Component {
@@ -10,10 +10,19 @@ export default class Register extends Component {
         style={styles.background}
       >
         <View style={styles.overlay}>
+          <View style={styles.title}>
+            <Text style={styles.header}>REGISTER</Text>
+          </View>
+
           <View style={styles.container}>
+
             <View style={styles.top}>
-              <Text style={styles.header}>REGISTER</Text>
+              <Image
+                style={styles.logo}
+                source={require("../LoadingPage/brumGoLogoRed.png")}
+              />
             </View>
+          
 
             <View style={styles.bottom}>
               <Input
@@ -21,7 +30,7 @@ export default class Register extends Component {
                   <Icon
                     name="user"
                     type="font-awesome"
-                    color="#FCC133"
+                    color="#FFFFFF"
                     size={27}
                   />
                 }
@@ -42,7 +51,7 @@ export default class Register extends Component {
                   <Icon
                     name="envelope"
                     type="font-awesome"
-                    color="#FCC133"
+                    color="#FFFFFF"
                     size={25}
                   />
                 }
@@ -63,7 +72,7 @@ export default class Register extends Component {
                   <Icon
                     name="lock"
                     type="font-awesome"
-                    color="#FCC133"
+                    color="#FFFFFF"
                     size={33}
                   />
                 }
@@ -82,13 +91,13 @@ export default class Register extends Component {
                 title="SIGN UP"
                 activeOpacity={1}
                 underlayColor="transparent"
-                loadingProps={{ size: "small", color: "#FCC133" }}
+                loadingProps={{ size: "small", color: "#FFFFFF" }}
                 buttonStyle={{
                   height: 45,
                   width: 325,
                   backgroundColor: "transparent",
                   borderWidth: 3,
-                  borderColor: "#FCC133",
+                  borderColor: "#FFFFFF",
                   borderRadius: 60
                 }}
                 containerStyle={{ marginVertical: 10, margin: 23 }}
@@ -99,6 +108,48 @@ export default class Register extends Component {
                 }}
               />
 
+            </View>
+            <View style={styles.social}>
+              <Button
+                title="   facebook"
+                icon={
+                  <Icon
+                    name="facebook"
+                    type="font-awesome"
+                    size={15}
+                    color="#E12B38"
+                  />
+                }
+                titleStyle={{ fontSize: 15, color: "#E12B38", fontWeight: "bold" }}
+                buttonStyle={{
+                  height: 45,
+                  width: 150,
+                  borderRadius: 60,
+                  backgroundColor: "#FFFFFF",
+
+                }}
+                containerStyle={{ marginVertical: 10, opacity: 0.9, padding: 5 }}
+              />
+              <Button
+                title="   twitter"
+                icon={
+                  <Icon
+                    name="twitter"
+                    type="font-awesome"
+                    size={15}
+                    color="#E12B38"
+                  />
+                }
+                titleStyle={{ fontSize: 15, color: "#E12B38", fontWeight: "bold" }}
+                buttonStyle={{
+                  height: 45,
+                  width: 150,
+                  borderRadius: 60,
+                  backgroundColor: "#FFFFFF",
+
+                }}
+                containerStyle={{ marginVertical: 10, opacity: 0.9, padding: 5 }}
+              />
             </View>
           </View>
         </View>
@@ -111,27 +162,37 @@ const styles = StyleSheet.create({
   background: {
     flex: 1
   },
+  logo: {
+    width: 100,
+    height: 100,
+    marginLeft: "65%",
+    marginTop: "-35%",
+    zIndex: -1,
+  },
   header: {
     fontSize: 30,
     letterSpacing: 2,
-    color: "#FCC133",
-    justifyContent: "flex-end",
-    margin: 23,
-    fontWeight: "bold"
+    color: "#E12B38",
+    fontWeight: "bold",
+    marginTop: 8,
+    marginLeft: 28
+  },
+  title: {
+    height: 60,
+    width: "100%",
+    backgroundColor: "#FFFFFF"
   },
   container: {
     flex: 1,
     flexDirection: "column",
     justifyContent: "center"
   },
-  buttom: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
-  },
   overlay: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "rgba(152,152,152,0.7)"
+  },
+  social: {
+    flexDirection: "row",
+    marginLeft: 25
   }
 });
