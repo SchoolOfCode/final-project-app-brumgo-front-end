@@ -30,23 +30,25 @@ export default class UserProfile extends Component {
               <Text style={styles.name}>Joe Bloggs</Text>
             </View>
 
-            <View style={styles.middle}>
-              <Icon
-                name="user-plus"
-                type="font-awesome"
-                color="#FCC133"
-                raised
-              />
+
+                        <View style={styles.middle}>
+                            <Icon
+                                name="user-plus"
+                                type="font-awesome"
+                                color="#FCC133"
+                                raised
+                            />
 
               <Icon name="edit" type="font-awesome" color="#FCC133" size={35} raised />
 
-              <Icon
-                name="share-alt"
-                type="font-awesome"
-                color="#FCC133"
-                raised
-              />
-            </View>
+
+                            <Icon
+                                name="share-alt"
+                                type="font-awesome"
+                                color="#FCC133"
+                                raised
+                            />
+                        </View>
 
             <View style={styles.bottom}>
               <Icon
@@ -175,4 +177,5 @@ const styles = StyleSheet.create({
   icons: {
     flexDirection: "row"
   }
+
 });

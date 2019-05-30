@@ -12,37 +12,44 @@ import MapDisplay from "../MapDisplay";
 import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
+import UserProfile from "../UserProfile";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import SocialMediaFAB from "../SocialMediaFAB"
 
 
+function ViewContainer(props) {
+    return (
+        <View style={styles.container}>
+            {props.children}
+            <View style={styles.footer}>
+                <FooterSection {...props} />
+            </View>
+        </View>
+    );
+}
+
 function MapScreen(props) {
-  return (
-    <View style={styles.container}>
-      <View style={styles.map}>
-        <GeoPopping />
-        <MapDisplay />
-        <SocialMediaFAB />
-      </View>
-      <View style={styles.footer}>
-        <FooterSection {...props} />
-      </View>
-    </View>
-  );
+
+    return (
+        <ViewContainer {...props}>
+            <View style={styles.map}>
+                <GeoPopping />
+                <MapDisplay />
+      <SocialMediaFAB />
+            </View>
+        </ViewContainer>
+    );
 }
 
 function ListScreen(props) {
-  return (
-      <View style={styles.container}>
-          <PickerCategory />
-          <View style={styles.list}>
-              <FlatList />
-          </View>
-          <View style={styles.footer}>
-              <FooterSection {...props} />
-          </View>
-          </View>
-  );
+    return (
+        <ViewContainer {...props}>
+            <PickerCategory />
+            <View style={styles.list}>
+                <FlatList />
+            </View>
+        </ViewContainer>
+    );
 }
 
 const TabNavigator = createMaterialTopTabNavigator(
