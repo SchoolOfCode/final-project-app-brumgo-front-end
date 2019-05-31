@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
-    StyleSheet,
-    View,
-    Image,
-    Text,
-    TouchableHighlight
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableHighlight
 } from "react-native";
+import { PoiContext } from "../PoiContextProvider";
 import pois from "../../data/digbethPois";
 import PinMarkerDetached from "../PinMarkerDetached";
 
 keyExtractor = (item, index) => index.toString();
 
-export default class PinMarker extends React.Component {
-    render() {
-        return (
-            <View>
-                {pois.map((item, idx) => {
-                    return <PinMarkerDetached poi={item} />;
-                })}
-            </View>
-        );
-    }
-}
+export default (PinMarker = props => {
+  const [{ filteredPois }, setSearchTerms] = useContext(PoiContext);
+  return (
+    <View>
+      {filteredPois.map((item, idx) => {
+        return <PinMarkerDetached poi={item} />;
+      })}
+    </View>
+  );
+});

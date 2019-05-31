@@ -17,10 +17,10 @@ export default function FlatListBasics() {
 
   return (
     <View style={styles.container}>
-      <PickerCategory
+      {/* <PickerCategory
         searchTerms={searchTerms.categories}
         setSearchTerms={setSearchTerms}
-      />
+      /> */}
       <FlatList
         data={filteredPois}
         keyExtractor={(item, index) => index.toString()}
