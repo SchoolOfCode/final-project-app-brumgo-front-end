@@ -16,13 +16,6 @@ import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import Search from "../Search";
 
 function ViewContainer(props) {
-<<<<<<< HEAD
-  return (
-    <View style={styles.container}>
-      {props.children}
-      <View style={styles.footer}>
-        <FooterSection {...props} />
-=======
   const [searching, setSearching] = useState(false);
   return (
     <View style={styles.container}>
@@ -33,7 +26,6 @@ function ViewContainer(props) {
           searchingToggle={() => setSearching(!searching)}
           {...props}
         />
->>>>>>> de1a60fc11137aa03ff3ea992b5f9f02029786ea
       </View>
     </View>
   );
@@ -51,10 +43,6 @@ function MapScreen(props) {
 }
 
 function ListScreen(props) {
-<<<<<<< HEAD
-=======
-  const [searching, setSearching] = useState(false);
->>>>>>> de1a60fc11137aa03ff3ea992b5f9f02029786ea
   return (
     <ViewContainer {...props}>
       <View style={styles.list}>
