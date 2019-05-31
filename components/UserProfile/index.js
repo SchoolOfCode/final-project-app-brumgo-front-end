@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
 import { Avatar, Icon, ListItem } from "react-native-elements";
 import FooterSection from "../FooterSection";
+import NavContext from "../NavigationContext";
+import Header from "../HeaderSection";
 
-export default class UserProfile extends Component {
-  render() {
-    return (
+
+export default (UserProfile = props => {
+  return (
+    <NavContext.Provider value={props.navigation}>
+      <Header />
       <ImageBackground
         source={require("../LoadingPage/brum.jpg")}
         style={styles.background}
@@ -13,14 +17,6 @@ export default class UserProfile extends Component {
         <View style={styles.overlay}>
           <View style={styles.container}>
             <View style={styles.top}>
-              {/* <Avatar
-                size={90}
-                rounded
-                source={{
-                  uri:
-                    "https://cdn2.iconfinder.com/data/icons/people-round-icons/128/man_avatar-512.png"
-                }}
-              /> */}
               <Icon
                 name="user-circle"
                 type="font-awesome"
@@ -30,25 +26,21 @@ export default class UserProfile extends Component {
               <Text style={styles.name}>Joe Bloggs</Text>
             </View>
 
-
-                        <View style={styles.middle}>
-                            <Icon
-                                name="user-plus"
-                                type="font-awesome"
-                                color="#FCC133"
-                                raised
-                            />
-
+            <View style={styles.middle}>
+              <Icon
+                name="user-plus"
+                type="font-awesome"
+                color="#FCC133"
+                raised
+              />
               <Icon name="edit" type="font-awesome" color="#FCC133" size={35} raised />
-
-
-                            <Icon
-                                name="share-alt"
-                                type="font-awesome"
-                                color="#FCC133"
-                                raised
-                            />
-                        </View>
+              <Icon
+                name="share-alt"
+                type="font-awesome"
+                color="#FCC133"
+                raised
+              />
+            </View>
 
             <View style={styles.bottom}>
               <Icon
@@ -108,16 +100,18 @@ export default class UserProfile extends Component {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
+
                 color="#FFFFFF"
-              />
+                />
             </View>
           </View>
-          <FooterSection />
+          <FooterSection/>
         </View>
       </ImageBackground>
-    );
-  }
-}
+    </NavContext.Provider>
+  );
+});
+
 
 const styles = StyleSheet.create({
   background: {
@@ -177,5 +171,4 @@ const styles = StyleSheet.create({
   icons: {
     flexDirection: "row"
   }
-
 });

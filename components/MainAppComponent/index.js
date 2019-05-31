@@ -14,17 +14,8 @@ import PickerCategory from "../PickerCategory";
 import UserProfile from "../UserProfile";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import SocialMediaFAB from "../SocialMediaFAB";
-
-function ViewContainer(props) {
-  return (
-    <View style={styles.container}>
-      {props.children}
-      <View style={styles.footer}>
-        <FooterSection {...props} />
-      </View>
-    </View>
-  );
-}
+import Search from "../Search";
+import ViewContainer from "../ViewContainer";
 
 function MapScreen(props) {
   return (
@@ -32,6 +23,7 @@ function MapScreen(props) {
       <View style={styles.map}>
         <GeoPopping />
         <MapDisplay />
+
         <SocialMediaFAB />
       </View>
     </ViewContainer>
@@ -41,7 +33,7 @@ function MapScreen(props) {
 function ListScreen(props) {
   return (
     <ViewContainer {...props}>
-      <PickerCategory />
+
       <View style={styles.list}>
         <FlatList />
       </View>
@@ -85,24 +77,23 @@ const styles = StyleSheet.create({
   },
 
   map: {
-    // flex: 7,
     height: "90%",
     width: "100%"
   },
   list: {
-    height: "81%",
+    height: "90%",
     width: "100%"
   },
   footer: {
     height: "10%",
-    width: "100%",
-    position: "relative"
+    width: "100%"
   },
   search: {
-    // flex: 1,
-    top: -50,
-    height: "10%",
+    bottom: 55,
+    left: 0,
+    // marginTop: -50,
     width: "100%",
-    position: "relative"
+    position: "absolute"
+
   }
 });

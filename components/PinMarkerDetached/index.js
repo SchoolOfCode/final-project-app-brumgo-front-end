@@ -17,15 +17,7 @@ import Dialog, {
   ScaleAnimation
 } from "react-native-popup-dialog";
 import ReadMore from "../ReadMore";
-// import placeholder from "../../assets/images/pictures/birds-custard-factory.jpg";
-
-const iconSet = {
-  Building: require("../../assets/images/icons/Building.png"),
-  Culture: require("../../assets/images/icons/Culture.png"),
-  Market: require("../../assets/images/icons/Market.png"),
-  Event: require("../../assets/images/icons/Event.png"),
-  FoodDrink: require("../../assets/images/icons/Food.png")
-};
+import iconSet from "../../assets/images/icons/iconSet";
 
 const styles = StyleSheet.create({
   container: {
@@ -134,13 +126,13 @@ export default class PinMarkerDetached extends React.Component {
           dialogTitle={
             <DialogTitle
               title={poiName}
-
               style={{
                 backgroundColor: "#FFFFFF",
                 margin: 10,
                 color: "#FCC133"
       }}
               hasTitleBar={true}
+
               align="left"
             />
           }
@@ -157,21 +149,12 @@ export default class PinMarkerDetached extends React.Component {
                 }}
                 key="button-1"
               />
-              {/* <DialogButton
-                                text="AR"
-                                bordered
-                                onPress={() => {
-                                    this.setState({
-                                        defaultAnimationDialog: false
-                                    });
-                                }}
-                                key="button-2"
-                            /> */}
               <DialogButton
                 text="Done"
                 bordered
                 textStyle={{ color: "#E12B38" }}
                 activeOpacity={0.6}
+
                 onPress={() => {
                   this.setState({
                     defaultAnimationDialog: false,
@@ -185,6 +168,7 @@ export default class PinMarkerDetached extends React.Component {
         >
           <DialogContent
             style={{
+
               backgroundColor: "#FFFFFF",
               margin: 10, 
             }}
@@ -193,7 +177,6 @@ export default class PinMarkerDetached extends React.Component {
               {this.state.readMore ? (
                 poiTrivia
               ) : (
-              
                 <ReadMore extraPoiTrivia={extraPoiTrivia} urlExtra={urlExtra} />
               )}
             </Text>

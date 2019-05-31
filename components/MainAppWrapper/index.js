@@ -1,11 +1,14 @@
 import React from "react";
 import MainAppComponent from "../MainAppComponent";
 import { PoiContextProvider } from "../PoiContextProvider";
+import NavContext from "../NavigationContext";
 
-const MainAppWrapper = () => {
+const MainAppWrapper = props => {
   return (
     <PoiContextProvider>
-      <MainAppComponent />
+      <NavContext.Provider value={props.navigation}>
+        <MainAppComponent />
+      </NavContext.Provider>
     </PoiContextProvider>
   );
 };

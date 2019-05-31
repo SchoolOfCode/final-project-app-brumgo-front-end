@@ -1,28 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
 import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
+import PickerCategory from "../PickerCategory";
+import { PoiContext } from "../PoiContextProvider";
 import TickIcon from "./tickIcon";
 
 
 
-const iconSet = {
-    Building: require("../../assets/images/icons/Building.png"),
-    Culture: require("../../assets/images/icons/Culture.png"),
-    Market: require("../../assets/images/icons/Market.png"),
-    Event: require("../../assets/images/icons/Event.png"),
-    FoodDrink: require("../../assets/images/icons/Food.png")
-};
+import iconSet from "../../assets/images/icons/iconSet";
 
 export default function FlatListBasics() {
-    const [destination, setDestination] = useState(null);
+  const [destination, setDestination] = useState(null);
+  const [{ searchTerms, filteredPois }, setSearchTerms] = useContext(
+    PoiContext
+  );
+
 
     return (
         <View style={styles.container}>
             <FlatList
-                data={pois}
+                data={filteredPois}
                 keyExtractor={(item, index) => index.toString()}
                 // keyExtractor={this.index.toString()}
                 renderItem={({ item, index }) => (
@@ -67,8 +67,40 @@ export default function FlatListBasics() {
                     </View>
                 )}
             />
-        </View>
-    );
+            <Image
+              style={{ height: 320, width: "100%" }}
+              source={item.urlExtra}
+            />
+            <ListItem
+              title={item.poiName}
+              leftIcon={
+                <Image
+                  style={{ height: 20, width: 20 }}
+                  source={iconSet[item.category]}
+                />
+              }
+              title={item.category}
+              rightIcon={
+                <Icon
+                  name="location-arrow"
+                  type="font-awesome"
+                  color="#FCC133"
+                  onPress={() =>
+                    setDestination({
+                      latitude: item.poiLocation.lat,
+                      longitude: item.poiLocation.lng
+                    })
+                  }
+                />
+              }
+              rightTitle="Directions"
+            />
+            <Text style={styles.text}>{item.poiTrivia}</Text>
+          </View>
+        )}
+      />
+    </View>
+  );
 }
 
 // add category
@@ -76,19 +108,16 @@ export default function FlatListBasics() {
 // triva needs to be five lines in order to have consistency in design
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%",
-        height: "100%"
-    },
-    text: {
-        color: "#000000",
-        letterSpacing: 1,
-        fontSize: 12,
-        textAlign: "justify",
-        padding: 10
-    }
+  container: {
+    flex: 1,
+    width: "100%",
+    height: "100%"
+  },
+  text: {
+    color: "#000000",
+    letterSpacing: 1,
+    fontSize: 12,
+    textAlign: "justify",
+    padding: 10
+  }
 });
-
-// skip this line if using Create React Native App
-// AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics);
