@@ -23,7 +23,6 @@ function MapScreen(props) {
       <View style={styles.map}>
         <GeoPopping />
         <MapDisplay />
-
         <SocialMediaFAB />
       </View>
     </ViewContainer>
@@ -33,7 +32,6 @@ function MapScreen(props) {
 function ListScreen(props) {
   return (
     <ViewContainer {...props}>
-
       <View style={styles.list}>
         <FlatList />
       </View>
@@ -94,6 +92,5 @@ const styles = StyleSheet.create({
     // marginTop: -50,
     width: "100%",
     position: "absolute"
-
   }
 });

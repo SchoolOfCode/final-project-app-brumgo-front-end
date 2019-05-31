@@ -8,8 +8,6 @@ import PickerCategory from "../PickerCategory";
 import { PoiContext } from "../PoiContextProvider";
 import TickIcon from "./tickIcon";
 
-
-
 import iconSet from "../../assets/images/icons/iconSet";
 
 export default function FlatListBasics() {
@@ -18,55 +16,21 @@ export default function FlatListBasics() {
     PoiContext
   );
 
-
-    return (
-        <View style={styles.container}>
-            <FlatList
-                data={filteredPois}
-                keyExtractor={(item, index) => index.toString()}
-                // keyExtractor={this.index.toString()}
-                renderItem={({ item, index }) => (
-                    <View>
-                        <ListItem
-                        leftIcon={<TickIcon />}
-                            title={item.poiName}
-                            titleStyle={{ textAlign: "center"}}
-                            topDivider="true"
-                            rightIcon={<FavIcon />}
-                        />
-
-                        <Image
-                            style={{ height: 320, width: "100%" }}
-                            source={item.urlExtra}
-                        />
-                        <ListItem
-                            title={item.poiName}
-                            leftIcon={
-                                <Image
-                                    style={{ height: 20, width: 20 }}
-                                    source={iconSet[item.category]}
-                                />
-                            }
-                            title={item.category}
-                            rightIcon={
-                                <Icon
-                                    name="location-arrow"
-                                    type="font-awesome"
-                                    color="#FCC133"
-                                    onPress={() =>
-                                        setDestination({
-                                            latitude: item.poiLocation.lat,
-                                            longitude: item.poiLocation.lng
-                                        })
-                                    }
-                                />
-                            }
-                            rightTitle="Directions"
-                        />
-                        <Text style={styles.text}>{item.poiTrivia}</Text>
-                    </View>
-                )}
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={filteredPois}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item, index }) => (
+          <View>
+            <ListItem
+              leftIcon={<TickIcon />}
+              title={item.poiName}
+              titleStyle={{ textAlign: "center" }}
+              topDivider="true"
+              rightIcon={<FavIcon />}
             />
+
             <Image
               style={{ height: 320, width: "100%" }}
               source={item.urlExtra}
