@@ -6,7 +6,6 @@ import NavContext from "../NavigationContext";
 
 export default function FooterSection(props) {
   const navigation = useContext(NavContext);
-  console.log("footermasternavigation State", navigation.state);
   return (
     <>
       <Footer>
