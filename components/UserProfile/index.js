@@ -3,11 +3,12 @@ import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
 import { Avatar, Icon, ListItem } from "react-native-elements";
 import FooterSection from "../FooterSection";
 import NavContext from "../NavigationContext";
+import Header from "../HeaderSection";
 
 export default (UserProfile = props => {
-  console.log(props);
   return (
     <NavContext.Provider value={props.navigation}>
+      <Header />
       <ImageBackground
         source={require("../LoadingPage/brum.jpg")}
         style={styles.background}

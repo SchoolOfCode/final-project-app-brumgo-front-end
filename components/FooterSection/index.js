@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
-import Search from "../Search";
-import { PoiContext } from "../PoiContextProvider";
 import NavContext from "../NavigationContext";
 
 export default function FooterSection(props) {
@@ -41,7 +39,7 @@ export default function FooterSection(props) {
           <Button
             onPress={
               navigation.state.routeName === "UserProfile"
-                ? () => navigation.push("Main")
+                ? () => navigation.goBack()
                 : () => navigation.push("UserProfile")
             }
           >

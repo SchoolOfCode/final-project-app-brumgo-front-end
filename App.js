@@ -43,7 +43,7 @@ const AppNavigator = createStackNavigator(
     UserProfile: {
       screen: UserProfile,
       navigationOptions: {
-        header: <HeaderSection />
+        header: null
       }
     },
     // Header: {
