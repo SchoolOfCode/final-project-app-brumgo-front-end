@@ -5,6 +5,7 @@ import FooterSection from "../FooterSection";
 import NavContext from "../NavigationContext";
 import Header from "../HeaderSection";
 
+
 export default (UserProfile = props => {
   return (
     <NavContext.Provider value={props.navigation}>
@@ -16,13 +17,11 @@ export default (UserProfile = props => {
         <View style={styles.overlay}>
           <View style={styles.container}>
             <View style={styles.top}>
-              <Avatar
-                size={90}
-                rounded
-                source={{
-                  uri:
-                    "https://banner2.kisspng.com/20180328/dew/kisspng-computer-icons-social-media-blog-avatar-material-5abbf0d5b48680.3023774615222663257395.jpg"
-                }}
+              <Icon
+                name="user-circle"
+                type="font-awesome"
+                color="#FFFFFF"
+                size={80}
               />
               <Text style={styles.name}>Joe Bloggs</Text>
             </View>
@@ -34,9 +33,7 @@ export default (UserProfile = props => {
                 color="#FCC133"
                 raised
               />
-
-              <Icon name="edit" type="font-awesome" color="#FCC133" raised />
-
+              <Icon name="edit" type="font-awesome" color="#FCC133" size={35} raised />
               <Icon
                 name="share-alt"
                 type="font-awesome"
@@ -49,12 +46,12 @@ export default (UserProfile = props => {
               <Icon
                 name="credit-card"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#FFFFFF"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "rgba(255,45,58,0.8)"
+                  color: "#FFFFFF"
                 }}
               >
                 Offers & Discounts
@@ -62,19 +59,19 @@ export default (UserProfile = props => {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#FFFFFF"
               />
             </View>
             <View style={styles.bottom}>
               <Icon
                 name="star"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#FFFFFF"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "rgba(255,45,58,0.8)"
+                  color: "#FFFFFF"
                 }}
               >
                 Favourite Places
@@ -82,7 +79,7 @@ export default (UserProfile = props => {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#FFFFFF"
               />
             </View>
 
@@ -90,12 +87,12 @@ export default (UserProfile = props => {
               <Icon
                 name="check"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
+                color="#FFFFFF"
               />
               <Text
                 style={{
                   fontWeight: "bold",
-                  color: "rgba(255,45,58,0.8)"
+                  color: "#FFFFFF"
                 }}
               >
                 Locations Visited
@@ -103,16 +100,18 @@ export default (UserProfile = props => {
               <Icon
                 name="chevron-right"
                 type="font-awesome"
-                color="rgba(255,45,58,0.8)"
-              />
+
+                color="#FFFFFF"
+                />
             </View>
           </View>
-          <FooterSection {...this.props} />
+          <FooterSection/>
         </View>
       </ImageBackground>
     </NavContext.Provider>
   );
 });
+
 
 const styles = StyleSheet.create({
   background: {
@@ -122,49 +121,52 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(255,255,255,0.7)"
+    backgroundColor: "rgba(152,152,152,0.7)"
   },
   container: {
     flex: 1,
     width: "100%"
   },
   top: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "transparent",
     flex: 0.5,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
-    margin: 10,
-    paddingTop: 10
+    marginBottom: 20,
+    paddingTop: 23,
+    marginLeft: "25%",
+    marginTop: "10%",
+    width: 180,
+    borderWidth: 3,
+    borderColor: "#FFFFFF",
   },
   middle: {
-    borderColor: "#FFFFFF",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "transparent",
     flex: 0.05,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 60,
     margin: 10,
-    borderWidth: 3,
     padding: 10,
-    opacity: 0.8
   },
   bottom: {
-    backgroundColor: "#FFFFFF",
-    opacity: 0.8,
+    backgroundColor: "transparent",
     flex: 0.15,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 60,
-    margin: 10
+    borderWidth: 3,
+    borderColor: "#FFFFFF",
+    margin: 18
   },
   name: {
     fontSize: 25,
     margin: 10,
     fontWeight: "bold",
-    color: "#D3D3D3"
+    color: "#FFFFFF"
   },
   icons: {
     flexDirection: "row"

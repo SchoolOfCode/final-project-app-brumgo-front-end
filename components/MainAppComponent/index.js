@@ -13,24 +13,9 @@ import GeoPopping from "../GeoPopping";
 import PickerCategory from "../PickerCategory";
 import UserProfile from "../UserProfile";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
+import SocialMediaFAB from "../SocialMediaFAB";
 import Search from "../Search";
 import ViewContainer from "../ViewContainer";
-
-// function ViewContainer(props) {
-//   const [searching, setSearching] = useState(false);
-//   return (
-//     <View style={styles.container}>
-//       {props.children}
-//       <View style={styles.search}>{searching && <Search />}</View>
-//       <View style={styles.footer}>
-//         <FooterSection
-//           searchingToggle={() => setSearching(!searching)}
-//           {...props}
-//         />
-//       </View>
-//     </View>
-//   );
-// }
 
 function MapScreen(props) {
   return (
@@ -38,6 +23,8 @@ function MapScreen(props) {
       <View style={styles.map}>
         <GeoPopping />
         <MapDisplay />
+
+        <SocialMediaFAB />
       </View>
     </ViewContainer>
   );
@@ -46,15 +33,12 @@ function MapScreen(props) {
 function ListScreen(props) {
   return (
     <ViewContainer {...props}>
+
       <View style={styles.list}>
         <FlatList />
       </View>
     </ViewContainer>
   );
-}
-
-function UserProfileScreen(props) {
-  return;
 }
 
 const TabNavigator = createMaterialTopTabNavigator(
@@ -110,5 +94,6 @@ const styles = StyleSheet.create({
     // marginTop: -50,
     width: "100%",
     position: "absolute"
+
   }
 });
