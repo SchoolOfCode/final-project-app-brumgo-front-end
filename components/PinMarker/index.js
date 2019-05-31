@@ -13,7 +13,7 @@ import PinMarkerDetached from "../PinMarkerDetached";
 keyExtractor = (item, index) => index.toString();
 
 export default (PinMarker = props => {
-  const [{ filteredPois }, setSearchTerms] = useContext(PoiContext);
+  const [{ filteredPois }] = useContext(PoiContext);
   return (
     <View>
       {filteredPois.map((item, idx) => {
