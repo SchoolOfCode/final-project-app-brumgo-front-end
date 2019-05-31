@@ -14,22 +14,23 @@ import PickerCategory from "../PickerCategory";
 import UserProfile from "../UserProfile";
 import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import Search from "../Search";
+import ViewContainer from "../ViewContainer";
 
-function ViewContainer(props) {
-  const [searching, setSearching] = useState(false);
-  return (
-    <View style={styles.container}>
-      {props.children}
-      <View style={styles.search}>{searching && <Search />}</View>
-      <View style={styles.footer}>
-        <FooterSection
-          searchingToggle={() => setSearching(!searching)}
-          {...props}
-        />
-      </View>
-    </View>
-  );
-}
+// function ViewContainer(props) {
+//   const [searching, setSearching] = useState(false);
+//   return (
+//     <View style={styles.container}>
+//       {props.children}
+//       <View style={styles.search}>{searching && <Search />}</View>
+//       <View style={styles.footer}>
+//         <FooterSection
+//           searchingToggle={() => setSearching(!searching)}
+//           {...props}
+//         />
+//       </View>
+//     </View>
+//   );
+// }
 
 function MapScreen(props) {
   return (
@@ -50,6 +51,10 @@ function ListScreen(props) {
       </View>
     </ViewContainer>
   );
+}
+
+function UserProfileScreen(props) {
+  return;
 }
 
 const TabNavigator = createMaterialTopTabNavigator(

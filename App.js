@@ -14,7 +14,6 @@ import MainAppWrapper from "./components/MainAppWrapper";
 
 console.disableYellowBox = true;
 
-
 const AppNavigator = createStackNavigator(
   {
     Home: {
@@ -35,24 +34,24 @@ const AppNavigator = createStackNavigator(
         header: null
       }
     },
-    Footer: {
-      screen: FooterSection,
-      navigationOptions: {
-        header: null
-      }
-    },
+    // Footer: {
+    //   screen: FooterSection,
+    //   navigationOptions: {
+    //     header: null
+    //   }
+    // },
     UserProfile: {
       screen: UserProfile,
       navigationOptions: {
         header: <HeaderSection />
       }
     },
-    Header: {
-      screen: HeaderSection,
-      navigationOptions: {
-        header: null
-      }
-    },
+    // Header: {
+    //   screen: HeaderSection,
+    //   navigationOptions: {
+    //     header: null
+    //   }
+    // },
 
     StoryBook: {
       screen: StoryBook,

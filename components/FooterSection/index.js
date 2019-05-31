@@ -5,10 +5,8 @@ import { PoiContext } from "../PoiContextProvider";
 import NavContext from "../NavigationContext";
 
 export default function FooterSection(props) {
-  // const [showSearch, setShowSearch] = useState(false);
   const navigation = useContext(NavContext);
-  console.log("footermasternavigation", navigation.state);
-  console.log("fotterTabnav", props.navigation);
+  console.log("footermasternavigation State", navigation.state);
   return (
     <>
       <Footer>
@@ -41,7 +39,13 @@ export default function FooterSection(props) {
           <Button>
             <Icon name="camera" style={{ color: "#FFFFFF" }} />
           </Button>
-          <Button onPress={() => navigation.push("UserProfile")}>
+          <Button
+            onPress={
+              navigation.state.routeName === "UserProfile"
+                ? () => navigation.push("Main")
+                : () => navigation.push("UserProfile")
+            }
+          >
             <Icon name="person" style={{ color: "#FFFFFF" }} />
           </Button>
         </FooterTab>
