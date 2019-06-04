@@ -3,6 +3,7 @@ import React from "react";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import { transition1 } from "./utils/animations/customAnimations";
 
+
 import LoadingPage from "./components/LoadingPage";
 import MainAppComponent from "./components/MainAppComponent";
 import StoryBook from "./storybook";
@@ -34,6 +35,7 @@ const AppNavigator = createStackNavigator(
         header: null
       }
     },
+   
     // Footer: {
     //   screen: FooterSection,
     //   navigationOptions: {

@@ -1,8 +1,52 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ImageBackground, Text, Image} from "react-native";
+import { StyleSheet, View, ImageBackground, Text, Image, TouchableOpacity} from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
+import * as firebase from "firebase";
+
+/// this is the config info for firebase
+
+var config = {
+  apiKey: "AIzaSyCt9wBE6Uuv0Xuqhr9-vQh3b0fc0mZhyLo",
+  authDomain: "brumgo-c44e3.firebaseapp.com",
+  databaseURL: "https://brumgo-c44e3.firebaseio.com",
+  projectId: "brumgo-c44e3",
+  storageBucket: "brumgo-c44e3.appspot.com",
+  messagingSenderId: "46252155412",
+  appID: "1:46252155412:android:847adb53adba91c8",
+};
+
+firebase.initializeApp(config);
+
+// this is currently a class component, I don't know how to make it functional using hooks. Do we need to??
 
 export default class Register extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      email: '',
+      password: ''
+    };
+  }
+
+  /// this is the signup logic for firebase. To register firebase will only take email and password not name.
+  /// there is an onPress function below which registers the user. Once the User is registered nothing happens in the UI
+  /// will need add a message to say 'great! you've signed up'
+  // will need to direct user to Login or User Profile. 
+
+  SignUp = (email, password) => {
+    try {
+
+      if(this.state.password.length<6){
+        alert("please enter at least 6 characters")
+        return;
+      }
+
+      firebase.auth().createUserWithEmailAndPassword(email, password);
+    }catch(error){
+      console.log(error.toString(error));
+    }
+  };
+
   render() {
     return (
       <ImageBackground
@@ -45,7 +89,6 @@ export default class Register extends Component {
                 returnKeyType="next"
                 placeholderTextColor="white"
               />
-
               <Input
                 leftIcon={
                   <Icon
@@ -55,6 +98,7 @@ export default class Register extends Component {
                     size={25}
                   />
                 }
+
                 containerStyle={{ marginVertical: 10 }}
                 inputStyle={{ marginLeft: 10, color: "white" }}
                 keyboardAppearance="light"
@@ -65,6 +109,8 @@ export default class Register extends Component {
                 keyboardType="email-address"
                 returnKeyType="next"
                 placeholderTextColor="white"
+                onChangeText={(email) => this.setState({ email })}
+                value={this.state.email}
               />
 
               <Input
@@ -85,6 +131,9 @@ export default class Register extends Component {
                 keyboardType="default"
                 returnKeyType="done"
                 placeholderTextColor="white"
+                secureTextEntry={true}
+                onChangeText={(password) => this.setState({ password })}
+                value={this.state.password}
               />
 
               <Button
@@ -106,6 +155,7 @@ export default class Register extends Component {
                   color: "white",
                   fontSize: 15
                 }}
+                onPress={() => this.SignUp(this.state.email, this.state.password)}
               />
 
             </View>

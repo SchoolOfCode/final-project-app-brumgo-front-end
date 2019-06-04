@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { StyleSheet, View, Image, ImageBackground } from "react-native";
+import { StyleSheet, View, Image, ImageBackground} from "react-native";
 import { Button, Icon } from "react-native-elements";
 
 import fineLocationPermissions from "../../utils/permissions/fineLocationPermission";

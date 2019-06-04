@@ -1,9 +1,34 @@
 import React, { Component } from "react";
 import { StyleSheet, View, ImageBackground, Text, Image } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
+import * as firebase from "firebase";
 
+///this function does nothing in the UI currently
+// also a class component!
 
 export default class Login extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      email: '',
+      password: ''
+    };
+  }
+  SignIn = (email, password) => {
+    try{
+      firebase.auth().signInWithEmailAndPassword(email,password)
+      .then(function(user){
+        if (user){
+
+        }
+        console.log(user)
+      })
+    }
+    catch(error)
+    {
+console.log(error.toString(error))
+    }
+  };
   render() {
     return (
       <ImageBackground
@@ -47,6 +72,7 @@ export default class Login extends Component {
                 keyboardType="email-address"
                 returnKeyType="next"
                 placeholderTextColor="white"
+                onChangeText={email => this.setState({ email })}
               />
 
               <Input
@@ -68,6 +94,8 @@ export default class Login extends Component {
                 keyboardType="default"
                 returnKeyType="done"
                 placeholderTextColor="white"
+                secureTextEntry={true}
+                onChangeText={password => this.setState({ password })}
               />
 
               <Button
@@ -89,6 +117,7 @@ export default class Login extends Component {
                   color: "#FFFFFF",
                   fontSize: 15
                 }}
+                onPress={() => this.SignIn(this.state.email, this.state.password)}
               />
             </View>
 
