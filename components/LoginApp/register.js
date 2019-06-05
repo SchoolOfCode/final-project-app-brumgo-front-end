@@ -5,7 +5,7 @@ import {
   ImageBackground,
   Text,
   Image,
-  TouchableOpacity
+  Alert
 } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 import * as firebase from "firebase";
@@ -37,7 +37,7 @@ export default function Register(props) {
   /// will need add a message to say 'great! you've signed up'
   // will need to direct user to Login or User Profile.
 
-  SignUp = (email, password) => {
+  const SignUp = (email, password) => {
     try {
       if (password.length < 6) {
         alert("please enter at least 6 characters");
@@ -50,7 +50,19 @@ export default function Register(props) {
         .then(currentUser => {
           console.log(currentUser);
         })
-        .then(() => alert("great, sign up was successful"));
+        .then(() =>
+          Alert.alert(
+            "Signup Successful",
+            "please Sign in on the next screen",
+            [
+              {
+                text: "Sign In",
+                onPress: () => props.navigation.navigate("Login")
+              }
+            ],
+            { cancelable: false }
+          )
+        );
       console.log(currentUser);
     } catch (error) {
       console.log(error.toString(error));
@@ -161,7 +173,7 @@ export default function Register(props) {
                 color: "white",
                 fontSize: 15
               }}
-              onPress={() => this.SignUp(email, password)}
+              onPress={() => SignUp(email, password)}
             />
           </View>
           <View style={styles.social}>

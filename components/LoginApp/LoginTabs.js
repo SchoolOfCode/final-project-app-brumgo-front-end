@@ -33,7 +33,7 @@ const TabNavigation = createMaterialBottomTabNavigator(
         )
       }
     },
-    "No Account? Register Here": {
+    Register: {
       screen: RegisterScreen,
       navigationOptions: {
         tabBarLabel: "No Account? Register Here",
