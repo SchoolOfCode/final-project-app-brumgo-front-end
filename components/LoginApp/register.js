@@ -7,7 +7,7 @@ import UserProfile from "../UserProfile";
 /// this is the config info for firebase
 
 var config = {
-  apiKey: "AIzaSyCt9wBE6Uuv0Xuqhr9-vQh3b0fc0mZhyLo",
+  apiKey: "XXXXXXXXXXXXXXXXXXXX",
   authDomain: "brumgo-c44e3.firebaseapp.com",
   databaseURL: "https://brumgo-c44e3.firebaseio.com",
   projectId: "brumgo-c44e3",
