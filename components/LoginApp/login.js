@@ -5,7 +5,7 @@ import * as firebase from "firebase";
 import NavContext from "../NavigationContext";
 
 ///this function does nothing in the UI currently
-// also a class component!
+
 
 /// so when the User Logins the User is directed to User Profile
 
@@ -14,19 +14,16 @@ export default (Login = props => {
   const [password, setPassword] = useState("");
   const navigation = useContext(NavContext);
 
-  const SignIn = async (email, password) => {
+  const SignIn = (email, password) => {
     try {
-      const user = await firebase
+      firebase
         .auth()
-        .signInWithEmailAndPassword(email, password);
-      if (user) {
-        console.log("push navigation");
-        navigation.push("UserProfile");
-      }
+        .signInWithEmailAndPassword(email, password)
+        .then(()=> navigation.push("Main"))  
     } catch (error) {
       console.log(error.toString(error));
     }
-  };
+  }
 
   return (
     <ImageBackground
@@ -65,7 +62,7 @@ export default (Login = props => {
               keyboardType="email-address"
               returnKeyType="next"
               placeholderTextColor="white"
-              onChangeText={email => setEmail({ email })}
+              onChangeText={email => setEmail( email )}
             />
 
             <Input
@@ -87,7 +84,7 @@ export default (Login = props => {
               returnKeyType="done"
               placeholderTextColor="white"
               secureTextEntry={true}
-              onChangeText={password => setPassword({ password })}
+              onChangeText={password => setPassword( password )}
             />
 
             <Button

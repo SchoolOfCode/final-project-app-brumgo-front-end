@@ -13,7 +13,7 @@ import NavigationContext from "../NavigationContext";
 /// this is the config info for firebase
 
 var config = {
-  apiKey: "XXXXXXXXXXXXXXXXXXXX",
+  apiKey: "AIzaSyCt9wBE6Uuv0Xuqhr9-vQh3b0fc0mZhyLo",
   authDomain: "brumgo-c44e3.firebaseapp.com",
   databaseURL: "https://brumgo-c44e3.firebaseio.com",
   projectId: "brumgo-c44e3",
@@ -57,13 +57,14 @@ export default function Register(props) {
             [
               {
                 text: "Sign In",
-                onPress: () => props.navigation.navigate("Login")
+                onPress: () => navigation.push("Login"),
+                style: 'cancel'
               }
             ],
             { cancelable: false }
           )
-        );
-      console.log(currentUser);
+        )
+
     } catch (error) {
       console.log(error.toString(error));
     }
@@ -127,7 +128,7 @@ export default function Register(props) {
               keyboardType="email-address"
               returnKeyType="next"
               placeholderTextColor="white"
-              onChangeText={email => setEmail({ email })} //why in an object???
+              onChangeText={email => setEmail( email )}
               value={email}
             />
 
@@ -150,7 +151,7 @@ export default function Register(props) {
               returnKeyType="done"
               placeholderTextColor="white"
               secureTextEntry={true}
-              onChangeText={password => setPassword({ password })} // Object???
+              onChangeText={password => setPassword( password )}
               value={password}
             />
 
