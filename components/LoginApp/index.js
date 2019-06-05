@@ -1,63 +1,12 @@
 import React from "react";
-import { View } from "react-native";
-import { Icon } from "react-native-elements";
-import { createAppContainer } from "react-navigation";
-import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
-import Login from "../LoginApp/login";
-import Register from "../LoginApp/register";
 
-class LoginScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <Login />
-      </View>
-    );
-  }
-}
+import LoginTabs from "./LoginTabs";
+import MasterNavContext from "../NavigationContext";
 
-class RegisterScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <Register />
-      </View>
-    );
-  }
-}
-
-const TabNavigation = createMaterialBottomTabNavigator(
-  {
-    Login: {
-      screen: LoginScreen,
-      navigationOptions: {
-        tabBarLabel: "Login",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon name="user" type="font-awesome" color={tintColor} size={24} />
-        )
-      }
-    },
-    "No Account? Register Here": {
-      screen: RegisterScreen,
-      navigationOptions: {
-        tabBarLabel: "No Account? Register Here",
-        tabBarIcon: ({ tintColor }) => (
-          <Icon
-            name="sign-in"
-            type="font-awesome"
-            color={tintColor}
-            size={24}
-          />
-        )
-      }
-    }
-  },
-  {
-    initialRouteName: "Login",
-    activeTintColor: "#E12B38",
-    inactiveTintColor: "#FFFFFF",
-    barStyle: { backgroundColor: "#D3D3D3" }
-  }
-);
-
-export default createAppContainer(TabNavigation);
+const LoginApp = props => {
+  return (
+    <MasterNavContext.Provider value={props.navigation}>
+      <LoginTabs />
+    </MasterNavContext.Provider>
+  );
+};

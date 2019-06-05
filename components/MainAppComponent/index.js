@@ -6,28 +6,16 @@ import {
 } from "react-navigation";
 
 import FlatList from "../FlatList";
-import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
-import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
-import PickerCategory from "../PickerCategory";
-import UserProfile from "../UserProfile";
-import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import SocialMediaFAB from "../SocialMediaFAB";
-import Search from "../Search";
 import ViewContainer from "../ViewContainer";
-import { joyride, joyridable, JoyrideStep } from 'react-native-joyride';
-
-const JoyrideText = joyridable(Text);
 
 
 function MapScreen(props) {
   return (
     <ViewContainer {...props}>
       <View style={styles.map}>
-      <JoyrideStep text="This is a hello world example!" order={1} name="hello">
-          <JoyrideText>Hello world!</JoyrideText>
-        </JoyrideStep>
         <GeoPopping />
         <MapDisplay />
         <SocialMediaFAB />
