@@ -11,7 +11,6 @@ import GeoPopping from "../GeoPopping";
 import SocialMediaFAB from "../SocialMediaFAB";
 import ViewContainer from "../ViewContainer";
 
-
 function MapScreen(props) {
   return (
     <ViewContainer {...props}>
@@ -23,8 +22,6 @@ function MapScreen(props) {
     </ViewContainer>
   );
 }
-
-export default joyride()(MapScreen);
 
 function ListScreen(props) {
   return (
