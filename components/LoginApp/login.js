@@ -1,35 +1,43 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
 import { StyleSheet, View, ImageBackground, Text, Image } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 import * as firebase from "firebase";
+import NavContext from "../NavigationContext";
+
+
 
 ///this function does nothing in the UI currently
 // also a class component!
 
-export default class Login extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      email: '',
-      password: ''
-    };
-  }
-  SignIn = (email, password) => {
-    try{
-      firebase.auth().signInWithEmailAndPassword(email,password)
-      .then(function(user){
-        if (user){
+/// so when the User Logins the User is directed to User Profile
+// export default class Login extends Component {
+//   constructor(props){
+//     super(props);
+//     this.state={
+//       email: '',
+//       password: ''
+//     };
+//   }
 
+  export default Login = props => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const navigation = useContext(NavContext);
+
+  const SignIn = async (email, password) => {
+    try{
+      const user = await firebase.auth().signInWithEmailAndPassword(email,password)
+      if (user) {
+        console.log("push navigation")
+        navigation.push("UserProfile")
         }
-        console.log(user)
-      })
-    }
-    catch(error)
-    {
-console.log(error.toString(error))
+      } catch(error) {
+        console.log(error.toString(error))
     }
   };
-  render() {
+
+
+  // render() {
     return (
       <ImageBackground
         source={require("../LoadingPage/brum.jpg")}
@@ -72,7 +80,7 @@ console.log(error.toString(error))
                 keyboardType="email-address"
                 returnKeyType="next"
                 placeholderTextColor="white"
-                onChangeText={email => this.setState({ email })}
+                onChangeText={email => setEmail({ email })}
               />
 
               <Input
@@ -95,7 +103,7 @@ console.log(error.toString(error))
                 returnKeyType="done"
                 placeholderTextColor="white"
                 secureTextEntry={true}
-                onChangeText={password => this.setState({ password })}
+                onChangeText={password => setPassword({ password })}
               />
 
               <Button
@@ -117,7 +125,7 @@ console.log(error.toString(error))
                   color: "#FFFFFF",
                   fontSize: 15
                 }}
-                onPress={() => this.SignIn(this.state.email, this.state.password)}
+                onPress={() => SignIn(email, password)}
               />
             </View>
 
@@ -170,7 +178,7 @@ console.log(error.toString(error))
       </ImageBackground>
     );
   }
-}
+
 const styles = StyleSheet.create({
   background: {
     flex: 1

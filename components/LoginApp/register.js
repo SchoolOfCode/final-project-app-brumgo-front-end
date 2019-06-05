@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, ImageBackground, Text, Image, TouchableOpacity} from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 import * as firebase from "firebase";
+import UserProfile from "../UserProfile";
 
 /// this is the config info for firebase
 
@@ -41,7 +42,11 @@ export default class Register extends Component {
         return;
       }
 
-      firebase.auth().createUserWithEmailAndPassword(email, password);
+      firebase.auth().createUserWithEmailAndPassword(email, password).then(currentUser => {
+        console.log(currentUser)
+      })
+      .then(() => alert("great, sign up was successful")) 
+      console.log(currentUser)
     }catch(error){
       console.log(error.toString(error));
     }

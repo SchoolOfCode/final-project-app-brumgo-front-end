@@ -16,11 +16,18 @@ import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import SocialMediaFAB from "../SocialMediaFAB";
 import Search from "../Search";
 import ViewContainer from "../ViewContainer";
+import { joyride, joyridable, JoyrideStep } from 'react-native-joyride';
+
+const JoyrideText = joyridable(Text);
+
 
 function MapScreen(props) {
   return (
     <ViewContainer {...props}>
       <View style={styles.map}>
+      <JoyrideStep text="This is a hello world example!" order={1} name="hello">
+          <JoyrideText>Hello world!</JoyrideText>
+        </JoyrideStep>
         <GeoPopping />
         <MapDisplay />
         <SocialMediaFAB />
@@ -28,6 +35,8 @@ function MapScreen(props) {
     </ViewContainer>
   );
 }
+
+export default joyride()(MapScreen);
 
 function ListScreen(props) {
   return (
