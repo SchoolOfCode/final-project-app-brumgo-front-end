@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "46252155412",
+    "firebase_url": "https://brumgo-c44e3.firebaseio.com",
+    "project_id": "brumgo-c44e3",
+    "storage_bucket": "brumgo-c44e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46252155412:android:847adb53adba91c8",
+        "android_client_info": {
+          "package_name": "com.brumgofrontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "46252155412-k5j104jsm5qqbud0putj9c3acr7fr40l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brumgofrontend",
+            "certificate_hash": "6467445482d5d35a0602dee9426bf175ac4639ed"
+          }
+        },
+        {
+          "client_id": "46252155412-a31f6fpd3s7kmr8khktn7ecnp2bucn5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt9wBE6Uuv0Xuqhr9-vQh3b0fc0mZhyLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "46252155412-a31f6fpd3s7kmr8khktn7ecnp2bucn5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

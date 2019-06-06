@@ -6,15 +6,9 @@ import {
 } from "react-navigation";
 
 import FlatList from "../FlatList";
-import FooterSection from "../FooterSection";
 import MapDisplay from "../MapDisplay";
-import Directions from "../Directions";
 import GeoPopping from "../GeoPopping";
-import PickerCategory from "../PickerCategory";
-import UserProfile from "../UserProfile";
-import usePoiFilter from "../../utils/hooks/usePoiFilter";
 import SocialMediaFAB from "../SocialMediaFAB";
-import Search from "../Search";
 import ViewContainer from "../ViewContainer";
 
 function MapScreen(props) {
