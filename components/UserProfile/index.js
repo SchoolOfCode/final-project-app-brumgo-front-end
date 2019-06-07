@@ -99,7 +99,7 @@ export default (UserProfile = props => {
                 />
               </View>
             </View>
-            <FooterSection />
+            <FooterSection {...props} />
           </View>
         </ImageBackground>
       </NavContext.Provider>

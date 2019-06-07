@@ -35,7 +35,9 @@ export default function FooterSection(props) {
             }}
             active
             onPress={
-              directionsData
+              navigation.state.routeName === "UserProfile"
+                ? () => navigation.goBack()
+                : directionsData
                 ? () => setDestination(null)
                 : () => props.navigation.navigate("List")
             }
