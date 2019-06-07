@@ -6,15 +6,15 @@ import { PoiContext } from "../PoiContextProvider";
 
 import CategoryToggles from "../CategoryToggles";
 
-export default (Search = props => {
-  const [{ searchTerms }, setSearchTerms] = useContext(PoiContext);
+export default function Search(props) {
+  const [{ searchTerms }, { setSearchAndFilter }] = useContext(PoiContext);
 
   return (
     <View style={styles.searchContainer}>
       <Text style={styles.header}>Filter by Category</Text>
       <CategoryToggles
         searchTerms={searchTerms}
-        setSearchTerms={setSearchTerms}
+        setSearchTerms={setSearchAndFilter}
       />
       <View>
         <Text style={styles.header}>Search by Name</Text>
@@ -23,7 +23,7 @@ export default (Search = props => {
           lightTheme
           round
           placeholder="Searching for..."
-          onChangeText={val => setSearchTerms({ nameSearch: val })}
+          onChangeText={val => setSearchAndFilter({ nameSearch: val })}
           value={searchTerms.nameSearch}
           containerStyle={{
             height: 60,
@@ -34,7 +34,7 @@ export default (Search = props => {
       </View>
     </View>
   );
-});
+}
 
 const styles = StyleSheet.create({
   searchContainer: {

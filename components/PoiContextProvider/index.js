@@ -13,10 +13,30 @@ const PoiContextProvider = ({ children }) => {
   const [filteredPois, setFilteredPois] = useState(
     usePoiFilter(pois, searchTerms)
   );
+  const [directionsData, setDirectionData] = useState(
+    null
+    //{
+    //origin: { latitude: 52, longitude: -1 },
+    //destination: { latitude: 52, longitude: -1 }
+    //}
+  );
 
   const setSearchAndFilter = newSearchTerms => {
     setSearchTerms(prevState => ({ ...prevState, ...newSearchTerms }));
     setFilteredPois(usePoiFilter(pois, newSearchTerms));
+  };
+
+  const setDestination = destination => {
+    setDirectionData(prevProps => {
+      if (
+        prevProps &&
+        destination &&
+        prevProps.latitude === destination.latitude
+      ) {
+        return null;
+      }
+      return destination;
+    });
   };
 
   return (
@@ -25,9 +45,10 @@ const PoiContextProvider = ({ children }) => {
         {
           pois: pois,
           filteredPois: filteredPois,
-          searchTerms: searchTerms
+          searchTerms: searchTerms,
+          directionsData: directionsData
         },
-        setSearchAndFilter
+        { setSearchAndFilter, setDestination }
       ]}
     >
       {children}
