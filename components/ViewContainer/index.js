@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { StyleSheet, View } from "react-native";
 import posed from "react-native-pose";
+
+import { PoiContext } from "../PoiContextProvider";
 
 import FooterSection from "../FooterSection";
 import Search from "../Search";
@@ -17,7 +19,7 @@ const SearchBox = posed.View({
 });
 
 export default function ViewContainer(props) {
-  const [searching, setSearching] = useState(false);
+  const [{ searching }, { setSearching }] = useContext(PoiContext);
   return (
     <View style={styles.container}>
       {props.children}
