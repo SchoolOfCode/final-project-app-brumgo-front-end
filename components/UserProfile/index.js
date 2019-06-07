@@ -22,9 +22,8 @@ export default (UserProfile = props => {
                   name="user-circle"
                   type="font-awesome"
                   color="#FFFFFF"
-                  size={80}
+                  size={100}
                 />
-                <Text style={styles.name}>Joe Bloggs</Text>
               </View>
 
               <View style={styles.middle}>
@@ -123,17 +122,15 @@ const styles = StyleSheet.create({
   },
   top: {
     backgroundColor: "transparent",
-    flex: 0.5,
+    flex: 0.4,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
     marginBottom: 20,
-    paddingTop: 23,
     marginLeft: "25%",
-    marginTop: "10%",
     width: 180,
     borderWidth: 3,
-    borderColor: "#FFFFFF"
+    borderColor: "transparent"
   },
   middle: {
     backgroundColor: "transparent",
@@ -142,7 +139,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 60,
-    margin: 10,
+    margin: 13,
     padding: 10
   },
   bottom: {
@@ -154,7 +151,7 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     borderWidth: 3,
     borderColor: "#FFFFFF",
-    margin: 18
+    margin: 17
   },
   name: {
     fontSize: 25,
