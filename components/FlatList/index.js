@@ -2,19 +2,14 @@ import React, { useContext, useState } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
 import { ListItem, Icon } from "react-native-elements";
 
-import pois from "../../data/digbethPois";
 import FavIcon from "./favIcon";
-import PickerCategory from "../PickerCategory";
 import { PoiContext } from "../PoiContextProvider";
 import TickIcon from "./tickIcon";
 
 import iconSet from "../../assets/images/icons/iconSet";
 
-export default function FlatListBasics() {
-  const [destination, setDestination] = useState(null);
-  const [{ searchTerms, filteredPois }, setSearchTerms] = useContext(
-    PoiContext
-  );
+export default function FlatListBasics(props) {
+  const [{ filteredPois }, { setDestination }] = useContext(PoiContext);
 
   return (
     <View style={styles.container}>
@@ -49,12 +44,13 @@ export default function FlatListBasics() {
                   name="location-arrow"
                   type="font-awesome"
                   color="#FCC133"
-                  onPress={() =>
+                  onPress={() => {
                     setDestination({
                       latitude: item.poiLocation.lat,
                       longitude: item.poiLocation.lng
-                    })
-                  }
+                    });
+                    props.navigation.goBack();
+                  }}
                 />
               }
               rightTitle="Directions"

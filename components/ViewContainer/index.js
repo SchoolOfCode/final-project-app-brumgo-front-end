@@ -1,15 +1,33 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
+import posed from "react-native-pose";
 
 import FooterSection from "../FooterSection";
 import Search from "../Search";
+
+const SearchBox = posed.View({
+  visible: {
+    transition: { useNativeDriver: true },
+    translateY: 0
+  },
+  hidden: {
+    transition: { useNativeDriver: true },
+    translateY: 170
+  }
+});
 
 export default function ViewContainer(props) {
   const [searching, setSearching] = useState(false);
   return (
     <View style={styles.container}>
       {props.children}
-      <View style={styles.search}>{searching && <Search />}</View>
+      <SearchBox
+        pose={searching ? "visible" : "hidden"}
+        style={styles.search}
+        useNativeDriver
+      >
+        <Search />
+      </SearchBox>
       <View style={styles.footer}>
         <FooterSection
           searchingToggle={() => setSearching(!searching)}
@@ -39,9 +57,8 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   search: {
-    bottom: 55,
+    bottom: "9.7%",
     left: 0,
-    // marginTop: -50,
     width: "100%",
     position: "absolute"
   }

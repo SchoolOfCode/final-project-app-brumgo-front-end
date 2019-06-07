@@ -1,9 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Footer, FooterTab, Button, Icon } from "native-base";
+
 import NavContext from "../NavigationContext";
+import { PoiContext } from "../PoiContextProvider";
 
 export default function FooterSection(props) {
   const navigation = useContext(NavContext);
+  const [{ directionsData }, { setDestination }] = useContext(PoiContext);
+
   return (
     <>
       <Footer>
@@ -27,9 +31,14 @@ export default function FooterSection(props) {
               borderWidth: 3,
               borderColor: "#FFFFFF",
               borderRadius: 35,
-              backgroundColor: "#FCC133"
+              backgroundColor: directionsData ? "#3EB650" : "#FCC133"
             }}
             active
+            onPress={
+              directionsData
+                ? () => setDestination(null)
+                : () => props.navigation.navigate("List")
+            }
           >
             <Icon active name="navigate" />
           </Button>

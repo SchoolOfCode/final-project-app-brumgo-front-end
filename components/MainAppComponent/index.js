@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import {
   createMaterialTopTabNavigator,
@@ -27,7 +27,7 @@ function ListScreen(props) {
   return (
     <ViewContainer {...props}>
       <View style={styles.list}>
-        <FlatList />
+        <FlatList {...props} />
       </View>
     </ViewContainer>
   );
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
   },
 
   map: {
-    height: "90%",
+    height: "90.3%",
     width: "100%"
   },
   list: {
-    height: "90%",
+    height: "90.3%",
     width: "100%"
   },
   footer: {
