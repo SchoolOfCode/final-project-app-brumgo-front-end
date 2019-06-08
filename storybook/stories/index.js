@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react-native";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import MapDisplay from "../../components/MapDisplay";
 import FlatList from "../../components/FlatList";
 import Search from "../../components/Search";
