@@ -2,10 +2,11 @@ import React, { useState, useContext } from "react";
 import { StyleSheet, View, ImageBackground, Text, Image } from "react-native";
 import { Button, Input, Icon } from "react-native-elements";
 import * as firebase from "firebase";
+
 import NavContext from "../NavigationContext";
+import imageAssets from "../../assets/images/images";
 
 ///this function does nothing in the UI currently
-
 
 /// so when the User Logins the User is directed to User Profile
 
@@ -19,27 +20,21 @@ export default (Login = props => {
       firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
-        .then(()=> navigation.push("Main"))  
+        .then(() => navigation.push("Main"));
     } catch (error) {
       console.log(error.toString(error));
     }
-  }
+  };
 
   return (
-    <ImageBackground
-      source={require("../LoadingPage/brum.jpg")}
-      style={styles.background}
-    >
+    <ImageBackground source={imageAssets.brum} style={styles.background}>
       <View style={styles.overlay}>
         <View style={styles.title}>
           <Text style={styles.header}>LOGIN</Text>
         </View>
         <View style={styles.container}>
           <View style={styles.top}>
-            <Image
-              style={styles.logo}
-              source={require("../LoadingPage/brumGoLogoRed.png")}
-            />
+            <Image style={styles.logo} source={imageAssets.brumGoLogoRed} />
           </View>
 
           <View style={styles.bottom}>
@@ -62,7 +57,7 @@ export default (Login = props => {
               keyboardType="email-address"
               returnKeyType="next"
               placeholderTextColor="white"
-              onChangeText={email => setEmail( email )}
+              onChangeText={email => setEmail(email)}
             />
 
             <Input
@@ -84,7 +79,7 @@ export default (Login = props => {
               returnKeyType="done"
               placeholderTextColor="white"
               secureTextEntry={true}
-              onChangeText={password => setPassword( password )}
+              onChangeText={password => setPassword(password)}
             />
 
             <Button
