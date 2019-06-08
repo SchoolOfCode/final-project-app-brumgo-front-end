@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Icon } from "react-native-elements";
 import { createAppContainer } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+
 import Login from "../LoginApp/login";
 import Register from "../LoginApp/register";
 

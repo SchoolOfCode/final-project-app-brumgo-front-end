@@ -1,30 +1,25 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
-import { Avatar, Icon, ListItem } from "react-native-elements";
+import React from "react";
+import { StyleSheet, View, Text, ImageBackground } from "react-native";
+import { Icon, Avatar } from "react-native-elements";
+
 import FooterSection from "../FooterSection";
 import NavContext from "../NavigationContext";
 import Header from "../HeaderSection";
+
 import { PoiContextProvider } from "../PoiContextProvider";
+import imageAssets from "../../assets/images/images";
 
 export default (UserProfile = props => {
   return (
     <PoiContextProvider>
       <NavContext.Provider value={props.navigation}>
         <Header />
-        <ImageBackground
-          source={require("../LoadingPage/brum.jpg")}
-          style={styles.background}
-        >
+        <ImageBackground source={imageAssets.brum} style={styles.background}>
           <View style={styles.overlay}>
             <View style={styles.container}>
               <View style={styles.top}>
-                <Icon
-                  name="user-circle"
-                  type="font-awesome"
-                  color="#FFFFFF"
-                  size={80}
-                />
-                <Text style={styles.name}>Joe Bloggs</Text>
+                <Avatar rounded source={require("./dave.png")} size={100} />
+                <Text style={styles.name}>David Adams</Text>
               </View>
 
               <View style={styles.middle}>

@@ -1,40 +1,45 @@
-import React, { Component } from 'react';
-import { Container, Header, View, Button, Fab } from 'native-base';
-import { Icon } from "react-native-elements"
+import React, { useState } from "react";
+import { Button, Fab } from "native-base";
+import { Icon } from "react-native-elements";
+import posed from "react-native-pose";
 
-export default class SocialMediaFAB extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            active: 'true'
-        };
-    }
-    render() {
-        return (
-            <Container>
-                <Header />
-                <View style={{ flex: 1 }}>
-                    <Fab
-                        active={this.state.active}
-                        direction="up"
-                        containerStyle={{ }}
-                        style={{ backgroundColor: '#FCC133' }}
-                        position="bottomRight"
-                        onPress={() => this.setState({ active: !this.state.active })}>
+const PosedButton = posed(Button)({
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 }
+});
 
-                        <Icon name="share" color="#FFFFFF" />
-                        <Button style={{ backgroundColor: '#34A34F' }}>
-                            <Icon name="instagram" type="font-awesome" color="#FFFFFF"  />
-                        </Button>
-                        <Button style={{ backgroundColor: '#3B5998' }}>
-                            <Icon name="facebook" type="font-awesome" color="#FFFFFF" />
-                        </Button>
-                        <Button disabled style={{ backgroundColor: '#DD5144' }}>
-                            <Icon name="twitter" type="font-awesome" color="#FFFFFF" />
-                        </Button>
-                    </Fab>
-                </View>
-            </Container>
-        );
-    }
+export default function SocialMediaFAB(props) {
+  const [active, setActive] = useState(false);
+
+  return (
+    <Fab
+      active={active}
+      direction="up"
+      containerStyle={{}}
+      style={{ backgroundColor: "#FCC133" }}
+      position="bottomRight"
+      onPress={() => setActive(!active)}
+    >
+      <Icon name="share" color="#FFFFFF" />
+      <PosedButton
+        pose={active ? "visible" : "hidden"}
+        style={{ backgroundColor: "#34A34F" }}
+      >
+        <Icon name="instagram" type="font-awesome" color="#FFFFFF" />
+      </PosedButton>
+      <PosedButton
+        pose={active ? "visible" : "hidden"}
+        style={{ backgroundColor: "#3B5998" }}
+      >
+        <Icon name="facebook" type="font-awesome" color="#FFFFFF" />
+      </PosedButton>
+      <PosedButton
+        pose={active ? "visible" : "hidden"}
+        disabled
+        style={{ backgroundColor: "#DD5144" }}
+      >
+        <Icon name="twitter" type="font-awesome" color="#FFFFFF" />
+      </PosedButton>
+    </Fab>
+  );
 }

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MapViewDirections from "react-native-maps-directions";
 
-// const destination = { latitude: 52.47495, longitude: -1.886312 };
-
 const GOOGLE_MAPS_APIKEY = "AIzaSyAFTylTQiMR1JwxltSEuuq6DdHNMf11ZRY";
 
 export default function Directions({ directionsData }) {

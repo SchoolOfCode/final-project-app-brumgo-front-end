@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { StyleSheet, View, Image, ImageBackground} from "react-native";
+import { StyleSheet, View, Image, ImageBackground } from "react-native";
 import { Button, Icon } from "react-native-elements";
 
 import fineLocationPermissions from "../../utils/permissions/fineLocationPermission";
+import imageAssets from "../../assets/images/images";
 
 export default function LoadingPage(props) {
   useEffect(() => {
@@ -10,16 +11,10 @@ export default function LoadingPage(props) {
   }, []);
 
   return (
-    <ImageBackground
-      source={require("../LoadingPage/brum.jpg")}
-      style={styles.background}
-    >
+    <ImageBackground source={imageAssets.brum} style={styles.background}>
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <Image
-            style={styles.logo}
-            source={require("../LoadingPage/brumGoLogoRed.png")}
-          />
+          <Image style={styles.logo} source={imageAssets.brumGoLogoRed} />
 
           <View style={styles.buttonGroup}>
             <Button
@@ -27,7 +22,11 @@ export default function LoadingPage(props) {
               activeOpacity={1}
               underlayColor="transparent"
               loadingProps={{ size: "small", color: "#FCC133" }}
-              titleStyle={{ fontSize: 15, color: "#FFFFFF", fontWeight: "bold" }}
+              titleStyle={{
+                fontSize: 15,
+                color: "#FFFFFF",
+                fontWeight: "bold"
+              }}
               buttonStyle={{
                 borderRadius: 60,
                 height: 45,
@@ -41,12 +40,16 @@ export default function LoadingPage(props) {
             />
             <Button
               title=" GUEST"
-              titleStyle={{ fontSize: 15, color: "#E12B38", fontWeight: "bold" }}
+              titleStyle={{
+                fontSize: 15,
+                color: "#E12B38",
+                fontWeight: "bold"
+              }}
               buttonStyle={{
                 height: 45,
                 width: 280,
                 borderRadius: 60,
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "#FFFFFF"
               }}
               containerStyle={{ marginVertical: 10, opacity: 0.8 }}
               onPress={() => props.navigation.push("Main")}
