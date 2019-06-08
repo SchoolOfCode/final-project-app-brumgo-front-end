@@ -21,11 +21,11 @@ const CategoryToggles = ({ searchTerms, setSearchTerms }) => {
   };
   return (
     <View style={styles.container}>
-      {Object.keys(iconSet).map(key => {
+      {Object.keys(iconSet.white).map(key => {
         return (
           <CatToggle
             keyExtractor={key}
-            image={iconSet[key]}
+            image={iconSet.white[key]}
             category={key}
             selected={searchTerms.categories.includes(key)}
             toggleCategory={() => toggleCategory(key)}
@@ -39,11 +39,8 @@ const CategoryToggles = ({ searchTerms, setSearchTerms }) => {
 export default CategoryToggles;
 
 const styles = StyleSheet.create({
-  icon: {
-    height: 40,
-    width: 40
-  },
   container: {
+    paddingBottom: 10,
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center"

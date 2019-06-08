@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import {
   createMaterialTopTabNavigator,
   createAppContainer
@@ -10,6 +10,7 @@ import MapDisplay from "../MapDisplay";
 import GeoPopping from "../GeoPopping";
 import SocialMediaFAB from "../SocialMediaFAB";
 import ViewContainer from "../ViewContainer";
+import images from "../../assets/images/images";
 
 function MapScreen(props) {
   return (
@@ -18,6 +19,7 @@ function MapScreen(props) {
         <GeoPopping />
         <MapDisplay />
         <SocialMediaFAB />
+        <Image style={styles.logo} source={images.brumGoLogoRed} />
       </View>
     </ViewContainer>
   );
@@ -56,6 +58,14 @@ const TabNavigator = createMaterialTopTabNavigator(
       style: {
         backgroundColor: "#E12B38"
       }
+    },
+    logo: {
+      position: "absolute",
+      height: 50,
+      width: 50,
+      top: 200,
+      left: 5,
+      zIndex: 100
     }
   }
 );

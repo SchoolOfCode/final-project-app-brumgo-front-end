@@ -14,7 +14,7 @@ const SearchBox = posed.View({
   },
   hidden: {
     transition: { useNativeDriver: true },
-    translateY: 170
+    translateY: 185
   }
 });
 
