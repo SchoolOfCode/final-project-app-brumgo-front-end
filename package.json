@@ -36,7 +36,7 @@
   "devDependencies": {
     "@babel/core": "7.4.4",
     "@babel/runtime": "7.4.4",
-    "@storybook/react-native": "^4.1.18",
+    "@storybook/react-native": "^6.5.3",
     "babel-jest": "24.7.1",
     "eslint-plugin-react-hooks": "^1.6.0",
     "jest": "24.7.1",
